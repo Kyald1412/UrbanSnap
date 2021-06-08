@@ -1,6 +1,6 @@
-# Diabestie 
+# UrbanSnap 
 
-Diabestie is an iOS App that aims to help diabetes patients maintain their nutritional balance. 
+UrbanSnap is an app .....
 
 
 # Starting the project
@@ -18,11 +18,11 @@ Clone this project using git clone
     1. Open Terminal
     2. `brew install swiftgen`
 
-- Open `Diabestie.xcodeproj`
+- Open `UrbanSnap.xcodeproj`
 
 ## Disable SwiftLint
 1. Open project information
-2. Select Diabestie in Targets
+2. Select UrbanSnap in Targets
 3. Select Build Phases
 4. Open Run Script
 
