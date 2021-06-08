@@ -1,0 +1,19 @@
+xcassets:
+  - inputs:
+      - UrbanSnap/Resources/Colors.xcassets
+    outputs:
+      - templatePath: asset-to-color-extension.stencil
+        output: UrbanSnap/Helpers/Extensions/UIColor+Extension.swift
+        params:
+          enumName: UIColor
+          publicAccess: true
+          allValues: true
+  - inputs:
+      - UrbanSnap/Resources/Assets.xcassets
+    outputs:
+      - templatePath: asset-to-image-extension.stencil
+        output: UrbanSnap/Helpers/Extensions/UIImage+Extension.swift
+        params:
+          enumName: UIImage
+          publicAccess: true
+          allValues: true

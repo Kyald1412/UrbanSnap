@@ -1,0 +1,37 @@
+//
+//
+//  UIImage+Extension.swift
+//  Diabestie
+//
+//  Created by Diabestie Team.
+//  swiftlint:disable all
+
+import UIKit
+
+{# Macro to create a static property for a given asset and class type #}
+{% macro staticAsset type asset %}
+static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = {{type}}.image(named: "{{asset.value}}")
+
+{% endmacro %}
+{# Create an UIImage extension for all image assets in asset catalogs #}
+// MARK: - Images Asset
+
+extension UIImage {
+
+    {% for catalog in catalogs %}
+        {% for asset in catalog.assets %}
+            {% if asset.type == "image" %}
+                {% filter indent:4 %}{% call staticAsset "UIImage" asset %}{% endfilter %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+    
+    {# define private function #}
+
+    private static func image(named: String) -> UIImage {
+        return UIImage(named: named)!
+    }
+    
+    {# end private function #}
+    
+}
