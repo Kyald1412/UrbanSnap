@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1BF26710AEE00B7B31F /* StickerView.swift */; };
 		BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C126710B8000B7B31F /* CanvasView.swift */; };
+		BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C626710C5800B7B31F /* CommonFunction.swift */; };
+		BC7DF1C926710CBF00B7B31F /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */; };
 		BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */; };
 		BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */; };
 		BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		BC7DF1BF26710AEE00B7B31F /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
 		BC7DF1C126710B8000B7B31F /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		BC7DF1C626710C5800B7B31F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
+		BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		BCC36E9B266DBD5B00E9E0BA /* UrbanSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC7DF1C526710C4A00B7B31F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC7DF1C626710C5800B7B31F /* CommonFunction.swift */,
+				BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		BC846C65266F090200B6F76C /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +179,7 @@
 		BCD13C4E266E4AA20029CE05 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				BC7DF1C526710C4A00B7B31F /* Utils */,
 				BCD13C69266E4C9A0029CE05 /* Constants */,
 				BCD13C68266E4C950029CE05 /* Libraries */,
 				BCD13C67266E4C620029CE05 /* Extensions */,
@@ -483,8 +497,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */,
+				BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */,
 				BCD13C92266E504C0029CE05 /* ChallengeCameraScene.swift in Sources */,
 				BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */,
+				BC7DF1C926710CBF00B7B31F /* UserDefaultsWrapper.swift in Sources */,
 				BCD13C7B266E4ED40029CE05 /* Constants.swift in Sources */,
 				BCD13C7F266E4EE40029CE05 /* TableViewCell+Extension.swift in Sources */,
 				BCD13CAF266E519E0029CE05 /* OnboardingScene.swift in Sources */,
