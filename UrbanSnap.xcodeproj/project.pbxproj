@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63E83807267054A4002D5E08 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E83806267054A4002D5E08 /* PageViewController.swift */; };
 		BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */; };
 		BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */; };
 		BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */; };
@@ -55,7 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		63E83806267054A4002D5E08 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BCC36E9B266DBD5B00E9E0BA /* UrbanSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			children = (
 				BCD13CAE266E51950029CE05 /* OnboardingScene.swift */,
 				BCD13CAD266E51950029CE05 /* Onboarding.storyboard */,
-				63E83806267054A4002D5E08 /* PageViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -493,7 +490,6 @@
 				BCD13CA8266E516D0029CE05 /* ChallengeDetailScene.swift in Sources */,
 				BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */,
 				BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */,
-				63E83807267054A4002D5E08 /* PageViewController.swift in Sources */,
 				BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */,
 				BCD13C7D266E4EE10029CE05 /* Date+Extension.swift in Sources */,
 				BCD13C9F266E50E20029CE05 /* ReflectionListCell.swift in Sources */,
