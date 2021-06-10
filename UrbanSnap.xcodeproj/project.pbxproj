@@ -46,6 +46,8 @@
 		BCD13CAC266E51860029CE05 /* ChallengeListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13CAA266E517B0029CE05 /* ChallengeListScene.swift */; };
 		BCD13CAF266E519E0029CE05 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13CAE266E51950029CE05 /* OnboardingScene.swift */; };
 		BCD13CB0266E519E0029CE05 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13CAD266E51950029CE05 /* Onboarding.storyboard */; };
+		BCD450692671CC010084A4F2 /* HomePageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD450682671CC010084A4F2 /* HomePageScene.swift */; };
+		BCD4506B2671CC190084A4F2 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD4506A2671CC160084A4F2 /* HomePage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		BCD13CAA266E517B0029CE05 /* ChallengeListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListScene.swift; sourceTree = "<group>"; };
 		BCD13CAD266E51950029CE05 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		BCD13CAE266E51950029CE05 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
+		BCD450682671CC010084A4F2 /* HomePageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageScene.swift; sourceTree = "<group>"; };
+		BCD4506A2671CC160084A4F2 /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +224,7 @@
 		BCD13C5F266E4B5E0029CE05 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BCD450672671CBEB0084A4F2 /* Homepage */,
 				BCD13C73266E4E260029CE05 /* Alerts */,
 				BCD13C6E266E4DB00029CE05 /* Reflection */,
 				BCD13C6D266E4DA10029CE05 /* Challenge */,
@@ -387,6 +392,15 @@
 			path = TableCell;
 			sourceTree = "<group>";
 		};
+		BCD450672671CBEB0084A4F2 /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				BCD450682671CC010084A4F2 /* HomePageScene.swift */,
+				BCD4506A2671CC160084A4F2 /* HomePage.storyboard */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -474,6 +488,7 @@
 				BCD13CA4266E51150029CE05 /* ReflectionDetailHeaderCell.xib in Resources */,
 				BCD13C79266E4EC60029CE05 /* SFProText-Regular.ttf in Resources */,
 				BCD13C63266E4BC30029CE05 /* Colors.xcassets in Resources */,
+				BCD4506B2671CC190084A4F2 /* HomePage.storyboard in Resources */,
 				BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */,
 				BCC36EA6266DBD5B00E9E0BA /* Main.storyboard in Resources */,
 				BCD13C78266E4EC60029CE05 /* SFProText-Medium.ttf in Resources */,
@@ -519,6 +534,7 @@
 				BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */,
 				BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */,
 				BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */,
+				BCD450692671CC010084A4F2 /* HomePageScene.swift in Sources */,
 				BCD13C7D266E4EE10029CE05 /* Date+Extension.swift in Sources */,
 				BCD13C9F266E50E20029CE05 /* ReflectionListCell.swift in Sources */,
 				BCD13C85266E4EF50029CE05 /* UIColor+Extension.swift in Sources */,
