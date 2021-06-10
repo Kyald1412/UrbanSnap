@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode12.5
+xcode_project: UrbanSnap.xcodeproj # path to your xcodeproj folder
+xcode_scheme: UrbanSnap
+xcode_destination: platform=iOS Simulator,OS=14.1,name=iPhone 12
