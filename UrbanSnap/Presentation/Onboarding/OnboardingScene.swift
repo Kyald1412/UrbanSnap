@@ -12,12 +12,12 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var btnGetStarted:UIButton!
+    @IBOutlet weak var btnSkip:UIButton!
     
-
     var scrollWidth: CGFloat! = 0.0
     var scrollHeight:CGFloat! = 0.0
     
-    var titles = ["Learn" , "Practice", "Evaluate"]
+    var titles = ["Learn", "Practice", "Evaluate"]
     var desc = ["Broaden your knowledge about urban photography by learning new skills in every level", "Stroll around the city and practice shooting as you complete the challenges", "Sit back after practice and evaluate your work for a better photos in the future"]
     var imgs = ["Onboarding-Learn", "Onboarding-Practice", "Onboarding-Evaluate"]
     
@@ -49,9 +49,9 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
             
             //subview
             let imageView = UIImageView.init(image: UIImage.init(named:imgs[index]))
-            imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+            imageView.frame = CGRect(x: 0, y: 0, width: 374, height: 399.61)
             imageView.contentMode = .scaleAspectFit
-            imageView.center = CGPoint(x: scrollWidth/2, y: scrollHeight/2-50)
+            imageView.center = CGPoint(x: scrollWidth/2, y: scrollHeight/2-85)
             
             let txt1 = UILabel.init(frame: CGRect(x: 32, y: imageView.frame.maxY+30, width: scrollWidth-64, height: 30))
             txt1.textAlignment = .center
@@ -61,7 +61,7 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
             let txt2 = UILabel.init(frame: CGRect(x: 32, y: txt1.frame.maxY+10, width: scrollWidth-64, height: 80))
             txt2.textAlignment = .center
             txt2.numberOfLines = 5
-            txt2.textColor = UIColor.gray
+            txt2.textColor = UIColor(red: 72/256, green: 74/256, blue: 77/256, alpha: 1)
             txt2.font = UIFont.systemFont(ofSize: 20.0)
             txt2.text = desc[index]
             
@@ -77,23 +77,56 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
         pageControl.currentPage = 0
     }
     
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        setIndiactorForCurrentPage()
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        setIndiactorForCurrentPage()
+    }
+    
+    func setIndiactorForCurrentPage()  {
+           let page = (scrollView?.contentOffset.x)!/scrollWidth
+           pageControl?.currentPage = Int(page)
+        switch(pageControl.currentPage) {
+        case 0:
+            btnGetStarted.isHidden = true
+            btnSkip.isHidden = false
+            break
+        case 1:
+            btnGetStarted.isHidden = true
+            btnSkip.isHidden = false
+            break
+        case 2:
+            btnGetStarted.isHidden = false
+            btnSkip.isHidden = true
+            UIView.animate(withDuration: 0.0) {
+                self.btnGetStarted.alpha = 1
+            }
+            break
+        default:
+            btnGetStarted.isHidden = true
+        }
+        
+    }
+
+    @IBAction func pageChanged(_ sender: Any) {
+        scrollView!.scrollRectToVisible(CGRect(x: scrollWidth*CGFloat((pageControl?.currentPage)!), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
+        
+    }
+    
     @IBAction func getStartedBtn(_sender:UIButton){
         print("to the next page")
         
     }
     
-    @IBAction func pageChanged(_ sender: Any) {
+    @IBAction func skipButton(_sender: Any){
+        pageControl.currentPage = 2
+        
         scrollView!.scrollRectToVisible(CGRect(x: scrollWidth*CGFloat((pageControl?.currentPage)!), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
+        setIndiactorForCurrentPage()
         
-        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            setIndiactorForCurrentPage()
-        }
-        
-        func setIndiactorForCurrentPage()  {
-               let page = (scrollView?.contentOffset.x)!/scrollWidth
-               pageControl?.currentPage = Int(page)
-           }
     }
-    
     
 }
