@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63EFA1BF2670BE980067F80E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFA1BE2670BE980067F80E /* OnboardingViewController.swift */; };
 		BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1BF26710AEE00B7B31F /* StickerView.swift */; };
 		BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C126710B8000B7B31F /* CanvasView.swift */; };
 		BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C626710C5800B7B31F /* CommonFunction.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63EFA1BE2670BE980067F80E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BC7DF1BF26710AEE00B7B31F /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
 		BC7DF1C126710B8000B7B31F /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		BC7DF1C626710C5800B7B31F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				BCD13CAE266E51950029CE05 /* OnboardingScene.swift */,
+				63EFA1BE2670BE980067F80E /* OnboardingViewController.swift */,
 				BCD13CAD266E51950029CE05 /* Onboarding.storyboard */,
 			);
 			path = Onboarding;
@@ -504,6 +507,7 @@
 				BCD13C7B266E4ED40029CE05 /* Constants.swift in Sources */,
 				BCD13C7F266E4EE40029CE05 /* TableViewCell+Extension.swift in Sources */,
 				BCD13CAF266E519E0029CE05 /* OnboardingScene.swift in Sources */,
+				63EFA1BF2670BE980067F80E /* OnboardingViewController.swift in Sources */,
 				BCD13C89266E4FD10029CE05 /* ReflectionSuccessScene.swift in Sources */,
 				BCD13C81266E4EED0029CE05 /* UIView+Extension.swift in Sources */,
 				BCD13CA3266E51150029CE05 /* ReflectionDetailHeaderCell.swift in Sources */,
