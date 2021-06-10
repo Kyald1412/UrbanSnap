@@ -273,8 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				BCD13CAE266E51950029CE05 /* OnboardingScene.swift */,
-				63EFA1BE2670BE980067F80E /* OnboardingViewController.swift */,
 				BCD13CAD266E51950029CE05 /* Onboarding.storyboard */,
+				63EFA1BE2670BE980067F80E /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
