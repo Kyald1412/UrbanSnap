@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,16 +15,90 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWV-Qd-kRb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Urban Challenge" id="NNi-ct-j7u"/>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0b-E7-xC8">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="Challenges" image="flag.circle" catalog="system" id="ET6-cX-gEX"/>
+                                    <tabBarItem title="Evaluation" image="square.and.pencil" catalog="system" id="k37-SD-mcf"/>
+                                </items>
+                            </tabBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="808-cd-FQg">
+                                <rect key="frame" x="26" y="88" width="358" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="challengeItem" rowHeight="121" id="1Ef-dE-CrE" customClass="ChallengeListTableViewCell" customModule="UrbanSnap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="358" height="121"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Ef-dE-CrE" id="aKS-Ir-PhC">
+                                            <rect key="frame" x="0.0" y="0.0" width="358" height="121"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-SR-d9e">
+                                                    <rect key="frame" x="36" y="27" width="52" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ilustrasi level 1" translatesAutoresizingMaskIntoConstraints="NO" id="0qu-ty-Xmg">
+                                                    <rect key="frame" x="151" y="0.0" width="207" height="121"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Belajar fotografi bersama kami" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fAe-rm-s3o">
+                                                    <rect key="frame" x="36" y="56" width="120" height="63"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="0qu-ty-Xmg" secondAttribute="bottom" id="3i1-CJ-oni"/>
+                                                <constraint firstAttribute="bottom" secondItem="fAe-rm-s3o" secondAttribute="bottom" constant="16" id="44U-Xe-kod"/>
+                                                <constraint firstItem="fAe-rm-s3o" firstAttribute="leading" secondItem="aKS-Ir-PhC" secondAttribute="leading" constant="16" id="Ds7-hz-Ozu"/>
+                                                <constraint firstAttribute="trailing" secondItem="0qu-ty-Xmg" secondAttribute="trailing" id="Efi-TL-bPh"/>
+                                                <constraint firstItem="0qu-ty-Xmg" firstAttribute="top" secondItem="aKS-Ir-PhC" secondAttribute="top" id="fgs-nV-qFE"/>
+                                                <constraint firstItem="gMT-SR-d9e" firstAttribute="top" secondItem="aKS-Ir-PhC" secondAttribute="topMargin" constant="16" id="pCP-HG-oCD"/>
+                                                <constraint firstItem="gMT-SR-d9e" firstAttribute="leading" secondItem="aKS-Ir-PhC" secondAttribute="leadingMargin" constant="16" id="z1F-Gb-xQB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="desc" destination="fAe-rm-s3o" id="hnr-Y6-JgK"/>
+                                            <outlet property="img" destination="0qu-ty-Xmg" id="8Rr-oQ-shH"/>
+                                            <outlet property="label" destination="gMT-SR-d9e" id="csj-WD-c9E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="challengeTableView" destination="808-cd-FQg" id="E4X-Eo-QMB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="110"/>
+            <point key="canvasLocation" x="21.739130434782609" y="109.82142857142857"/>
         </scene>
     </scenes>
     <resources>
+        <image name="flag.circle" catalog="system" width="128" height="121"/>
+        <image name="ilustrasi level 1" width="207" height="148"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
