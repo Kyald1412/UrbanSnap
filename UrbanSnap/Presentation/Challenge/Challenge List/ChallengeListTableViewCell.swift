@@ -16,5 +16,6 @@ class ChallengeListTableViewCell: UITableViewCell {
     func setLevelList(with challenge: Challenge){
         label.text = challenge.level
         desc.text = challenge.desc
+        img.image = challenge.image
     }
 }

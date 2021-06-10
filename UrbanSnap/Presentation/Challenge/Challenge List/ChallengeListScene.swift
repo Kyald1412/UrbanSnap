@@ -24,7 +24,8 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var challengeTableView: UITableView!
     
-    private let challengeList = [ Challenge(level: "Level 1", desc: "Learn to shoot still urban objects with two layers", image: "yes"), Challenge(level: "Level 2", desc: "Learn to shoot still urban objects with three layers", image: "yes"), Challenge(level: "Level 3", desc: "Learn to shoot moving urban objects with two layers", image: "yes")]
+    private let challengeList = [ Challenge(level: "Level 1", desc: "Learn to shoot still urban objects with two layers", image: UIImage.ilustrasiLevel1), Challenge(level: "Level 2", desc: "Learn to shoot still urban objects with three layers", image: UIImage.ilustrasiLevel2), Challenge(level: "Level 3", desc: "Learn to shoot moving urban objects with two layers", image: UIImage.ilustrasiLevel3)]
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -38,5 +39,5 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
 struct Challenge{
     let level : String
     let desc: String
-    let image: String
+    let image: UIImage
 }
