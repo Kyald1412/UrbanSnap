@@ -1,3 +1,5 @@
+[![Build Status](https://app.bitrise.io/app/a1d77a091861e3c2/status.svg?token=mSjuaz2MAKIBQAW01j8gFg&branch=core)](https://app.bitrise.io/app/a1d77a091861e3c2)
+
 # UrbanSnap 
 
 UrbanSnap is an app .....
