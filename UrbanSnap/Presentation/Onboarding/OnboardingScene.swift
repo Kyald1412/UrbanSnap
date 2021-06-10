@@ -117,8 +117,8 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func getStartedBtn(_sender:UIButton){
-        print("to the next page")
-        
+        let homePage = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "HomePageScene") as! HomePageScene
+        self.navigationController?.pushViewController(homePage, animated: true)
     }
     
     @IBAction func skipButton(_sender: Any){
