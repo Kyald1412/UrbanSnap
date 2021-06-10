@@ -7,18 +7,18 @@
 
 import UIKit
 
-class ChallengeListScene: UIViewController {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return challengeList.count
-//    }
+class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return challengeList.count
+    }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let item = challengeList[indexPath.row]
-//        let cell = challengeTableView.dequeueReusableCell(withIdentifier: "challengeItem", for: indexPath) as! ChallengeListTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = challengeList[indexPath.row]
+        let cell = challengeTableView.dequeueReusableCell(withIdentifier: "challengeItem", for: indexPath) as! ChallengeListTableViewCell
 //        cell.update(with: item)
 //        print("CELL \(cell)")
-//        return cell
-//    }
+        return cell
+    }
     
     @IBOutlet weak var challengeTableView: UITableView!
     
@@ -29,10 +29,11 @@ class ChallengeListScene: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    struct Challenge{
-        let level : String
-        let desc: String
-        let image: String
-    }
 
+
+}
+struct Challenge{
+    let level : String
+    let desc: String
+    let image: String
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84F54B082671B4B70013353B /* ChallengeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B072671B4B70013353B /* ChallengeListTableViewCell.swift */; };
 		BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1BF26710AEE00B7B31F /* StickerView.swift */; };
 		BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C126710B8000B7B31F /* CanvasView.swift */; };
 		BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C626710C5800B7B31F /* CommonFunction.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84F54B072671B4B70013353B /* ChallengeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListTableViewCell.swift; sourceTree = "<group>"; };
 		BC7DF1BF26710AEE00B7B31F /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
 		BC7DF1C126710B8000B7B31F /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		BC7DF1C626710C5800B7B31F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 			children = (
 				BCD13CAA266E517B0029CE05 /* ChallengeListScene.swift */,
 				BCD13CA9266E517B0029CE05 /* ChallengeList.storyboard */,
+				84F54B072671B4B70013353B /* ChallengeListTableViewCell.swift */,
 			);
 			path = "Challenge List";
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				BCD13C7D266E4EE10029CE05 /* Date+Extension.swift in Sources */,
 				BCD13C9F266E50E20029CE05 /* ReflectionListCell.swift in Sources */,
 				BCD13C85266E4EF50029CE05 /* UIColor+Extension.swift in Sources */,
+				84F54B082671B4B70013353B /* ChallengeListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
