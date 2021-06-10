@@ -27,8 +27,9 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
     private let challengeList = [ Challenge(level: "Level 1", desc: "Learn to shoot still urban objects with two layers", image: "yes"), Challenge(level: "Level 2", desc: "Learn to shoot still urban objects with three layers", image: "yes"), Challenge(level: "Level 3", desc: "Learn to shoot moving urban objects with two layers", image: "yes")]
     override func viewDidLoad() {
         
-//        challengeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "challengeItem")
         super.viewDidLoad()
+        challengeTableView.delegate = self
+        challengeTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
