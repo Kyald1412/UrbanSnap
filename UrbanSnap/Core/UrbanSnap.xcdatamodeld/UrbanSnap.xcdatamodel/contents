@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ChallengeObjects" representedClassName="ChallengeObjects" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="ofChallenge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Challenges" inverseName="challengeObject" inverseEntity="Challenges"/>
+    </entity>
+    <entity name="ChallengePhotos" representedClassName="ChallengePhotos" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <relationship name="ofChallenge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Challenges" inverseName="challengePhoto" inverseEntity="Challenges"/>
+    </entity>
+    <entity name="Challenges" representedClassName="Challenges" syncable="YES" codeGenerationType="class">
+        <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="long_desc" optional="YES" attributeType="String"/>
+        <attribute name="short_desc" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="challengeObject" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ChallengeObjects" inverseName="ofChallenge" inverseEntity="ChallengeObjects"/>
+        <relationship name="challengePhoto" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ChallengePhotos" inverseName="ofChallenge" inverseEntity="ChallengePhotos"/>
+    </entity>
+    <entity name="EvaluationDetails" representedClassName="EvaluationDetails" syncable="YES" codeGenerationType="class">
+        <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="edited_image" optional="YES" attributeType="Binary"/>
+        <attribute name="raw_image" optional="YES" attributeType="Binary"/>
+        <relationship name="ofEvaluation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evaluations" inverseName="evaluationDetail" inverseEntity="Evaluations"/>
+    </entity>
+    <entity name="Evaluations" representedClassName=".Evaluations" syncable="YES" codeGenerationType="class">
+        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="evaluationDetail" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EvaluationDetails" inverseName="ofEvaluation" inverseEntity="EvaluationDetails"/>
+    </entity>
+    <elements>
+        <element name="Challenges" positionX="-232.1102905273438" positionY="206.70947265625" width="128" height="163"/>
+        <element name="ChallengePhotos" positionX="72.6976318359375" positionY="158.3883056640625" width="128" height="59"/>
+        <element name="ChallengeObjects" positionX="102.6621704101562" positionY="377.13525390625" width="128" height="74"/>
+        <element name="Evaluations" positionX="-236.3215942382812" positionY="-124.6099700927734" width="128" height="73"/>
+        <element name="EvaluationDetails" positionX="73.6488037109375" positionY="-129.8216857910156" width="128" height="104"/>
+    </elements>
 </model>
