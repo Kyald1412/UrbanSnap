@@ -7,20 +7,8 @@
 
 import UIKit
 
-class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return challengeList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = challengeList[indexPath.row]
-        let cell = challengeTableView.dequeueReusableCell(withIdentifier: "challengeItem", for: indexPath) as! ChallengeListTableViewCell
-        cell.setLevelList(with: item)
-//        print("CELL \(cell)")
-        cell.layer.cornerRadius = 10
-        cell.layer.masksToBounds = true
-        return cell
-    }
+class ChallengeListScene: UIViewController{
+
     
     @IBOutlet weak var challengeTableView: UITableView!
     
@@ -33,9 +21,27 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
         challengeTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
-
-
 }
+
+extension ChallengeListScene: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return challengeList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = challengeList[indexPath.row]
+        let cell = challengeTableView.dequeueReusableCell(withIdentifier: "challengeItem", for: indexPath) as! ChallengeListTableViewCell
+        cell.setLevelList(with: item)
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
+        return cell
+    }
+}
+
+extension ChallengeListScene: UITableViewDelegate{
+    
+}
+
 struct Challenge{
     let level : String
     let desc: String
