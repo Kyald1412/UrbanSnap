@@ -14,8 +14,6 @@
 		BC7DF1C926710CBF00B7B31F /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */; };
 		BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */; };
 		BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */; };
-		BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */; };
-		BCC36EA6266DBD5B00E9E0BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */; };
 		BCC36EA9266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA7266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld */; };
 		BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EAA266DBD5D00E9E0BA /* Assets.xcassets */; };
 		BCC36EAE266DBD5D00E9E0BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EAC266DBD5D00E9E0BA /* LaunchScreen.storyboard */; };
@@ -72,8 +70,6 @@
 		BCC36E9B266DBD5B00E9E0BA /* UrbanSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BCC36EA5266DBD5B00E9E0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCC36EA8266DBD5B00E9E0BA /* UrbanSnap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UrbanSnap.xcdatamodel; sourceTree = "<group>"; };
 		BCC36EAA266DBD5D00E9E0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCC36EAD266DBD5D00E9E0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -238,8 +234,6 @@
 				BCD13C6E266E4DB00029CE05 /* Reflection */,
 				BCD13C6D266E4DA10029CE05 /* Challenge */,
 				BCD13C6B266E4D940029CE05 /* Onboarding */,
-				BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */,
-				BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -531,7 +525,6 @@
 				BCD13C63266E4BC30029CE05 /* Colors.xcassets in Resources */,
 				BCD4506B2671CC190084A4F2 /* HomePage.storyboard in Resources */,
 				BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */,
-				BCC36EA6266DBD5B00E9E0BA /* Main.storyboard in Resources */,
 				BCD13C78266E4EC60029CE05 /* SFProText-Medium.ttf in Resources */,
 				BCD13C87266E4F1C0029CE05 /* library in Resources */,
 				BCD13CA0266E50E20029CE05 /* ReflectionListCell.xib in Resources */,
@@ -573,7 +566,6 @@
 				BCD13C8E266E50210029CE05 /* ReflectionListScene.swift in Sources */,
 				BCC36EA9266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld in Sources */,
 				BCD13CA8266E516D0029CE05 /* ChallengeDetailScene.swift in Sources */,
-				BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */,
 				BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */,
 				BCFB6A8A267366300099558E /* CoreDataManager.swift in Sources */,
 				BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */,
@@ -604,14 +596,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BCC36EA5266DBD5B00E9E0BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BCC36EAC266DBD5D00E9E0BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

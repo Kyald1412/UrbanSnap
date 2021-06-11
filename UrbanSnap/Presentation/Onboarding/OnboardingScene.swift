@@ -117,6 +117,7 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func getStartedBtn(_sender:UIButton){
+        UserDefaultManager.shared.setOnboardingCompleted()
         let homePage = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "HomePageScene") as! HomePageScene
         self.navigationController?.pushViewController(homePage, animated: true)
     }
