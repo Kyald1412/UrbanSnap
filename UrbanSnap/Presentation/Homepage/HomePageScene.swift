@@ -15,7 +15,10 @@ class HomePageScene: UITabBarController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func onHomeTap(_ sender: Any) {
+        CoreDataManager.sharedManager.deleteAllData()
+    }
+    
     /*
     // MARK: - Navigation
 
