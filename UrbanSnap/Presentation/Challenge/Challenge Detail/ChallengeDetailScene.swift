@@ -11,7 +11,6 @@ class ChallengeDetailScene: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.backgroundColor = .white

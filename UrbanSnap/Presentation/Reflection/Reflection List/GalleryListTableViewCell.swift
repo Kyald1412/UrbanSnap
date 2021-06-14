@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol GalleryListCellDelegate {
+    func performSegueFromCell()
+}
+
 class GalleryListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var galleryCollectionView : UICollectionView!
     @IBOutlet weak var levelLabel : UILabel!
     var photos: [Photos]?
+    
+    var delegate: GalleryListCellDelegate!
     
     func displayLevelGallery(with eval: Evaluation){
         levelLabel.text = eval.level
@@ -45,7 +51,16 @@ extension GalleryListTableViewCell: UICollectionViewDataSource{
             cell.displayPhotosTaken(with: item[indexPath.row])
         }
         
+        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if self.delegate != nil {
+            self.delegate.performSegueFromCell()
+        }
+    }
+    
+    
     
 }
