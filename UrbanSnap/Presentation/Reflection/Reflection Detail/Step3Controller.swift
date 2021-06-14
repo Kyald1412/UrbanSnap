@@ -9,6 +9,10 @@ import UIKit
 
 class Step3Controller: UIViewController {
 
+    @IBOutlet weak var imageStep3: UIImageView!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var descTextView: UITextView!
+    @IBOutlet weak var buttonSafe: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 

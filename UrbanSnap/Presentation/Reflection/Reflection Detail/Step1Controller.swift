@@ -9,6 +9,13 @@ import UIKit
 
 class Step1Controller: UIViewController {
 
+    @IBOutlet weak var infoButton: UIImageView!
+    @IBOutlet weak var step2Button: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var sticker1Button: UIImageView!
+    @IBOutlet weak var sticker2Button: UIImageView!
+    @IBOutlet weak var sticker3Button: UIImageView!
+    @IBOutlet weak var infoDesc: DesignableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
