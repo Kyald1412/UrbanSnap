@@ -52,6 +52,7 @@
                                                         </imageView>
                                                         <label opaque="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Belajar fotografi bersama " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-kb-TUU">
                                                             <rect key="frame" x="16" y="64" width="88.333333333333329" height="28"/>
+
                                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>

@@ -16,8 +16,7 @@ class ChallengeDetailScene: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.tintColor = .black
-
-        
+      
         // Do any additional setup after loading the view.
     }
     
