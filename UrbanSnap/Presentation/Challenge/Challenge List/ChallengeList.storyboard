@@ -1,58 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProText-Medium.ttf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SFProText-Regular.ttf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Challenges-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="ChallengeListScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ChallengeListScene" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="808-cd-FQg">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="808-cd-FQg">
+                                <rect key="frame" x="0.0" y="44" width="390" height="717"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="challengeItem" rowHeight="121" id="1Ef-dE-CrE" customClass="ChallengeListTableViewCell" customModule="UrbanSnap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="121"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="challengeItem" rowHeight="171" id="1Ef-dE-CrE" customClass="ChallengeListTableViewCell" customModule="UrbanSnap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Ef-dE-CrE" id="aKS-Ir-PhC">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="121"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-SR-d9e">
-                                                    <rect key="frame" x="36" y="27" width="52" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="ilustrasi level 1" translatesAutoresizingMaskIntoConstraints="NO" id="0qu-ty-Xmg">
-                                                    <rect key="frame" x="207" y="0.0" width="207" height="121"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Belajar fotografi bersama kami" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-kb-TUU">
-                                                    <rect key="frame" x="36" y="56" width="209" height="41"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3a-bT-ZOX" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="350" height="149"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Level 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-SR-d9e">
+                                                            <rect key="frame" x="8" y="24" width="98" height="24"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="ilustrasi level 1" translatesAutoresizingMaskIntoConstraints="NO" id="0qu-ty-Xmg">
+                                                            <rect key="frame" x="143" y="0.0" width="207" height="149"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Belajar fotografi bersama kami" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-kb-TUU">
+                                                            <rect key="frame" x="8" y="64" width="127" height="28.666666666666664"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                                            <color key="textColor" name="black"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <rect key="contentStretch" x="0.5" y="0.10000000000000001" width="1" height="1"/>
+                                                    <constraints>
+                                                        <constraint firstItem="0qu-ty-Xmg" firstAttribute="leading" secondItem="hGe-kb-TUU" secondAttribute="trailing" id="0jf-zk-uHU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0qu-ty-Xmg" secondAttribute="trailingMargin" constant="8" id="Exb-Tt-nAM"/>
+                                                        <constraint firstItem="gMT-SR-d9e" firstAttribute="top" secondItem="X3a-bT-ZOX" secondAttribute="top" constant="24" id="J5n-WN-BHA"/>
+                                                        <constraint firstItem="hGe-kb-TUU" firstAttribute="top" secondItem="gMT-SR-d9e" secondAttribute="bottom" constant="16" id="N9b-uJ-7q1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0qu-ty-Xmg" secondAttribute="bottom" id="V9y-SN-Fwz"/>
+                                                        <constraint firstItem="0qu-ty-Xmg" firstAttribute="top" secondItem="X3a-bT-ZOX" secondAttribute="top" id="Ynq-q5-Glc"/>
+                                                        <constraint firstItem="hGe-kb-TUU" firstAttribute="leading" secondItem="X3a-bT-ZOX" secondAttribute="leading" constant="16" id="ael-rJ-nuQ"/>
+                                                        <constraint firstItem="gMT-SR-d9e" firstAttribute="leading" secondItem="X3a-bT-ZOX" secondAttribute="leading" constant="16" id="wkN-Eo-RTI"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.92941176470588238" green="0.93725490196078431" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" red="0.92941176470588238" green="0.93725490196078431" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="5" height="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadowShouldRasterize" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="0qu-ty-Xmg" secondAttribute="bottom" id="3i1-CJ-oni"/>
-                                                <constraint firstItem="hGe-kb-TUU" firstAttribute="leading" secondItem="gMT-SR-d9e" secondAttribute="leading" id="Bah-me-Obd"/>
-                                                <constraint firstAttribute="trailing" secondItem="0qu-ty-Xmg" secondAttribute="trailing" id="Efi-TL-bPh"/>
-                                                <constraint firstItem="hGe-kb-TUU" firstAttribute="top" secondItem="gMT-SR-d9e" secondAttribute="bottom" constant="8" id="JaH-4J-zf7"/>
-                                                <constraint firstItem="0qu-ty-Xmg" firstAttribute="leading" secondItem="hGe-kb-TUU" secondAttribute="trailing" constant="-38" id="OFy-dB-WZI"/>
-                                                <constraint firstItem="0qu-ty-Xmg" firstAttribute="top" secondItem="aKS-Ir-PhC" secondAttribute="top" id="fgs-nV-qFE"/>
-                                                <constraint firstItem="gMT-SR-d9e" firstAttribute="top" secondItem="aKS-Ir-PhC" secondAttribute="topMargin" constant="16" id="pCP-HG-oCD"/>
-                                                <constraint firstItem="gMT-SR-d9e" firstAttribute="leading" secondItem="aKS-Ir-PhC" secondAttribute="leadingMargin" constant="16" id="z1F-Gb-xQB"/>
+                                                <constraint firstItem="X3a-bT-ZOX" firstAttribute="top" secondItem="aKS-Ir-PhC" secondAttribute="topMargin" id="1tE-1E-SIo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="X3a-bT-ZOX" secondAttribute="bottom" id="Y9c-d4-x1z"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="X3a-bT-ZOX" secondAttribute="trailing" id="yEm-HK-wqN"/>
+                                                <constraint firstItem="X3a-bT-ZOX" firstAttribute="leading" secondItem="aKS-Ir-PhC" secondAttribute="leadingMargin" id="yVm-XC-jlz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -83,12 +132,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.739130434782609" y="109.82142857142857"/>
+            <point key="canvasLocation" x="21.538461538461537" y="109.47867298578198"/>
         </scene>
     </scenes>
     <resources>
         <image name="flag" catalog="system" width="128" height="121"/>
         <image name="ilustrasi level 1" width="207" height="148"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

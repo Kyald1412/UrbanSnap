@@ -180,6 +180,7 @@ extension UIView {
 
 @IBDesignable
 class DesignableView: UIView {
+        
     
     @IBInspectable
     /// Should the corner be as circle
@@ -200,7 +201,8 @@ class DesignableView: UIView {
         }
         set {
             layer.cornerRadius = circleCorner ? min(bounds.size.height, bounds.size.width) / 2 : newValue
-            //abs(CGFloat(Int(newValue * 100)) / 100)
+            ///
+
         }
     }
     
@@ -241,9 +243,11 @@ class DesignableView: UIView {
                 return nil
             }
             return UIColor(cgColor: color)
+           // return UIColor.blue.cgColor
         }
         set {
             layer.shadowColor = newValue?.cgColor
+        
         }
     }
     
@@ -255,6 +259,9 @@ class DesignableView: UIView {
         }
         set {
             layer.shadowOffset = newValue
+            layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+            //
+//
         }
     }
     
@@ -266,6 +273,8 @@ class DesignableView: UIView {
         }
         set {
             layer.shadowOpacity = Float(newValue)
+            ///
+      
         }
     }
     
@@ -277,6 +286,7 @@ class DesignableView: UIView {
         }
         set {
             layer.shadowRadius = newValue
+
         }
     }
     
@@ -325,4 +335,5 @@ class DesignableView: UIView {
             layer.masksToBounds = newValue
         }
     }
+    
 }
