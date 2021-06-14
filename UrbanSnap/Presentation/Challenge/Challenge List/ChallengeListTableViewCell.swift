@@ -10,7 +10,7 @@ import UIKit
 class ChallengeListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var label : UILabel!
-    @IBOutlet weak var desc : UITextView!
+    @IBOutlet weak var desc : UILabel!
     @IBOutlet weak var img : UIImageView!
     
     func setLevelList(with challenge: Challenge){

@@ -14,11 +14,9 @@
 		BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1BF26710AEE00B7B31F /* StickerView.swift */; };
 		BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C126710B8000B7B31F /* CanvasView.swift */; };
 		BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C626710C5800B7B31F /* CommonFunction.swift */; };
-		BC7DF1C926710CBF00B7B31F /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */; };
+		BC7DF1C926710CBF00B7B31F /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */; };
 		BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */; };
 		BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */; };
-		BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */; };
-		BCC36EA6266DBD5B00E9E0BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */; };
 		BCC36EA9266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA7266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld */; };
 		BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EAA266DBD5D00E9E0BA /* Assets.xcassets */; };
 		BCC36EAE266DBD5D00E9E0BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EAC266DBD5D00E9E0BA /* LaunchScreen.storyboard */; };
@@ -51,6 +49,9 @@
 		BCD13CB0266E519E0029CE05 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13CAD266E51950029CE05 /* Onboarding.storyboard */; };
 		BCD450692671CC010084A4F2 /* HomePageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD450682671CC010084A4F2 /* HomePageScene.swift */; };
 		BCD4506B2671CC190084A4F2 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD4506A2671CC160084A4F2 /* HomePage.storyboard */; };
+		BCFB6A8A267366300099558E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6A89267365A10099558E /* CoreDataManager.swift */; };
+		BCFB6A912673670D0099558E /* EvaluationDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6A8F267366660099558E /* EvaluationDataRepository.swift */; };
+		BCFB6A942673688C0099558E /* ChallengeDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6A932673686C0099558E /* ChallengeDataRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,12 +72,10 @@
 		BC7DF1BF26710AEE00B7B31F /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
 		BC7DF1C126710B8000B7B31F /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		BC7DF1C626710C5800B7B31F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
-		BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		BCC36E9B266DBD5B00E9E0BA /* UrbanSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BCC36EA5266DBD5B00E9E0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCC36EA8266DBD5B00E9E0BA /* UrbanSnap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UrbanSnap.xcdatamodel; sourceTree = "<group>"; };
 		BCC36EAA266DBD5D00E9E0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCC36EAD266DBD5D00E9E0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,6 +111,9 @@
 		BCD13CAE266E51950029CE05 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
 		BCD450682671CC010084A4F2 /* HomePageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageScene.swift; sourceTree = "<group>"; };
 		BCD4506A2671CC160084A4F2 /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
+		BCFB6A89267365A10099558E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BCFB6A8F267366660099558E /* EvaluationDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationDataRepository.swift; sourceTree = "<group>"; };
+		BCFB6A932673686C0099558E /* ChallengeDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDataRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				BC7DF1C626710C5800B7B31F /* CommonFunction.swift */,
-				BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -211,7 +212,11 @@
 		BCD13C5D266E4B560029CE05 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BCFB6A90267366900099558E /* Entities */,
+				BCFB6A8B267366420099558E /* Repositories */,
+				BCFB6A89267365A10099558E /* CoreDataManager.swift */,
 				BCC36EA7266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld */,
+				BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -235,8 +240,6 @@
 				BCD13C6E266E4DB00029CE05 /* Reflection */,
 				BCD13C6D266E4DA10029CE05 /* Challenge */,
 				BCD13C6B266E4D940029CE05 /* Onboarding */,
-				BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */,
-				BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -285,7 +288,6 @@
 			children = (
 				BCD13CAE266E51950029CE05 /* OnboardingScene.swift */,
 				BCD13CAD266E51950029CE05 /* Onboarding.storyboard */,
-				63EFA1BE2670BE980067F80E /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -410,6 +412,38 @@
 			path = Homepage;
 			sourceTree = "<group>";
 		};
+		BCFB6A8B267366420099558E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB6A8D2673664E0099558E /* Evaluation */,
+				BCFB6A8C2673664A0099558E /* Challenge */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		BCFB6A8C2673664A0099558E /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB6A932673686C0099558E /* ChallengeDataRepository.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		BCFB6A8D2673664E0099558E /* Evaluation */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB6A8F267366660099558E /* EvaluationDataRepository.swift */,
+			);
+			path = Evaluation;
+			sourceTree = "<group>";
+		};
+		BCFB6A90267366900099558E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,7 +533,6 @@
 				BCD13C63266E4BC30029CE05 /* Colors.xcassets in Resources */,
 				BCD4506B2671CC190084A4F2 /* HomePage.storyboard in Resources */,
 				BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */,
-				BCC36EA6266DBD5B00E9E0BA /* Main.storyboard in Resources */,
 				BCD13C78266E4EC60029CE05 /* SFProText-Medium.ttf in Resources */,
 				BCD13C87266E4F1C0029CE05 /* library in Resources */,
 				BCD13CA0266E50E20029CE05 /* ReflectionListCell.xib in Resources */,
@@ -529,21 +562,22 @@
 				84F54B102671E6830013353B /* GalleryListTableViewCell.swift in Sources */,
 				BCD13C92266E504C0029CE05 /* ChallengeCameraScene.swift in Sources */,
 				BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */,
-				BC7DF1C926710CBF00B7B31F /* UserDefaultsWrapper.swift in Sources */,
+				BC7DF1C926710CBF00B7B31F /* UserDefaultManager.swift in Sources */,
 				BCD13C7B266E4ED40029CE05 /* Constants.swift in Sources */,
 				BCD13C7F266E4EE40029CE05 /* TableViewCell+Extension.swift in Sources */,
 				BCD13CAF266E519E0029CE05 /* OnboardingScene.swift in Sources */,
-				63EFA1BF2670BE980067F80E /* OnboardingViewController.swift in Sources */,
 				BCD13C89266E4FD10029CE05 /* ReflectionSuccessScene.swift in Sources */,
 				BCD13C81266E4EED0029CE05 /* UIView+Extension.swift in Sources */,
+				BCFB6A942673688C0099558E /* ChallengeDataRepository.swift in Sources */,
 				BCD13CA3266E51150029CE05 /* ReflectionDetailHeaderCell.swift in Sources */,
 				BCD13CAC266E51860029CE05 /* ChallengeListScene.swift in Sources */,
 				BCD13C84266E4EF50029CE05 /* UIImage+Extension.swift in Sources */,
+				BCFB6A912673670D0099558E /* EvaluationDataRepository.swift in Sources */,
 				BCD13C8E266E50210029CE05 /* ReflectionListScene.swift in Sources */,
 				BCC36EA9266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld in Sources */,
 				BCD13CA8266E516D0029CE05 /* ChallengeDetailScene.swift in Sources */,
-				BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */,
 				BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */,
+				BCFB6A8A267366300099558E /* CoreDataManager.swift in Sources */,
 				BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */,
 				BCD450692671CC010084A4F2 /* HomePageScene.swift in Sources */,
 				BCD13C7D266E4EE10029CE05 /* Date+Extension.swift in Sources */,
@@ -572,14 +606,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BCC36EA5266DBD5B00E9E0BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BCC36EAC266DBD5D00E9E0BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -49,7 +49,7 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
             
             //subview
             let imageView = UIImageView.init(image: UIImage.init(named:imgs[index]))
-            imageView.frame = CGRect(x: 0, y: 0, width: 374, height: 399.61)
+            imageView.frame = CGRect(x: 0, y: 0, width: scrollWidth, height: scrollHeight/2)
             imageView.contentMode = .scaleAspectFit
             imageView.center = CGPoint(x: scrollWidth/2, y: scrollHeight/2-85)
             
@@ -117,6 +117,7 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func getStartedBtn(_sender:UIButton){
+        UserDefaultManager.shared.setOnboardingCompleted()
         let homePage = UIStoryboard(name: "HomePage", bundle: nil).instantiateViewController(withIdentifier: "HomePageScene") as! HomePageScene
         self.navigationController?.pushViewController(homePage, animated: true)
     }
