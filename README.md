@@ -1,4 +1,4 @@
-[![Build Status](https://app.bitrise.io/app/ad74eaa9f585ff3d/status.svg?token=oDlF4a5E3mk0ZdGw8vLwCg&branch=core)](https://app.bitrise.io/app/ad74eaa9f585ff3d)
+[![Build Status](https://app.bitrise.io/app/b9c738734a979e5e/status.svg?token=nCeijkmPyoLB6CBCN0rwBA)](https://app.bitrise.io/app/b9c738734a979e5e)
 
 # UrbanSnap 
 
