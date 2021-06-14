@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63EFA1BF2670BE980067F80E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFA1BE2670BE980067F80E /* OnboardingViewController.swift */; };
 		84F38A782672FEB400F09ECD /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F38A772672FEB400F09ECD /* PhotosCollectionViewCell.swift */; };
 		84F54B082671B4B70013353B /* ChallengeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B072671B4B70013353B /* ChallengeListTableViewCell.swift */; };
 		84F54B102671E6830013353B /* GalleryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B0F2671E6830013353B /* GalleryListTableViewCell.swift */; };
@@ -65,7 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		63EFA1BE2670BE980067F80E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		84F38A772672FEB400F09ECD /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		84F54B072671B4B70013353B /* ChallengeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListTableViewCell.swift; sourceTree = "<group>"; };
 		84F54B0F2671E6830013353B /* GalleryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListTableViewCell.swift; sourceTree = "<group>"; };
@@ -745,7 +743,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.tukangfoto.urbansnap.UrbanSnap;
+				PRODUCT_BUNDLE_IDENTIFIER = co.tukangfoto.urbansnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -764,7 +762,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.tukangfoto.urbansnap.UrbanSnap;
+				PRODUCT_BUNDLE_IDENTIFIER = co.tukangfoto.urbansnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
