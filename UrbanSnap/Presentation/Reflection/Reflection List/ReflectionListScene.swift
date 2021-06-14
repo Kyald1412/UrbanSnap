@@ -7,24 +7,44 @@
 
 import UIKit
 
-class ReflectionListScene: UIViewController {
+class ReflectionListScene: UIViewController{
 
+    @IBOutlet weak var levelTableView : UITableView!
+
+    private let galleryList = [ Evaluation(level: "Level 1", gallery: [ Photos(image: UIImage.ilustrasiLevel2)])]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
+        levelTableView.dataSource = self
+        levelTableView.delegate = self
     }
+
+}
+
+extension ReflectionListScene: UITableViewDelegate{
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ReflectionListScene: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 200
     }
-    */
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let item = galleryList[indexPath.row]
+            let cell = levelTableView.dequeueReusableCell(withIdentifier: "galleryItem", for: indexPath) as! GalleryListTableViewCell
+//            cell.setLevelList(with: item)
+            cell.layer.cornerRadius = 10
+            cell.layer.masksToBounds = true
+            return cell
+    }
+}
+
+struct Evaluation{
+    let level : String
+    let gallery : [Photos]
+}
+
+struct Photos{
+    let image : UIImage
 }
