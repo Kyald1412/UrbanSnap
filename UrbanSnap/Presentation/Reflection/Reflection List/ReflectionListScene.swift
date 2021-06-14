@@ -27,13 +27,17 @@ extension ReflectionListScene: UITableViewDelegate{
 
 extension ReflectionListScene: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return galleryList.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let item = galleryList[indexPath.row]
             let cell = levelTableView.dequeueReusableCell(withIdentifier: "galleryItem", for: indexPath) as! GalleryListTableViewCell
-//            cell.setLevelList(with: item)
+            cell.displayLevelGallery(with: item)
             cell.layer.cornerRadius = 10
             cell.layer.masksToBounds = true
             return cell
@@ -46,5 +50,5 @@ struct Evaluation{
 }
 
 struct Photos{
-    let image : UIImage
+    var image : UIImage
 }

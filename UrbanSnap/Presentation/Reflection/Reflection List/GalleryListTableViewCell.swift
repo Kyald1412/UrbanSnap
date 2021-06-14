@@ -11,9 +11,41 @@ class GalleryListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var galleryCollectionView : UICollectionView!
     @IBOutlet weak var levelLabel : UILabel!
+    var photos: [Photos]?
     
     func displayLevelGallery(with eval: Evaluation){
         levelLabel.text = eval.level
-//        galleryCollectionView.
+        photos = eval.gallery
+        
+        galleryCollectionView.reloadData()
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        galleryCollectionView.delegate = self
+        galleryCollectionView.dataSource = self
+    }
+}
+
+extension GalleryListTableViewCell: UICollectionViewDelegate{
+    
+}
+
+extension GalleryListTableViewCell: UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("CEKCEK")
+        return photos?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier: "galleryItem", for: indexPath) as! PhotosCollectionViewCell
+       
+        if let item = photos {
+            cell.displayPhotosTaken(with: item[indexPath.row])
+        }
+        
+        return cell
+    }
+    
 }
