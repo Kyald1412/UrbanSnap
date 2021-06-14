@@ -24,6 +24,7 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
         let item = challengeList[indexPath.row]
         let cell = challengeTableView.dequeueReusableCell(withIdentifier: "challengeItem", for: indexPath) as! ChallengeListTableViewCell
         cell.setLevelList(with: item)
+        cell.selectionStyle = .none
 //        print("CELL \(cell)")
 //        cell.layer.cornerRadius = 10
 //        cell.layer.masksToBounds = true
@@ -48,17 +49,39 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
         
         super.viewDidLoad()
         
+        self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: "", style: .plain, target: nil, action: nil)
+        
         
        // challengeTableView.separatorStyle = .singleLine
         challengeTableView.showsVerticalScrollIndicator = false
         challengeTableView.delegate = self
         challengeTableView.dataSource = self
-        challengeTableView.allowsSelection = false
         
         
         //making table view looks good
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("DID SELECT")
+        switch indexPath.row {
+        case 0:
+            openChallengeDetail()
+        case 1:
+            openChallengeDetail()
+        case 2:
+            openChallengeDetail()
+        default:
+            print("No")
+        }
+    }
+    
+    func openChallengeDetail(){
+        let challengeScene = UIStoryboard(name: "ChallengeDetail", bundle: nil).instantiateViewController(withIdentifier: "ChallengeDetailScene") as! ChallengeDetailScene
+        self.navigationController?.pushViewController(challengeScene, animated: true)
     }
 
 }

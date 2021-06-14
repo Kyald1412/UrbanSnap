@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             vc = launchStoryboard.instantiateViewController(identifier: "OnboardingScene")
         }
     
-        window.rootViewController = UINavigationController(rootViewController: vc)
+        window.rootViewController = vc
         
         self.window = window
         window.makeKeyAndVisible()
