@@ -12,7 +12,6 @@ class ReflectionListScene: UIViewController{
     @IBOutlet weak var levelTableView : UITableView!
 
     private let galleryList = [ Evaluation(level: "Level 1", gallery: [ Photos(image: UIImage.ilustrasiLevel2), Photos(image: UIImage.ilustrasiLevel3), Photos(image: UIImage.ilustrasiLevel1)]), Evaluation(level: "Level 1", gallery: [ Photos(image: UIImage.ilustrasiLevel2), Photos(image: UIImage.ilustrasiLevel3), Photos(image: UIImage.ilustrasiLevel1)]), Evaluation(level: "Level 1", gallery: [ Photos(image: UIImage.ilustrasiLevel2), Photos(image: UIImage.ilustrasiLevel3), Photos(image: UIImage.ilustrasiLevel1)])]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         levelTableView.dataSource = self
