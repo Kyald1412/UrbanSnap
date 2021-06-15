@@ -24,6 +24,7 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
         let item = challengeList[indexPath.row]
         let cell = challengeTableView.dequeueReusableCell(withIdentifier: "challengeItem", for: indexPath) as! ChallengeListTableViewCell
         cell.setLevelList(with: item)
+        cell.setBlurView()
         cell.selectionStyle = .none
 
         return cell
