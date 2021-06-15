@@ -72,17 +72,23 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
         func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
             setIndiactorForCurrentPage()
         }
-        
+    
         func setIndiactorForCurrentPage()  {
                let page = (scrollView?.contentOffset.x)!/scrollWidth
                pageControl?.currentPage = Int(page)
         }
 
     @IBAction func pressButton(_ sender: Any) {
+      
+        // Do any additional setup after loading the view.
     }
     
     @IBAction func pageChanged(_ sender: Any) {
         scrollView!.scrollRectToVisible(CGRect(x: scrollWidth*CGFloat((pageControl?.currentPage)!), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
+    }
+    @IBAction func beginChallenge(_ sender: Any) {
+        let evaluationScene = ChallengeCameraView()
+        self.navigationController?.pushViewController(evaluationScene, animated: true)
     }
     
     /*

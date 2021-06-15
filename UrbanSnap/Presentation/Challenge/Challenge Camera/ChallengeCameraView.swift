@@ -136,6 +136,12 @@ class ChallengeCameraView: ChallengeCameraScene {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+
+        
         self.challengeCameraView = self
         setupView()
         updateView()
