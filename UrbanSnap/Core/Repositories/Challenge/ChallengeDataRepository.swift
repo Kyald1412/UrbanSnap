@@ -28,7 +28,7 @@ class ChallengeDataRepository {
                        objects: [ObjectData]) {
 
         do {
-            let context = CoreDataManager.sharedManager.newDerivedContext()
+            let context = CoreDataManager.sharedManager.persistentContainer.viewContext
             let entity: Challenges = .init(context: context)
             
             //Add challenge data
@@ -37,6 +37,7 @@ class ChallengeDataRepository {
             entity.long_desc = long_desc
             entity.short_desc = short_desc
             entity.title = title
+            entity.icon = icon
             
             //Add challenge photo
             var challengePhotos = [Any]()
@@ -67,7 +68,7 @@ class ChallengeDataRepository {
     
     func getAllChallenges() -> [Challenges] {
         
-        let context = CoreDataManager.sharedManager.newDerivedContext()
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         
         do {
@@ -85,7 +86,7 @@ class ChallengeDataRepository {
     func updateChallenges(completed: Bool, data: Challenges){
         
         do {
-            let context = CoreDataManager.sharedManager.newDerivedContext()
+            let context = CoreDataManager.sharedManager.persistentContainer.viewContext
             let entity = data
             entity.completed = completed
             

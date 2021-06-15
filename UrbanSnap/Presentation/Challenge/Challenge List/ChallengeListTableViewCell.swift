@@ -13,9 +13,11 @@ class ChallengeListTableViewCell: UITableViewCell {
     @IBOutlet weak var desc : UILabel!
     @IBOutlet weak var img : UIImageView!
     
-    func setLevelList(with challenge: Challenge){
-        label.text = challenge.level
-        desc.text = challenge.desc
-        img.image = challenge.image
+    func setLevelList(with challenges: Challenges){
+        label.text = "Level \(challenges.level)"
+        desc.text = challenges.short_desc
+        img.image = UIImage(named:challenges.icon ?? "")
     }
+    
+    
 }
