@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,35 +23,35 @@
             <objects>
                 <viewController storyboardIdentifier="ChallengeListScene" title="Challenge" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ChallengeListScene" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="808-cd-FQg">
-                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="challengeItem" rowHeight="171" id="1Ef-dE-CrE" customClass="ChallengeListTableViewCell" customModule="UrbanSnap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="171"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="414" height="171"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Ef-dE-CrE" id="aKS-Ir-PhC">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="171"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3a-bT-ZOX" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="11" width="350" height="149"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="149"/>
                                                     <subviews>
                                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Level 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-SR-d9e">
-                                                            <rect key="frame" x="16" y="24" width="64" height="24"/>
+                                                            <rect key="frame" x="16" y="24" width="65.333333333333329" height="24"/>
                                                             <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="ilustrasi level 1" translatesAutoresizingMaskIntoConstraints="NO" id="0qu-ty-Xmg">
-                                                            <rect key="frame" x="143" y="0.0" width="207" height="149"/>
+                                                            <rect key="frame" x="167" y="0.0" width="207" height="149"/>
                                                         </imageView>
                                                         <label opaque="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Belajar fotografi bersama " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-kb-TUU">
-                                                            <rect key="frame" x="16" y="64" width="88.333333333333329" height="28"/>
+                                                            <rect key="frame" x="16" y="63.999999999999993" width="93.666666666666671" height="28.666666666666664"/>
                                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
@@ -97,19 +97,72 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="shadowShouldRasterize" value="NO"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpu-ZE-JBX" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="374" height="149"/>
+                                                    <subviews>
+                                                        <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDx-VY-6DA" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="149"/>
+                                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Level 1 to Unlock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fk-Zw-iz4">
+                                                            <rect key="frame" x="0.0" y="115" width="374" height="12"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="12" id="w0i-E5-mtk"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Padlock" translatesAutoresizingMaskIntoConstraints="NO" id="7xW-Kg-0pw">
+                                                            <rect key="frame" x="148" y="42" width="79" height="65"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="0Fk-Zw-iz4" firstAttribute="leading" secondItem="Jpu-ZE-JBX" secondAttribute="leading" id="I1F-ok-DFU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0Fk-Zw-iz4" secondAttribute="bottom" constant="22" id="M3p-M0-FQD"/>
+                                                        <constraint firstAttribute="trailing" secondItem="HDx-VY-6DA" secondAttribute="trailing" id="Qhk-MS-fGt"/>
+                                                        <constraint firstItem="7xW-Kg-0pw" firstAttribute="top" secondItem="Jpu-ZE-JBX" secondAttribute="top" constant="42" id="Sxc-qz-fbb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7xW-Kg-0pw" secondAttribute="trailing" constant="147" id="Y6e-t8-O8S"/>
+                                                        <constraint firstAttribute="bottom" secondItem="HDx-VY-6DA" secondAttribute="bottom" id="ZwZ-9M-1oU"/>
+                                                        <constraint firstItem="0Fk-Zw-iz4" firstAttribute="top" secondItem="7xW-Kg-0pw" secondAttribute="bottom" constant="8" id="ir1-zz-bRI"/>
+                                                        <constraint firstItem="7xW-Kg-0pw" firstAttribute="leading" secondItem="Jpu-ZE-JBX" secondAttribute="leading" constant="148" id="sEt-cC-iJ0"/>
+                                                        <constraint firstItem="HDx-VY-6DA" firstAttribute="top" secondItem="Jpu-ZE-JBX" secondAttribute="top" id="seZ-iI-ms5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0Fk-Zw-iz4" secondAttribute="trailing" id="uNu-Kx-Fu3"/>
+                                                        <constraint firstItem="HDx-VY-6DA" firstAttribute="leading" secondItem="Jpu-ZE-JBX" secondAttribute="leading" id="zDx-pN-yXX"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="X3a-bT-ZOX" firstAttribute="top" secondItem="aKS-Ir-PhC" secondAttribute="topMargin" id="1tE-1E-SIo"/>
+                                                <constraint firstItem="Jpu-ZE-JBX" firstAttribute="leading" secondItem="X3a-bT-ZOX" secondAttribute="leading" id="EcD-Kd-Mun"/>
+                                                <constraint firstItem="Jpu-ZE-JBX" firstAttribute="trailing" secondItem="X3a-bT-ZOX" secondAttribute="trailing" id="Kq9-3X-JyP"/>
+                                                <constraint firstItem="Jpu-ZE-JBX" firstAttribute="bottom" secondItem="X3a-bT-ZOX" secondAttribute="bottom" id="P3d-JG-tu9"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="X3a-bT-ZOX" secondAttribute="bottom" id="Y9c-d4-x1z"/>
+                                                <constraint firstItem="Jpu-ZE-JBX" firstAttribute="top" secondItem="X3a-bT-ZOX" secondAttribute="top" id="nkj-Td-LZu"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="X3a-bT-ZOX" secondAttribute="trailing" id="yEm-HK-wqN"/>
                                                 <constraint firstItem="X3a-bT-ZOX" firstAttribute="leading" secondItem="aKS-Ir-PhC" secondAttribute="leadingMargin" id="yVm-XC-jlz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="blurView" destination="HDx-VY-6DA" id="Xdv-uR-16l"/>
                                             <outlet property="desc" destination="hGe-kb-TUU" id="FbJ-V1-yib"/>
                                             <outlet property="img" destination="0qu-ty-Xmg" id="8Rr-oQ-shH"/>
                                             <outlet property="label" destination="gMT-SR-d9e" id="csj-WD-c9E"/>
+                                            <outlet property="lockDesc" destination="0Fk-Zw-iz4" id="3v4-br-aKA"/>
+                                            <outlet property="lockIcon" destination="7xW-Kg-0pw" id="Jhr-4z-Jfj"/>
+                                            <outlet property="lockedView" destination="Jpu-ZE-JBX" id="fu6-Fu-zwL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -139,6 +192,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Padlock" width="54.333332061767578" height="70.666664123535156"/>
         <image name="flag" catalog="system" width="128" height="121"/>
         <image name="ilustrasi level 1" width="207" height="148"/>
         <namedColor name="black">
