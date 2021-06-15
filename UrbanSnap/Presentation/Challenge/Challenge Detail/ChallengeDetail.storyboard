@@ -20,14 +20,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXS-f2-Oi0">
                                 <rect key="frame" x="16" y="104.00000000000001" width="358" height="253.33333333333337"/>
                                 <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuB-Es-vI9">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="253.33333333333334"/>
+                                    </scrollView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="0Xt-K8-9HC">
                                         <rect key="frame" x="119" y="227" width="120.33333333333331" height="26.333333333333343"/>
                                         <color key="pageIndicatorTintColor" red="0.81176470590000005" green="0.83137254900000002" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="currentPageIndicatorTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="pageChanged:" destination="Y6W-OH-hqX" eventType="valueChanged" id="h01-Py-sRc"/>
+                                        </connections>
                                     </pageControl>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuB-Es-vI9">
-                                        <rect key="frame" x="0.0" y="0.0" width="358" height="253.33333333333334"/>
-                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -86,8 +89,10 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pressButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="o9B-xD-iIF"/>
+                                </connections>
                             </button>
-
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,6 +117,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Level 1" id="7Kf-fA-KBz"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="levelDesc" destination="NB0-jg-ELO" id="f4W-XL-KG2"/>
+                        <outlet property="levelTitle" destination="cO4-LR-jmv" id="MU1-hL-qEG"/>
+                        <outlet property="pageControl" destination="0Xt-K8-9HC" id="KvN-fz-iKA"/>
+                        <outlet property="scrollView" destination="wuB-Es-vI9" id="zKU-PJ-qUE"/>
+                        <outlet property="stackView" destination="79q-sM-5V1" id="3Jw-9p-MoQ"/>
+                        <outlet property="startButton" destination="PEE-Qb-Vef" id="k0d-cI-ISb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
