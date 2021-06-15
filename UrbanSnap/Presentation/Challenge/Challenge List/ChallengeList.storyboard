@@ -1,30 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFProText-Medium.ttf">
+            <string>SFProText-Medium</string>
+        </array>
+        <array key="SFProText-Regular.ttf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Challenge List Scene-->
+        <!--Challenge-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="ChallengeListScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ChallengeListScene" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChallengeListScene" title="Challenge" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ChallengeListScene" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="808-cd-FQg">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="challengeItem" rowHeight="171" id="1Ef-dE-CrE" customClass="ChallengeListTableViewCell" customModule="UrbanSnap" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="171"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Ef-dE-CrE" id="aKS-Ir-PhC">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="171"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X3a-bT-ZOX" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="11" width="350" height="149"/>
+                                                    <subviews>
+                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Level 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMT-SR-d9e">
+                                                            <rect key="frame" x="16" y="24" width="64" height="24"/>
+                                                            <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="ilustrasi level 1" translatesAutoresizingMaskIntoConstraints="NO" id="0qu-ty-Xmg">
+                                                            <rect key="frame" x="143" y="0.0" width="207" height="149"/>
+                                                        </imageView>
+                                                        <label opaque="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Belajar fotografi bersama " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-kb-TUU">
+                                                            <rect key="frame" x="16" y="64" width="88.333333333333329" height="28"/>
+
+                                                            <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="12"/>
+                                                            <color key="textColor" name="black"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <rect key="contentStretch" x="0.5" y="0.10000000000000001" width="1" height="1"/>
+                                                    <constraints>
+                                                        <constraint firstItem="0qu-ty-Xmg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hGe-kb-TUU" secondAttribute="trailing" constant="10" id="0jf-zk-uHU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0qu-ty-Xmg" secondAttribute="trailingMargin" constant="8" id="Exb-Tt-nAM"/>
+                                                        <constraint firstItem="gMT-SR-d9e" firstAttribute="top" secondItem="X3a-bT-ZOX" secondAttribute="top" constant="24" id="J5n-WN-BHA"/>
+                                                        <constraint firstItem="hGe-kb-TUU" firstAttribute="top" secondItem="gMT-SR-d9e" secondAttribute="bottom" constant="16" id="N9b-uJ-7q1"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hGe-kb-TUU" secondAttribute="bottom" constant="10" id="NmC-JS-973"/>
+                                                        <constraint firstItem="0qu-ty-Xmg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gMT-SR-d9e" secondAttribute="trailing" constant="10" id="PLn-C0-oR3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="0qu-ty-Xmg" secondAttribute="bottom" id="V9y-SN-Fwz"/>
+                                                        <constraint firstItem="0qu-ty-Xmg" firstAttribute="top" secondItem="X3a-bT-ZOX" secondAttribute="top" id="Ynq-q5-Glc"/>
+                                                        <constraint firstItem="hGe-kb-TUU" firstAttribute="leading" secondItem="X3a-bT-ZOX" secondAttribute="leading" constant="16" id="ael-rJ-nuQ"/>
+                                                        <constraint firstItem="gMT-SR-d9e" firstAttribute="leading" secondItem="X3a-bT-ZOX" secondAttribute="leading" constant="16" id="wkN-Eo-RTI"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" red="0.92941176470588238" green="0.93725490196078431" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" red="0.92941176470588238" green="0.93725490196078431" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                            <size key="value" width="5" height="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="shadowShouldRasterize" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="X3a-bT-ZOX" firstAttribute="top" secondItem="aKS-Ir-PhC" secondAttribute="topMargin" id="1tE-1E-SIo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="X3a-bT-ZOX" secondAttribute="bottom" id="Y9c-d4-x1z"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="X3a-bT-ZOX" secondAttribute="trailing" id="yEm-HK-wqN"/>
+                                                <constraint firstItem="X3a-bT-ZOX" firstAttribute="leading" secondItem="aKS-Ir-PhC" secondAttribute="leadingMargin" id="yVm-XC-jlz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="desc" destination="hGe-kb-TUU" id="FbJ-V1-yib"/>
+                                            <outlet property="img" destination="0qu-ty-Xmg" id="8Rr-oQ-shH"/>
+                                            <outlet property="label" destination="gMT-SR-d9e" id="csj-WD-c9E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="808-cd-FQg" secondAttribute="bottom" id="CFC-1n-VFd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="808-cd-FQg" secondAttribute="trailing" id="XV1-VQ-Fih"/>
+                            <constraint firstItem="808-cd-FQg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nkG-Wo-IqS"/>
+                            <constraint firstItem="808-cd-FQg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yhr-oc-Jcr"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Challenges" image="flag" catalog="system" id="ekQ-8Y-vYw">
+                        <imageReference key="selectedImage" image="flag" catalog="system" renderingMode="template"/>
+                    </tabBarItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="challengeTableView" destination="808-cd-FQg" id="E4X-Eo-QMB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="110"/>
+            <point key="canvasLocation" x="21.538461538461537" y="109.47867298578198"/>
         </scene>
     </scenes>
     <resources>
+        <image name="flag" catalog="system" width="128" height="121"/>
+        <image name="ilustrasi level 1" width="207" height="148"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

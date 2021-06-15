@@ -1,26 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zd3-ui-T3t">
+
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Onboarding Scene-->
-        <scene sceneID="s0d-6b-0kx">
+        <scene sceneID="0Nx-NX-awm">
             <objects>
-                <viewController storyboardIdentifier="OnboardingScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="OnboardingScene" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="DtS-ZS-cah" customClass="OnboardingScene" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q3A-my-q1q">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOs-fa-K2c">
+                                <rect key="frame" x="20" y="957" width="728" height="47"/>
+                                <color key="backgroundColor" red="0.13357576730000001" green="0.1447329819" blue="0.16078686710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="gke-Tn-bl3"/>
+                                </constraints>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" name="white"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getStartedBtnWith_sender:" destination="DtS-ZS-cah" eventType="touchUpInside" id="AK1-e7-ucV"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ki8-xg-pFy">
+                                <rect key="frame" x="20" y="24" width="728" height="854"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzT-Km-FWY">
+                                <rect key="frame" x="718" y="24" width="30" height="30"/>
+                                <state key="normal" title="Skip">
+                                    <color key="titleColor" red="0.81176470588235294" green="0.83137254901960778" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonWith_sender:" destination="DtS-ZS-cah" eventType="touchUpInside" id="ede-zE-tXs"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="019-7t-74s">
+                                <rect key="frame" x="323.5" y="898" width="121" height="27"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.1296929121" green="0.1447311342" blue="0.1607868969" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="pageChanged:" destination="DtS-ZS-cah" eventType="valueChanged" id="idl-7T-65n"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rg6-S1-2Wd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rg6-S1-2Wd" firstAttribute="trailing" secondItem="AzT-Km-FWY" secondAttribute="trailing" constant="20" id="0cJ-rn-JNH"/>
+                            <constraint firstItem="Ki8-xg-pFy" firstAttribute="top" secondItem="Rg6-S1-2Wd" secondAttribute="top" constant="24" id="9fj-aV-lbw"/>
+                            <constraint firstItem="Rg6-S1-2Wd" firstAttribute="trailing" secondItem="Ki8-xg-pFy" secondAttribute="trailing" constant="20" id="Aay-Lr-mBc"/>
+                            <constraint firstItem="019-7t-74s" firstAttribute="centerX" secondItem="Rg6-S1-2Wd" secondAttribute="centerX" id="E04-72-wGC"/>
+                            <constraint firstItem="AzT-Km-FWY" firstAttribute="top" secondItem="Rg6-S1-2Wd" secondAttribute="top" constant="24" id="T0J-3J-pPn"/>
+                            <constraint firstItem="Ki8-xg-pFy" firstAttribute="leading" secondItem="Rg6-S1-2Wd" secondAttribute="leading" constant="20" id="Yk4-bb-nfM"/>
+                            <constraint firstItem="QOs-fa-K2c" firstAttribute="top" secondItem="019-7t-74s" secondAttribute="bottom" constant="32" id="lj8-gO-9nx"/>
+                            <constraint firstItem="019-7t-74s" firstAttribute="top" secondItem="Ki8-xg-pFy" secondAttribute="bottom" constant="20" id="pxl-bP-ewD"/>
+                            <constraint firstItem="Rg6-S1-2Wd" firstAttribute="trailing" secondItem="QOs-fa-K2c" secondAttribute="trailing" constant="20" id="qEp-ZL-N7Z"/>
+                            <constraint firstItem="QOs-fa-K2c" firstAttribute="leading" secondItem="Rg6-S1-2Wd" secondAttribute="leading" constant="20" id="vR7-SS-k9W"/>
+                            <constraint firstItem="Rg6-S1-2Wd" firstAttribute="bottom" secondItem="QOs-fa-K2c" secondAttribute="bottom" constant="20" id="wKJ-d4-roE"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="d6T-nF-4AG"/>
+                    <connections>
+                        <outlet property="btnGetStarted" destination="QOs-fa-K2c" id="RqE-0R-Tse"/>
+                        <outlet property="btnSkip" destination="AzT-Km-FWY" id="Yw2-nN-f2L"/>
+                        <outlet property="pageControl" destination="019-7t-74s" id="trb-Ud-J2C"/>
+                        <outlet property="scrollView" destination="Ki8-xg-pFy" id="DKO-SG-nR2"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ljC-qi-atM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="110"/>
+            <point key="canvasLocation" x="2789.2307692307691" y="115.87677725118483"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="byj-Hg-svB">
+            <objects>
+                <navigationController storyboardIdentifier="OnboardingScene" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="zd3-ui-T3t" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eg5-LA-LDD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DtS-ZS-cah" kind="relationship" relationship="rootViewController" id="xm3-Kn-TUI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfq-Hf-CBY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1860" y="115.87677725118483"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

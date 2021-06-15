@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84F38A782672FEB400F09ECD /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F38A772672FEB400F09ECD /* PhotosCollectionViewCell.swift */; };
+		84F54B082671B4B70013353B /* ChallengeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B072671B4B70013353B /* ChallengeListTableViewCell.swift */; };
+		84F54B102671E6830013353B /* GalleryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F54B0F2671E6830013353B /* GalleryListTableViewCell.swift */; };
+		BC08E7EB2673B970007A0D29 /* ChallengeCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7E82673B96A007A0D29 /* ChallengeCameraView.swift */; };
+		BC08E7EC2673B970007A0D29 /* ChallengeCameraML.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7EA2673B96B007A0D29 /* ChallengeCameraML.swift */; };
+		BC08E7ED2673B970007A0D29 /* ChallengeCameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7E92673B96A007A0D29 /* ChallengeCameraScene.swift */; };
+		BC08E7EE2673B970007A0D29 /* ChallengeCameraVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7E72673B96A007A0D29 /* ChallengeCameraVision.swift */; };
+		BC08E7F02673B9CF007A0D29 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7EF2673B9CF007A0D29 /* UILabel+Extension.swift */; };
+		BC08E7F22673B9E0007A0D29 /* CameraFocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F12673B9E0007A0D29 /* CameraFocusSquare.swift */; };
+		BC08E7F42673BA09007A0D29 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */; };
+		BC08E7F62673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */; };
 		BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1BF26710AEE00B7B31F /* StickerView.swift */; };
 		BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C126710B8000B7B31F /* CanvasView.swift */; };
 		BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C626710C5800B7B31F /* CommonFunction.swift */; };
-		BC7DF1C926710CBF00B7B31F /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */; };
+		BC7DF1C926710CBF00B7B31F /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */; };
 		BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */; };
 		BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */; };
-		BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */; };
-		BCC36EA6266DBD5B00E9E0BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */; };
 		BCC36EA9266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA7266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld */; };
 		BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EAA266DBD5D00E9E0BA /* Assets.xcassets */; };
 		BCC36EAE266DBD5D00E9E0BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EAC266DBD5D00E9E0BA /* LaunchScreen.storyboard */; };
@@ -29,22 +38,26 @@
 		BCD13C84266E4EF50029CE05 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C82266E4EF50029CE05 /* UIImage+Extension.swift */; };
 		BCD13C85266E4EF50029CE05 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C83266E4EF50029CE05 /* UIColor+Extension.swift */; };
 		BCD13C87266E4F1C0029CE05 /* library in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C86266E4F1C0029CE05 /* library */; };
-		BCD13C89266E4FD10029CE05 /* ReflectionSuccessScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C88266E4FD10029CE05 /* ReflectionSuccessScene.swift */; };
-		BCD13C8B266E4FF90029CE05 /* ReflectionSuccess.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C8A266E4FF90029CE05 /* ReflectionSuccess.storyboard */; };
-		BCD13C8E266E50210029CE05 /* ReflectionListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C8C266E50070029CE05 /* ReflectionListScene.swift */; };
-		BCD13C8F266E50210029CE05 /* ReflectionList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C8D266E50070029CE05 /* ReflectionList.storyboard */; };
-		BCD13C92266E504C0029CE05 /* ChallengeCameraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C90266E503F0029CE05 /* ChallengeCameraScene.swift */; };
-		BCD13C93266E50520029CE05 /* ChallengeCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C91266E503F0029CE05 /* ChallengeCamera.storyboard */; };
-		BCD13C9F266E50E20029CE05 /* ReflectionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C9D266E50E20029CE05 /* ReflectionListCell.swift */; };
-		BCD13CA0266E50E20029CE05 /* ReflectionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C9E266E50E20029CE05 /* ReflectionListCell.xib */; };
-		BCD13CA3266E51150029CE05 /* ReflectionDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13CA2266E51080029CE05 /* ReflectionDetailHeaderCell.swift */; };
-		BCD13CA4266E51150029CE05 /* ReflectionDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD13CA1266E51080029CE05 /* ReflectionDetailHeaderCell.xib */; };
+		BCD13C8E266E50210029CE05 /* EvaluationListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C8C266E50070029CE05 /* EvaluationListScene.swift */; };
+		BCD13C8F266E50210029CE05 /* EvaluationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C8D266E50070029CE05 /* EvaluationList.storyboard */; };
 		BCD13CA7266E516D0029CE05 /* ChallengeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13CA6266E51610029CE05 /* ChallengeDetail.storyboard */; };
 		BCD13CA8266E516D0029CE05 /* ChallengeDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13CA5266E51610029CE05 /* ChallengeDetailScene.swift */; };
 		BCD13CAB266E51860029CE05 /* ChallengeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13CA9266E517B0029CE05 /* ChallengeList.storyboard */; };
 		BCD13CAC266E51860029CE05 /* ChallengeListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13CAA266E517B0029CE05 /* ChallengeListScene.swift */; };
 		BCD13CAF266E519E0029CE05 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13CAE266E51950029CE05 /* OnboardingScene.swift */; };
 		BCD13CB0266E519E0029CE05 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD13CAD266E51950029CE05 /* Onboarding.storyboard */; };
+		BCD450692671CC010084A4F2 /* HomePageScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD450682671CC010084A4F2 /* HomePageScene.swift */; };
+		BCD4506B2671CC190084A4F2 /* HomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD4506A2671CC160084A4F2 /* HomePage.storyboard */; };
+		BCFB6A8A267366300099558E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6A89267365A10099558E /* CoreDataManager.swift */; };
+		BCFB6A912673670D0099558E /* EvaluationDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6A8F267366660099558E /* EvaluationDataRepository.swift */; };
+		BCFB6A942673688C0099558E /* ChallengeDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFB6A932673686C0099558E /* ChallengeDataRepository.swift */; };
+		E8ED43DF2677092200C1DAEF /* EvaluationDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8ED43DE2677092200C1DAEF /* EvaluationDetail.storyboard */; };
+		E8ED43E12677093300C1DAEF /* EvaluationDetailLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E02677093300C1DAEF /* EvaluationDetailLevel.swift */; };
+		E8ED43E32677206B00C1DAEF /* Step1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E22677206B00C1DAEF /* Step1Controller.swift */; };
+		E8ED43E52677815500C1DAEF /* Step2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E42677815500C1DAEF /* Step2Controller.swift */; };
+		E8ED43E72677816300C1DAEF /* Step3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E62677816300C1DAEF /* Step3Controller.swift */; };
+		E8ED43EA267781A300C1DAEF /* EvaluationCongragulationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E8267781A300C1DAEF /* EvaluationCongragulationsController.swift */; };
+		E8ED43EB267781A300C1DAEF /* EvaluationCongragulationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8ED43E9267781A300C1DAEF /* EvaluationCongragulationsController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,15 +71,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84F38A772672FEB400F09ECD /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		84F54B072671B4B70013353B /* ChallengeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListTableViewCell.swift; sourceTree = "<group>"; };
+		84F54B0F2671E6830013353B /* GalleryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryListTableViewCell.swift; sourceTree = "<group>"; };
+		BC08E7E72673B96A007A0D29 /* ChallengeCameraVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCameraVision.swift; sourceTree = "<group>"; };
+		BC08E7E82673B96A007A0D29 /* ChallengeCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCameraView.swift; sourceTree = "<group>"; };
+		BC08E7E92673B96A007A0D29 /* ChallengeCameraScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCameraScene.swift; sourceTree = "<group>"; };
+		BC08E7EA2673B96B007A0D29 /* ChallengeCameraML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCameraML.swift; sourceTree = "<group>"; };
+		BC08E7EF2673B9CF007A0D29 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		BC08E7F12673B9E0007A0D29 /* CameraFocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFocusSquare.swift; sourceTree = "<group>"; };
+		BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "UrbanSnapImageML 1.mlmodel"; sourceTree = "<group>"; };
 		BC7DF1BF26710AEE00B7B31F /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
 		BC7DF1C126710B8000B7B31F /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		BC7DF1C626710C5800B7B31F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
-		BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
+		BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		BCC36E9B266DBD5B00E9E0BA /* UrbanSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BCC36EA5266DBD5B00E9E0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BCC36EA8266DBD5B00E9E0BA /* UrbanSnap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UrbanSnap.xcdatamodel; sourceTree = "<group>"; };
 		BCC36EAA266DBD5D00E9E0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCC36EAD266DBD5D00E9E0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,22 +106,26 @@
 		BCD13C82266E4EF50029CE05 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BCD13C83266E4EF50029CE05 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BCD13C86266E4F1C0029CE05 /* library */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = library; sourceTree = "<group>"; };
-		BCD13C88266E4FD10029CE05 /* ReflectionSuccessScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionSuccessScene.swift; sourceTree = "<group>"; };
-		BCD13C8A266E4FF90029CE05 /* ReflectionSuccess.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReflectionSuccess.storyboard; sourceTree = "<group>"; };
-		BCD13C8C266E50070029CE05 /* ReflectionListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionListScene.swift; sourceTree = "<group>"; };
-		BCD13C8D266E50070029CE05 /* ReflectionList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReflectionList.storyboard; sourceTree = "<group>"; };
-		BCD13C90266E503F0029CE05 /* ChallengeCameraScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCameraScene.swift; sourceTree = "<group>"; };
-		BCD13C91266E503F0029CE05 /* ChallengeCamera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeCamera.storyboard; sourceTree = "<group>"; };
-		BCD13C9D266E50E20029CE05 /* ReflectionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionListCell.swift; sourceTree = "<group>"; };
-		BCD13C9E266E50E20029CE05 /* ReflectionListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectionListCell.xib; sourceTree = "<group>"; };
-		BCD13CA1266E51080029CE05 /* ReflectionDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReflectionDetailHeaderCell.xib; sourceTree = "<group>"; };
-		BCD13CA2266E51080029CE05 /* ReflectionDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionDetailHeaderCell.swift; sourceTree = "<group>"; };
+		BCD13C8C266E50070029CE05 /* EvaluationListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationListScene.swift; sourceTree = "<group>"; };
+		BCD13C8D266E50070029CE05 /* EvaluationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EvaluationList.storyboard; sourceTree = "<group>"; };
 		BCD13CA5266E51610029CE05 /* ChallengeDetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailScene.swift; sourceTree = "<group>"; };
 		BCD13CA6266E51610029CE05 /* ChallengeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeDetail.storyboard; sourceTree = "<group>"; };
 		BCD13CA9266E517B0029CE05 /* ChallengeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeList.storyboard; sourceTree = "<group>"; };
 		BCD13CAA266E517B0029CE05 /* ChallengeListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeListScene.swift; sourceTree = "<group>"; };
 		BCD13CAD266E51950029CE05 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		BCD13CAE266E51950029CE05 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
+		BCD450682671CC010084A4F2 /* HomePageScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageScene.swift; sourceTree = "<group>"; };
+		BCD4506A2671CC160084A4F2 /* HomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomePage.storyboard; sourceTree = "<group>"; };
+		BCFB6A89267365A10099558E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BCFB6A8F267366660099558E /* EvaluationDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationDataRepository.swift; sourceTree = "<group>"; };
+		BCFB6A932673686C0099558E /* ChallengeDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDataRepository.swift; sourceTree = "<group>"; };
+		E8ED43DE2677092200C1DAEF /* EvaluationDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EvaluationDetail.storyboard; sourceTree = "<group>"; };
+		E8ED43E02677093300C1DAEF /* EvaluationDetailLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationDetailLevel.swift; sourceTree = "<group>"; };
+		E8ED43E22677206B00C1DAEF /* Step1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1Controller.swift; sourceTree = "<group>"; };
+		E8ED43E42677815500C1DAEF /* Step2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2Controller.swift; sourceTree = "<group>"; };
+		E8ED43E62677816300C1DAEF /* Step3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3Controller.swift; sourceTree = "<group>"; };
+		E8ED43E8267781A300C1DAEF /* EvaluationCongragulationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCongragulationsController.swift; sourceTree = "<group>"; };
+		E8ED43E9267781A300C1DAEF /* EvaluationCongragulationsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EvaluationCongragulationsController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				BC7DF1C626710C5800B7B31F /* CommonFunction.swift */,
-				BC7DF1C826710CBF00B7B31F /* UserDefaultsWrapper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -132,6 +157,7 @@
 		BC846C65266F090200B6F76C /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				84F38A772672FEB400F09ECD /* PhotosCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -163,6 +189,7 @@
 				BCD13C5D266E4B560029CE05 /* Core */,
 				BCD13C4E266E4AA20029CE05 /* Helpers */,
 				BCC36EAF266DBD5D00E9E0BA /* Info.plist */,
+				BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */,
 			);
 			path = UrbanSnap;
 			sourceTree = "<group>";
@@ -199,7 +226,11 @@
 		BCD13C5D266E4B560029CE05 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BCFB6A90267366900099558E /* Entities */,
+				BCFB6A8B267366420099558E /* Repositories */,
+				BCFB6A89267365A10099558E /* CoreDataManager.swift */,
 				BCC36EA7266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld */,
+				BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -218,12 +249,11 @@
 		BCD13C5F266E4B5E0029CE05 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BCD450672671CBEB0084A4F2 /* Homepage */,
 				BCD13C73266E4E260029CE05 /* Alerts */,
-				BCD13C6E266E4DB00029CE05 /* Reflection */,
+				BCD13C6E266E4DB00029CE05 /* Evaluation */,
 				BCD13C6D266E4DA10029CE05 /* Challenge */,
 				BCD13C6B266E4D940029CE05 /* Onboarding */,
-				BCC36EA2266DBD5B00E9E0BA /* ViewController.swift */,
-				BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -240,8 +270,10 @@
 		BCD13C67266E4C620029CE05 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */,
 				BCD13C83266E4EF50029CE05 /* UIColor+Extension.swift */,
 				BCD13C82266E4EF50029CE05 /* UIImage+Extension.swift */,
+				BC08E7EF2673B9CF007A0D29 /* UILabel+Extension.swift */,
 				BCD13C80266E4EED0029CE05 /* UIView+Extension.swift */,
 				BCD13C7E266E4EE40029CE05 /* TableViewCell+Extension.swift */,
 				BCD13C7C266E4EE10029CE05 /* Date+Extension.swift */,
@@ -255,6 +287,7 @@
 				BCD13C86266E4F1C0029CE05 /* library */,
 				BC7DF1BF26710AEE00B7B31F /* StickerView.swift */,
 				BC7DF1C126710B8000B7B31F /* CanvasView.swift */,
+				BC08E7F12673B9E0007A0D29 /* CameraFocusSquare.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -286,31 +319,35 @@
 			path = Challenge;
 			sourceTree = "<group>";
 		};
-		BCD13C6E266E4DB00029CE05 /* Reflection */ = {
+		BCD13C6E266E4DB00029CE05 /* Evaluation */ = {
 			isa = PBXGroup;
 			children = (
-				BCD13C70266E4DDC0029CE05 /* Reflection List */,
-				BCD13C6F266E4DC90029CE05 /* Reflection Detail */,
+				BCD13C70266E4DDC0029CE05 /* Evaluation List */,
+				BCD13C6F266E4DC90029CE05 /* Evaluation Detail */,
 			);
-			path = Reflection;
+			path = Evaluation;
 			sourceTree = "<group>";
 		};
-		BCD13C6F266E4DC90029CE05 /* Reflection Detail */ = {
+		BCD13C6F266E4DC90029CE05 /* Evaluation Detail */ = {
 			isa = PBXGroup;
 			children = (
-				BCD13C9A266E50AD0029CE05 /* TableCell */,
+				E8ED43E02677093300C1DAEF /* EvaluationDetailLevel.swift */,
+				E8ED43E22677206B00C1DAEF /* Step1Controller.swift */,
+				E8ED43E42677815500C1DAEF /* Step2Controller.swift */,
+				E8ED43E62677816300C1DAEF /* Step3Controller.swift */,
+				E8ED43DE2677092200C1DAEF /* EvaluationDetail.storyboard */,
 			);
-			path = "Reflection Detail";
+			path = "Evaluation Detail";
 			sourceTree = "<group>";
 		};
-		BCD13C70266E4DDC0029CE05 /* Reflection List */ = {
+		BCD13C70266E4DDC0029CE05 /* Evaluation List */ = {
 			isa = PBXGroup;
 			children = (
 				BCD13C96266E50840029CE05 /* Cell */,
-				BCD13C8C266E50070029CE05 /* ReflectionListScene.swift */,
-				BCD13C8D266E50070029CE05 /* ReflectionList.storyboard */,
+				BCD13C8C266E50070029CE05 /* EvaluationListScene.swift */,
+				BCD13C8D266E50070029CE05 /* EvaluationList.storyboard */,
 			);
-			path = "Reflection List";
+			path = "Evaluation List";
 			sourceTree = "<group>";
 		};
 		BCD13C71266E4DEE0029CE05 /* Challenge List */ = {
@@ -318,6 +355,7 @@
 			children = (
 				BCD13CAA266E517B0029CE05 /* ChallengeListScene.swift */,
 				BCD13CA9266E517B0029CE05 /* ChallengeList.storyboard */,
+				84F54B072671B4B70013353B /* ChallengeListTableViewCell.swift */,
 			);
 			path = "Challenge List";
 			sourceTree = "<group>";
@@ -334,25 +372,27 @@
 		BCD13C73266E4E260029CE05 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
-				BCD13C74266E4E390029CE05 /* Reflection Success Popup */,
+				BCD13C74266E4E390029CE05 /* Evaluation Success Popup */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
 		};
-		BCD13C74266E4E390029CE05 /* Reflection Success Popup */ = {
+		BCD13C74266E4E390029CE05 /* Evaluation Success Popup */ = {
 			isa = PBXGroup;
 			children = (
-				BCD13C88266E4FD10029CE05 /* ReflectionSuccessScene.swift */,
-				BCD13C8A266E4FF90029CE05 /* ReflectionSuccess.storyboard */,
+				E8ED43E8267781A300C1DAEF /* EvaluationCongragulationsController.swift */,
+				E8ED43E9267781A300C1DAEF /* EvaluationCongragulationsController.xib */,
 			);
-			path = "Reflection Success Popup";
+			path = "Evaluation Success Popup";
 			sourceTree = "<group>";
 		};
 		BCD13C75266E4E530029CE05 /* Challenge Camera */ = {
 			isa = PBXGroup;
 			children = (
-				BCD13C90266E503F0029CE05 /* ChallengeCameraScene.swift */,
-				BCD13C91266E503F0029CE05 /* ChallengeCamera.storyboard */,
+				BC08E7EA2673B96B007A0D29 /* ChallengeCameraML.swift */,
+				BC08E7E92673B96A007A0D29 /* ChallengeCameraScene.swift */,
+				BC08E7E82673B96A007A0D29 /* ChallengeCameraView.swift */,
+				BC08E7E72673B96A007A0D29 /* ChallengeCameraVision.swift */,
 			);
 			path = "Challenge Camera";
 			sourceTree = "<group>";
@@ -369,19 +409,50 @@
 		BCD13C99266E50A10029CE05 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				BCD13C9D266E50E20029CE05 /* ReflectionListCell.swift */,
-				BCD13C9E266E50E20029CE05 /* ReflectionListCell.xib */,
+				84F54B0F2671E6830013353B /* GalleryListTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		BCD13C9A266E50AD0029CE05 /* TableCell */ = {
+		BCD450672671CBEB0084A4F2 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
-				BCD13CA2266E51080029CE05 /* ReflectionDetailHeaderCell.swift */,
-				BCD13CA1266E51080029CE05 /* ReflectionDetailHeaderCell.xib */,
+				BCD450682671CC010084A4F2 /* HomePageScene.swift */,
+				BCD4506A2671CC160084A4F2 /* HomePage.storyboard */,
 			);
-			path = TableCell;
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		BCFB6A8B267366420099558E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB6A8D2673664E0099558E /* Evaluation */,
+				BCFB6A8C2673664A0099558E /* Challenge */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		BCFB6A8C2673664A0099558E /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB6A932673686C0099558E /* ChallengeDataRepository.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		BCFB6A8D2673664E0099558E /* Evaluation */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB6A8F267366660099558E /* EvaluationDataRepository.swift */,
+			);
+			path = Evaluation;
+			sourceTree = "<group>";
+		};
+		BCFB6A90267366900099558E /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,18 +538,16 @@
 				BCD13CAB266E51860029CE05 /* ChallengeList.storyboard in Resources */,
 				BCC36EAE266DBD5D00E9E0BA /* LaunchScreen.storyboard in Resources */,
 				BCD13CB0266E519E0029CE05 /* Onboarding.storyboard in Resources */,
-				BCD13C8F266E50210029CE05 /* ReflectionList.storyboard in Resources */,
-				BCD13CA4266E51150029CE05 /* ReflectionDetailHeaderCell.xib in Resources */,
+				E8ED43EB267781A300C1DAEF /* EvaluationCongragulationsController.xib in Resources */,
+				BCD13C8F266E50210029CE05 /* EvaluationList.storyboard in Resources */,
 				BCD13C79266E4EC60029CE05 /* SFProText-Regular.ttf in Resources */,
 				BCD13C63266E4BC30029CE05 /* Colors.xcassets in Resources */,
+				BCD4506B2671CC190084A4F2 /* HomePage.storyboard in Resources */,
 				BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */,
-				BCC36EA6266DBD5B00E9E0BA /* Main.storyboard in Resources */,
 				BCD13C78266E4EC60029CE05 /* SFProText-Medium.ttf in Resources */,
 				BCD13C87266E4F1C0029CE05 /* library in Resources */,
-				BCD13CA0266E50E20029CE05 /* ReflectionListCell.xib in Resources */,
 				BCD13CA7266E516D0029CE05 /* ChallengeDetail.storyboard in Resources */,
-				BCD13C93266E50520029CE05 /* ChallengeCamera.storyboard in Resources */,
-				BCD13C8B266E4FF90029CE05 /* ReflectionSuccess.storyboard in Resources */,
+				E8ED43DF2677092200C1DAEF /* EvaluationDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,28 +565,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8ED43EA267781A300C1DAEF /* EvaluationCongragulationsController.swift in Sources */,
+				BC08E7F42673BA09007A0D29 /* UIViewController+Extension.swift in Sources */,
 				BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */,
+				BC08E7F22673B9E0007A0D29 /* CameraFocusSquare.swift in Sources */,
 				BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */,
-				BCD13C92266E504C0029CE05 /* ChallengeCameraScene.swift in Sources */,
+				84F38A782672FEB400F09ECD /* PhotosCollectionViewCell.swift in Sources */,
+				E8ED43E72677816300C1DAEF /* Step3Controller.swift in Sources */,
+				84F54B102671E6830013353B /* GalleryListTableViewCell.swift in Sources */,
+				BC08E7F02673B9CF007A0D29 /* UILabel+Extension.swift in Sources */,
 				BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */,
-				BC7DF1C926710CBF00B7B31F /* UserDefaultsWrapper.swift in Sources */,
+				BC08E7ED2673B970007A0D29 /* ChallengeCameraScene.swift in Sources */,
+				BC08E7EC2673B970007A0D29 /* ChallengeCameraML.swift in Sources */,
+				BC7DF1C926710CBF00B7B31F /* UserDefaultManager.swift in Sources */,
 				BCD13C7B266E4ED40029CE05 /* Constants.swift in Sources */,
 				BCD13C7F266E4EE40029CE05 /* TableViewCell+Extension.swift in Sources */,
 				BCD13CAF266E519E0029CE05 /* OnboardingScene.swift in Sources */,
-				BCD13C89266E4FD10029CE05 /* ReflectionSuccessScene.swift in Sources */,
+				BC08E7EB2673B970007A0D29 /* ChallengeCameraView.swift in Sources */,
 				BCD13C81266E4EED0029CE05 /* UIView+Extension.swift in Sources */,
-				BCD13CA3266E51150029CE05 /* ReflectionDetailHeaderCell.swift in Sources */,
+				BCFB6A942673688C0099558E /* ChallengeDataRepository.swift in Sources */,
+				E8ED43E12677093300C1DAEF /* EvaluationDetailLevel.swift in Sources */,
 				BCD13CAC266E51860029CE05 /* ChallengeListScene.swift in Sources */,
 				BCD13C84266E4EF50029CE05 /* UIImage+Extension.swift in Sources */,
-				BCD13C8E266E50210029CE05 /* ReflectionListScene.swift in Sources */,
+				BC08E7EE2673B970007A0D29 /* ChallengeCameraVision.swift in Sources */,
+				BCFB6A912673670D0099558E /* EvaluationDataRepository.swift in Sources */,
+				BCD13C8E266E50210029CE05 /* EvaluationListScene.swift in Sources */,
 				BCC36EA9266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld in Sources */,
 				BCD13CA8266E516D0029CE05 /* ChallengeDetailScene.swift in Sources */,
-				BCC36EA3266DBD5B00E9E0BA /* ViewController.swift in Sources */,
 				BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */,
+				BCFB6A8A267366300099558E /* CoreDataManager.swift in Sources */,
+				BC08E7F62673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel in Sources */,
 				BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */,
+				BCD450692671CC010084A4F2 /* HomePageScene.swift in Sources */,
+				E8ED43E32677206B00C1DAEF /* Step1Controller.swift in Sources */,
 				BCD13C7D266E4EE10029CE05 /* Date+Extension.swift in Sources */,
-				BCD13C9F266E50E20029CE05 /* ReflectionListCell.swift in Sources */,
+				E8ED43E52677815500C1DAEF /* Step2Controller.swift in Sources */,
 				BCD13C85266E4EF50029CE05 /* UIColor+Extension.swift in Sources */,
+				84F54B082671B4B70013353B /* ChallengeListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,14 +624,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BCC36EA4266DBD5B00E9E0BA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BCC36EA5266DBD5B00E9E0BA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BCC36EAC266DBD5D00E9E0BA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -680,17 +756,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YU42ADAZ46;
 				INFOPLIST_FILE = UrbanSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.tukangfoto.urbansnap.UrbanSnap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tukangfoto.urbansnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "UrbanSnap Provisioning";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -699,17 +777,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YU42ADAZ46;
 				INFOPLIST_FILE = UrbanSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = co.tukangfoto.urbansnap.UrbanSnap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tukangfoto.urbansnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "UrbanSnap Provisioning";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
