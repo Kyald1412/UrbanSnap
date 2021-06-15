@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class CoreDataManager {
     static let sharedManager = CoreDataManager()
@@ -85,6 +86,15 @@ class CoreDataManager {
 
 
 extension CoreDataManager {
+    
+    func preloadDataEvaluation(){
+        EvaluationDataRepository.shared.insertEvaluations(
+            completed: true,
+            level: 10,
+            desc: "",
+            editedImage: UIImage.init(),
+            rawImage: UIImage.init())
+    }
     
     func preloadDataChallenge(){
         
