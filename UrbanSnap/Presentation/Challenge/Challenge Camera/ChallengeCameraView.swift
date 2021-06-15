@@ -162,7 +162,7 @@ class ChallengeCameraView: ChallengeCameraScene {
         view.addSubview(pictureLabel)
         view.addSubview(cancelButton)
         view.addSubview(flashCameraButton)
-        view.addSubview(taskCompletedStatusLabel)
+//        view.addSubview(taskCompletedStatusLabel)
         view.addSubview(objectStacView)
 
         NSLayoutConstraint.activate([
@@ -180,8 +180,8 @@ class ChallengeCameraView: ChallengeCameraScene {
             flashCameraButton.widthAnchor.constraint(equalToConstant: 40),
             flashCameraButton.heightAnchor.constraint(equalToConstant: 40),
      
-            taskCompletedStatusLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            taskCompletedStatusLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+//            taskCompletedStatusLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+//            taskCompletedStatusLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
 
             pictureLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             pictureLabel.bottomAnchor.constraint(equalTo: captureImageButton.topAnchor, constant: -10),
@@ -392,7 +392,11 @@ extension ChallengeCameraView {
             
             if isConfirmed{
                 //Done saving, now go back
+                
+                EvaluationDataRepository.shared.insertEvaluations(completed: false, level: Int(self.challengeData?.level ?? 0), desc: "", editedImage: self.selectedImage ?? UIImage.init(), rawImage: self.selectedImage ?? UIImage.init())
+                
                 self.navigationController?.popToRootViewController(animated: true)
+
             } else {
                 //restart
                 self.startCaptureSession()

@@ -19,6 +19,13 @@ class EvaluationListScene: UIViewController{
         levelTableView.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("viewWillAppear count \(EvaluationDataRepository.shared.getAllEvaluations().count)")
+        
+    }
+    
 }
 
 extension EvaluationListScene: UITableViewDelegate{
