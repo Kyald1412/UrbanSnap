@@ -25,15 +25,6 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
         let cell = challengeTableView.dequeueReusableCell(withIdentifier: "challengeItem", for: indexPath) as! ChallengeListTableViewCell
         cell.setLevelList(with: item)
         cell.selectionStyle = .none
-//        print("CELL \(cell)")
-//        cell.layer.cornerRadius = 10
-//        cell.layer.masksToBounds = true
-//        cell.layer.borderWidth = 0.5
-        
-
-
-
-        //cell.contentView =
 
         return cell
     }
@@ -43,7 +34,7 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var challengeTableView: UITableView!
     
-    private let challengeList = [ Challenge(level: "Level 1", desc: "Learn to shoot still urban objects with two layers", image: UIImage.ilustrasiLevel1), Challenge(level: "Level 2", desc: "Learn to shoot still urban objects with three layers", image: UIImage.ilustrasiLevel2), Challenge(level: "Level 3", desc: "Learn to shoot moving urban objects with two layers", image: UIImage.ilustrasiLevel3)]
+    let challengeList = ChallengeDataRepository.shared.getAllChallenges()
     
     override func viewDidLoad() {
         
@@ -61,7 +52,6 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
         
         //making table view looks good
 
-        // Do any additional setup after loading the view.
     }
     
     
