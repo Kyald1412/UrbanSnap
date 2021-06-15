@@ -18,6 +18,7 @@
 		BC08E7F22673B9E0007A0D29 /* CameraFocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F12673B9E0007A0D29 /* CameraFocusSquare.swift */; };
 		BC08E7F42673BA09007A0D29 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */; };
 		BC08E7F62673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */; };
+		BC2E85F826791987004E347B /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BC2E85F726791987004E347B /* ObjectDetector.mlmodel */; };
 		BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1BF26710AEE00B7B31F /* StickerView.swift */; };
 		BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C126710B8000B7B31F /* CanvasView.swift */; };
 		BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C626710C5800B7B31F /* CommonFunction.swift */; };
@@ -82,6 +83,7 @@
 		BC08E7F12673B9E0007A0D29 /* CameraFocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFocusSquare.swift; sourceTree = "<group>"; };
 		BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "UrbanSnapImageML 1.mlmodel"; sourceTree = "<group>"; };
+		BC2E85F726791987004E347B /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		BC7DF1BF26710AEE00B7B31F /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
 		BC7DF1C126710B8000B7B31F /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		BC7DF1C626710C5800B7B31F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				BCD13C5D266E4B560029CE05 /* Core */,
 				BCD13C4E266E4AA20029CE05 /* Helpers */,
 				BCC36EAF266DBD5D00E9E0BA /* Info.plist */,
+				BC2E85F726791987004E347B /* ObjectDetector.mlmodel */,
 				BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */,
 			);
 			path = UrbanSnap;
@@ -570,6 +573,7 @@
 				BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */,
 				BC08E7F22673B9E0007A0D29 /* CameraFocusSquare.swift in Sources */,
 				BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */,
+				BC2E85F826791987004E347B /* ObjectDetector.mlmodel in Sources */,
 				84F38A782672FEB400F09ECD /* PhotosCollectionViewCell.swift in Sources */,
 				E8ED43E72677816300C1DAEF /* Step3Controller.swift in Sources */,
 				84F54B102671E6830013353B /* GalleryListTableViewCell.swift in Sources */,
