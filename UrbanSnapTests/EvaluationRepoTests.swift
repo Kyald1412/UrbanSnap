@@ -18,40 +18,33 @@ class UrbanSnapTests: XCTestCase {
         repo.deleteAllEvaluations()
     }
     
-//    func test_evaluationData() {
-//        
-//        let expectation = self.expectation(description: "Should return correct data")
-//        expectation.expectedFulfillmentCount = 1
-//        
-//        //when
-//     
-//        let evaluations = repo.insertEvaluations(
-//            completed: true,
-//            level: 12,
-//            desc: "testing",
-//            editedImage: UIImage.init(),
-//            rawImage: UIImage.init())
-//
-//        
-//        if let expectedResponseData = evaluations {
-//            XCTAssertEqual(expectedResponseData.level, 0)
-//            expectation.fulfill()
-//        } else {
-//            XCTFail("Should return proper response")
-//        }
-//        
-////        let data = repo.getAllEvaluations()
-////
-////        if let result = data.first {
-////            XCTAssertEqual(result.level, 0)
-////            expectation.fulfill()
-////        } else {
-////            XCTFail("Should return proper response")
-////        }
-//
-//        //then
-//        wait(for: [expectation], timeout: 5)
-//        
-//    }
+    func test_evaluationData() {
+        
+        let expectation = self.expectation(description: "Should return correct data")
+        expectation.expectedFulfillmentCount = 1
+        
+        //when
+     
+        repo.insertEvaluations(
+            completed: true,
+            level: 12,
+            desc: "testing",
+            editedImage: UIImage.init(),
+            rawImage: UIImage.init())
+
+        let data = repo.getAllEvaluations()
+
+        if let result = data.first, let evaluationDetail = result.evaluationDetail?.allObjects.first as? EvaluationDetails {
+            XCTAssertEqual(result.level, 12)
+            XCTAssertEqual(evaluationDetail.desc, "testing")
+            expectation.fulfill()
+        } else {
+            XCTFail("Should return proper response")
+        }
+
+        //then
+        wait(for: [expectation], timeout: 5)
+        
+    }
 
 }

@@ -73,51 +73,52 @@ class ChallengeCameraView: ChallengeCameraScene {
         return label
     }()
     
-    let objectLabel1 : PaddingLabel = {
+    var objectLabel = [PaddingLabel]()
+    let objectLabelSample : PaddingLabel = {
         let label = PaddingLabel()
         label.textColor = .white
         label.text = "Building"
         label.font = UIFont.systemFont(ofSize: 14)
-        label.backgroundColor = .systemGreen
-        label.paddingLeft = 32
-        label.paddingRight = 32
-        label.minimumScaleFactor = 0.5
-        label.adjustsFontSizeToFitWidth = true
-        label.paddingTop = 6
-        label.paddingBottom = 6
-        label.roundedCorners([.bottomLeft,.bottomRight,.topLeft,.topRight], radius: 10)
-        return label
-    }()
-    let objectLabel2 : PaddingLabel = {
-        let label = PaddingLabel()
-        label.textColor = .white
-        label.text = "People"
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.backgroundColor = .systemRed
-        label.paddingLeft = 32
-        label.minimumScaleFactor = 0.5
-        label.adjustsFontSizeToFitWidth = true
-        label.paddingRight = 32
-        label.paddingTop = 6
-        label.paddingBottom = 6
-        label.roundedCorners([.bottomLeft,.bottomRight,.topLeft,.topRight], radius: 10)
-        return label
-    }()
-    let objectLabel3 : PaddingLabel = {
-        let label = PaddingLabel()
-        label.textColor = .white
-        label.text = "Car"
-        label.minimumScaleFactor = 0.5
-        label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 14)
         label.backgroundColor = .systemRed
         label.paddingLeft = 32
         label.paddingRight = 32
+        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         label.paddingTop = 6
         label.paddingBottom = 6
         label.roundedCorners([.bottomLeft,.bottomRight,.topLeft,.topRight], radius: 10)
         return label
     }()
+//    let objectLabel2 : PaddingLabel = {
+//        let label = PaddingLabel()
+//        label.textColor = .white
+//        label.text = "People"
+//        label.font = UIFont.systemFont(ofSize: 14)
+//        label.backgroundColor = .systemRed
+//        label.paddingLeft = 32
+//        label.minimumScaleFactor = 0.5
+//        label.adjustsFontSizeToFitWidth = true
+//        label.paddingRight = 32
+//        label.paddingTop = 6
+//        label.paddingBottom = 6
+//        label.roundedCorners([.bottomLeft,.bottomRight,.topLeft,.topRight], radius: 10)
+//        return label
+//    }()
+//    let objectLabel3 : PaddingLabel = {
+//        let label = PaddingLabel()
+//        label.textColor = .white
+//        label.text = "Car"
+//        label.minimumScaleFactor = 0.5
+//        label.adjustsFontSizeToFitWidth = true
+//        label.font = UIFont.systemFont(ofSize: 14)
+//        label.backgroundColor = .systemRed
+//        label.paddingLeft = 32
+//        label.paddingRight = 32
+//        label.paddingTop = 6
+//        label.paddingBottom = 6
+//        label.roundedCorners([.bottomLeft,.bottomRight,.topLeft,.topRight], radius: 10)
+//        return label
+//    }()
     let objectStacView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -133,9 +134,21 @@ class ChallengeCameraView: ChallengeCameraScene {
         checkPermissions()
        startCaptureSession()
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+
+        
         self.challengeCameraView = self
         setupView()
         updateView()
@@ -149,7 +162,7 @@ class ChallengeCameraView: ChallengeCameraScene {
         view.addSubview(pictureLabel)
         view.addSubview(cancelButton)
         view.addSubview(flashCameraButton)
-        view.addSubview(taskCompletedStatusLabel)
+//        view.addSubview(taskCompletedStatusLabel)
         view.addSubview(objectStacView)
 
         NSLayoutConstraint.activate([
@@ -167,8 +180,8 @@ class ChallengeCameraView: ChallengeCameraScene {
             flashCameraButton.widthAnchor.constraint(equalToConstant: 40),
             flashCameraButton.heightAnchor.constraint(equalToConstant: 40),
      
-            taskCompletedStatusLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            taskCompletedStatusLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+//            taskCompletedStatusLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+//            taskCompletedStatusLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
 
             pictureLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             pictureLabel.bottomAnchor.constraint(equalTo: captureImageButton.topAnchor, constant: -10),
@@ -191,9 +204,58 @@ class ChallengeCameraView: ChallengeCameraScene {
         
         // loop
 //        let obj = objectLabel
-        objectStacView.addArrangedSubview(objectLabel1)
-        objectStacView.addArrangedSubview(objectLabel2)
-        objectStacView.addArrangedSubview(objectLabel3)
+        if let objectsData = challengeData?.challengeObject?.allObjects as? [ChallengeObjects] {
+            
+            let objectData = objectsData.map {$0.title ?? ""}
+            
+            objectData.forEach { data in
+                challengeObjectData.append(ChallengeObjectData.init(title: data, isSatisfy: false))
+            }
+            
+            objectsData.forEach { data in
+                let label = PaddingLabel()
+                label.textColor = .white
+//                label.text = "Building"
+                label.font = UIFont.systemFont(ofSize: 14)
+                label.backgroundColor = .systemRed
+                label.paddingLeft = 32
+                label.paddingRight = 32
+                label.minimumScaleFactor = 0.5
+                label.adjustsFontSizeToFitWidth = true
+                label.paddingTop = 6
+                label.paddingBottom = 6
+                label.roundedCorners([.bottomLeft,.bottomRight,.topLeft,.topRight], radius: 10)
+                label.text = data.title
+                
+                objectLabel.append(label)
+            }
+                        
+            objectLabel.forEach { label in
+                objectStacView.addArrangedSubview(label)
+            }
+            
+            objectStacView.layoutSubviews()
+            
+//            print("OBEC STACJVOEIW COUTN \(objectStacView.arrangedSubviews.count)")
+            
+//            if objectsData.count == 3 {
+//                objectStacView.addArrangedSubview(objectLabel1)
+//                objectStacView.addArrangedSubview(objectLabel2)
+//                objectStacView.addArrangedSubview(objectLabel3)
+//                objectLabel1.text = objectsData[0].title
+//                objectLabel2.text = objectsData[1].title
+//                objectLabel3.text = objectsData[2].title
+//            } else if objectsData.count == 2 {
+//                objectStacView.addArrangedSubview(objectLabel1)
+//                objectStacView.addArrangedSubview(objectLabel2)
+//                objectLabel1.text = objectsData[0].title
+//                objectLabel2.text = objectsData[1].title
+//            } else {
+//                objectStacView.addArrangedSubview(objectLabel1)
+//                objectLabel1.text = objectsData[0].title
+//            }
+        }
+   
 
         switchCameraButton.addTarget(self, action: #selector(switchCamera(_:)), for: .touchUpInside)
         flashCameraButton.addTarget(self, action: #selector(flashCamera(_:)), for: .touchUpInside)
@@ -289,6 +351,19 @@ class ChallengeCameraView: ChallengeCameraScene {
         }
     }
     
+    func updateCameraButton(){
+        if canTakePicture {
+            captureImageButton.isEnabled = true
+            captureImageButton.backgroundColor = .white
+            captureImageButton.tintColor = .white
+
+        } else {
+            captureImageButton.isEnabled = false
+            captureImageButton.backgroundColor = .gray
+            captureImageButton.tintColor = .gray
+        }
+    }
+    
 }
 
 extension ChallengeCameraView {
@@ -317,7 +392,11 @@ extension ChallengeCameraView {
             
             if isConfirmed{
                 //Done saving, now go back
+                
+                EvaluationDataRepository.shared.insertEvaluations(completed: false, level: Int(self.challengeData?.level ?? 0), desc: "", editedImage: self.selectedImage ?? UIImage.init(), rawImage: self.selectedImage ?? UIImage.init())
+                
                 self.navigationController?.popToRootViewController(animated: true)
+
             } else {
                 //restart
                 self.startCaptureSession()
