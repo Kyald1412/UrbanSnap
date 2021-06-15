@@ -27,7 +27,7 @@
 		BCC36EA9266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA7266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld */; };
 		BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EAA266DBD5D00E9E0BA /* Assets.xcassets */; };
 		BCC36EAE266DBD5D00E9E0BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC36EAC266DBD5D00E9E0BA /* LaunchScreen.storyboard */; };
-		BCD13C56266E4B2B0029CE05 /* UrbanSnapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C55266E4B2B0029CE05 /* UrbanSnapTests.swift */; };
+		BCD13C56266E4B2B0029CE05 /* EvaluationRepoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD13C55266E4B2B0029CE05 /* EvaluationRepoTests.swift */; };
 		BCD13C63266E4BC30029CE05 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C62266E4BC30029CE05 /* Colors.xcassets */; };
 		BCD13C78266E4EC60029CE05 /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C76266E4EC00029CE05 /* SFProText-Medium.ttf */; };
 		BCD13C79266E4EC60029CE05 /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCD13C77266E4EC00029CE05 /* SFProText-Regular.ttf */; };
@@ -94,7 +94,7 @@
 		BCC36EAD266DBD5D00E9E0BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCC36EAF266DBD5D00E9E0BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD13C53266E4B2B0029CE05 /* UrbanSnapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UrbanSnapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCD13C55266E4B2B0029CE05 /* UrbanSnapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanSnapTests.swift; sourceTree = "<group>"; };
+		BCD13C55266E4B2B0029CE05 /* EvaluationRepoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationRepoTests.swift; sourceTree = "<group>"; };
 		BCD13C57266E4B2B0029CE05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD13C62266E4BC30029CE05 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BCD13C76266E4EC00029CE05 /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.ttf"; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 		BCD13C54266E4B2B0029CE05 /* UrbanSnapTests */ = {
 			isa = PBXGroup;
 			children = (
-				BCD13C55266E4B2B0029CE05 /* UrbanSnapTests.swift */,
+				BCD13C55266E4B2B0029CE05 /* EvaluationRepoTests.swift */,
 				BCD13C57266E4B2B0029CE05 /* Info.plist */,
 			);
 			path = UrbanSnapTests;
@@ -609,7 +609,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCD13C56266E4B2B0029CE05 /* UrbanSnapTests.swift in Sources */,
+				BCD13C56266E4B2B0029CE05 /* EvaluationRepoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,10 +31,10 @@
         <relationship name="evaluationDetail" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EvaluationDetails" inverseName="ofEvaluation" inverseEntity="EvaluationDetails"/>
     </entity>
     <elements>
-        <element name="Challenges" positionX="-232.1102905273438" positionY="206.70947265625" width="128" height="163"/>
-        <element name="ChallengePhotos" positionX="72.6976318359375" positionY="158.3883056640625" width="128" height="59"/>
         <element name="ChallengeObjects" positionX="102.6621704101562" positionY="377.13525390625" width="128" height="74"/>
-        <element name="Evaluations" positionX="-236.3215942382812" positionY="-124.6099700927734" width="128" height="73"/>
+        <element name="ChallengePhotos" positionX="72.6976318359375" positionY="158.3883056640625" width="128" height="59"/>
+        <element name="Challenges" positionX="-232.1102905273438" positionY="206.70947265625" width="128" height="149"/>
         <element name="EvaluationDetails" positionX="73.6488037109375" positionY="-129.8216857910156" width="128" height="104"/>
+        <element name="Evaluations" positionX="-236.3215942382812" positionY="-124.6099700927734" width="128" height="73"/>
     </elements>
 </model>

@@ -7,31 +7,90 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class EvaluationDataRepository {
     
     static let shared = EvaluationDataRepository()
-//    let entityName = Evaluations.self.description()
-
-    func addEvaluations(data: Evaluations) {
-
+    let entityName = "Evaluations"
+    
+    func insertEvaluations(completed: Bool,
+                           level: Int,
+                           desc: String,
+                           editedImage: UIImage,
+                           rawImage: UIImage) {
+        
         do {
             let context = CoreDataManager.sharedManager.newDerivedContext()
             let entity: Evaluations = .init(context: context)
             
+            //Add evaluation data
+            entity.level = Int32(level)
+            
+            //Add evaluation photo
+            let evaluationDetails = EvaluationDetails(context: context)
+            evaluationDetails.completed = false
+            evaluationDetails.desc = ""
+            evaluationDetails.edited_image = editedImage.jpegData(compressionQuality: 100)
+            evaluationDetails.raw_image = rawImage.jpegData(compressionQuality: 100)
+            
+            entity.addToEvaluationDetail(evaluationDetails)
+            
             try context.save()
-
+            
         } catch {
-
+            
         }
-        
-    }
 
-    func updateEvaluations(data: Evaluations){
+    }
+    
+    func getEvaluationByLevel(level: Int) -> Evaluations? {
+        
+        let context = CoreDataManager.sharedManager.newDerivedContext()
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        fetchRequest.predicate = NSPredicate(format: "level == %d", level)
         
         do {
+            
+            let item = try context.fetch(fetchRequest) as! [Evaluations]
+            
+            return item.first
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        return nil
+    }
+    
+    
+    func getAllEvaluations() -> [Evaluations] {
+        
+        let context = CoreDataManager.sharedManager.newDerivedContext()
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        
+        do {
+            
+            let item = try context.fetch(fetchRequest) as! [Evaluations]
+            
+            return item
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        return []
+    }
+
+    func updateEvaluationDetail(completed:Bool, desc: String, editedImage: UIImage, data: EvaluationDetails){
+        
+        do {
+            
             let context = CoreDataManager.sharedManager.newDerivedContext()
-            let entity = data
+         
+            let entityData = data
+
+            entityData.completed = completed
+            data.desc = desc
+            data.edited_image = editedImage.jpegData(compressionQuality: 100)
             
             try context.save()
 
@@ -40,6 +99,8 @@ class EvaluationDataRepository {
         }
     }
 
+    
+    
     func deleteEvaluations(data: Evaluations){
 
         let context = CoreDataManager.sharedManager.persistentContainer.viewContext
@@ -48,6 +109,22 @@ class EvaluationDataRepository {
             context.delete(data)
             try context.save()
 
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+
+    }
+    
+    
+    func deleteAllEvaluations(){
+
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
+
+        do {
+            let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+            try context.execute(deleteRequest)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }

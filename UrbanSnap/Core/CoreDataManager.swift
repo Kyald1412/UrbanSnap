@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 class CoreDataManager {
     static let sharedManager = CoreDataManager()
@@ -86,6 +87,15 @@ class CoreDataManager {
 
 extension CoreDataManager {
     
+    func preloadDataEvaluation(){
+        EvaluationDataRepository.shared.insertEvaluations(
+            completed: true,
+            level: 10,
+            desc: "",
+            editedImage: UIImage.init(),
+            rawImage: UIImage.init())
+    }
+    
     func preloadDataChallenge(){
         
         // Level 1
@@ -100,17 +110,29 @@ extension CoreDataManager {
             objects: [ObjectData(desc: "Sky is the background", title: "Sky"),
                       ObjectData(desc: "Buildings are the foreground and the focus object", title: "Building")])
         
-        //        Level 2 here
-        //        ChallengeDataRepository.shared.insertChallenges(
-        //            completed: false,
-        //            icon: "ilustrasi level 1",
-        //            level: 1,
-        //            long_desc: "Take a picture of a building(s) and the sky. Make sure to separate your objects into 2 layers: foreground and background. In this picture:",
-        //            short_desc: "Learn to shoot still urban objects with two layers",
-        //            title: "Building and The Sky",
-        //            photos: ["Onboarding-Learn","Onboarding-Practice"],
-        //            objects: [ObjectData(desc: "Sky is the background", title: "Sky"),
-        //                      ObjectData(desc: "Buildings are the foreground and the focus object", title: "Building")])
+        ChallengeDataRepository.shared.insertChallenges(
+            completed: false,
+            icon: "ilustrasi level 2",
+            level: 2,
+            long_desc: "Take a picture of a person, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
+            short_desc: "Learn to shoot still urban objects with three layers",
+            title: "A Person, Building, and The Sky",
+            photos: ["Onboarding-Learn","Onboarding-Practice"],
+            objects: [ObjectData(desc: "A person is the foreground and the focus object", title: "Person"),
+                      ObjectData(desc: "Building is the middle ground", title: "Building"),
+                      ObjectData(desc: "Sky is the background", title: "Sky")])
+        
+        ChallengeDataRepository.shared.insertChallenges(
+            completed: false,
+            icon: "ilustrasi level 3",
+            level: 3,
+            long_desc: "Take a picture of a car, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
+            short_desc: "Learn to shoot moving urban objects with three layers",
+            title: "A Car, Building, and The Sky",
+            photos: ["Onboarding-Learn","Onboarding-Practice"],
+            objects: [ObjectData(desc: "A car is the foreground and the focus object", title: "Car"),
+                      ObjectData(desc: "Building is the middle ground", title: "Building"),
+                      ObjectData(desc: "Sky is the background", title: "Sky")])
         
     }
     
