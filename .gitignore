@@ -7,6 +7,8 @@ build/
 DerivedData/
 Credentials/
 
+*.mlmodel
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
