@@ -28,7 +28,7 @@ class ChallengeDataRepository {
                        objects: [ObjectData]) {
 
         do {
-            let context = CoreDataManager.sharedManager.newDerivedContext()
+            let context = CoreDataManager.sharedManager.persistentContainer.viewContext
             let entity: Challenges = .init(context: context)
             
             //Add challenge data
@@ -67,7 +67,7 @@ class ChallengeDataRepository {
     
     func getAllChallenges() -> [Challenges] {
         
-        let context = CoreDataManager.sharedManager.newDerivedContext()
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         
         do {
