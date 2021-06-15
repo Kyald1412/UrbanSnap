@@ -16,10 +16,10 @@
             </objects>
             <point key="canvasLocation" x="1733" y="581"/>
         </scene>
-        <!--ReflectionList-->
+        <!--EvaluationList-->
         <scene sceneID="nUB-hA-cbE">
             <objects>
-                <viewControllerPlaceholder storyboardName="ReflectionList" id="d7C-fZ-6RC" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="EvaluationList" id="d7C-fZ-6RC" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="VqQ-ov-QpE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re6-TD-wmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

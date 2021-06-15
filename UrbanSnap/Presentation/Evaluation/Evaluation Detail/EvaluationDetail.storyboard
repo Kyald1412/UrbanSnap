@@ -67,7 +67,7 @@ your work</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP4-gZ-reI">
-                                        <rect key="frame" x="0.0" y="93.000000000000057" width="388" height="43"/>
+                                        <rect key="frame" x="0.0" y="93.000000000000057" width="388" height="42"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Tap the button below to write
@@ -202,7 +202,7 @@ evaluation</string>
                                 </constraints>
                             </imageView>
                             <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04j-Ik-iBn" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
-                                <rect key="frame" x="34" y="52" width="360" height="166"/>
+                                <rect key="frame" x="34" y="52" width="360" height="164"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark the layers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNe-dP-USi">
                                         <rect key="frame" x="13" y="11" width="347" height="21"/>
@@ -211,7 +211,7 @@ evaluation</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="267-F2-nQX">
-                                        <rect key="frame" x="13" y="40" width="347" height="106"/>
+                                        <rect key="frame" x="13" y="40" width="347" height="104"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">There are 2 sticker on the top right corner that you can 
@@ -338,7 +338,7 @@ stickers as follows:
                                 </constraints>
                             </imageView>
                             <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-46-N4W" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
-                                <rect key="frame" x="34" y="56" width="360" height="111"/>
+                                <rect key="frame" x="34" y="56" width="360" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark the focus object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-26-PlQ">
                                         <rect key="frame" x="13" y="11" width="347" height="21"/>
@@ -347,7 +347,7 @@ stickers as follows:
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDt-pq-fgn">
-                                        <rect key="frame" x="13" y="40" width="347" height="51"/>
+                                        <rect key="frame" x="13" y="40" width="347" height="50"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Every photo has object to be focused on. Now please
