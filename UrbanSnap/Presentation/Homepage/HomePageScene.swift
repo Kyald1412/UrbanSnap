@@ -8,7 +8,7 @@
 import UIKit
 
 class HomePageScene: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,14 +19,21 @@ class HomePageScene: UITabBarController {
         CoreDataManager.sharedManager.deleteAllData()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait //return the value as per the required orientation
     }
-    */
-
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

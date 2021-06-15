@@ -8,6 +8,11 @@
 import UIKit
 import AVFoundation
 import Vision
+ 
+struct ChallengeObjectData {
+    var title: String
+    var isSatisfy: Bool
+}
 
 class ChallengeCameraScene: UIViewController {
     
@@ -23,6 +28,7 @@ class ChallengeCameraScene: UIViewController {
     //MARK:- Vars
     var takePicture = false
     var backCameraOn = true
+    var canTakePicture = false
     
     // Vision
     var detectionOverlay: CALayer! = nil
@@ -41,6 +47,17 @@ class ChallengeCameraScene: UIViewController {
     var animateActivity: Bool!
     var initialZoom: CGFloat = 1.0
 
+    var challengeData: Challenges?
+    
+    var challengeObjectData = [ChallengeObjectData]()
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
     
     //MARK:- Camera Setup
     func setupCaptureSession(){

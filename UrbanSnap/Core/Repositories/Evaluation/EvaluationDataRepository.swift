@@ -21,7 +21,7 @@ class EvaluationDataRepository {
                            rawImage: UIImage) {
         
         do {
-            let context = CoreDataManager.sharedManager.newDerivedContext()
+            let context = CoreDataManager.sharedManager.persistentContainer.viewContext
             let entity: Evaluations = .init(context: context)
             
             //Add evaluation data
@@ -30,7 +30,7 @@ class EvaluationDataRepository {
             //Add evaluation photo
             let evaluationDetails = EvaluationDetails(context: context)
             evaluationDetails.completed = false
-            evaluationDetails.desc = ""
+            evaluationDetails.desc = desc
             evaluationDetails.edited_image = editedImage.jpegData(compressionQuality: 100)
             evaluationDetails.raw_image = rawImage.jpegData(compressionQuality: 100)
             
@@ -46,7 +46,7 @@ class EvaluationDataRepository {
     
     func getEvaluationByLevel(level: Int) -> Evaluations? {
         
-        let context = CoreDataManager.sharedManager.newDerivedContext()
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         fetchRequest.predicate = NSPredicate(format: "level == %d", level)
         
@@ -65,7 +65,7 @@ class EvaluationDataRepository {
     
     func getAllEvaluations() -> [Evaluations] {
         
-        let context = CoreDataManager.sharedManager.newDerivedContext()
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
         
         do {
@@ -84,8 +84,8 @@ class EvaluationDataRepository {
         
         do {
             
-            let context = CoreDataManager.sharedManager.newDerivedContext()
-         
+            let context = CoreDataManager.sharedManager.persistentContainer.viewContext
+
             let entityData = data
 
             entityData.completed = completed

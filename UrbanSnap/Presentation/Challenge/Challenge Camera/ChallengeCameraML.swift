@@ -73,6 +73,7 @@ extension ChallengeCameraScene {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
                 continue
             }
+            
             // Select only the label with the highest confidence.
             let topLabelObservation = objectObservation.labels[0]
             let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
@@ -82,6 +83,44 @@ extension ChallengeCameraScene {
             let textLayer = self.createTextSubLayerInBounds(objectBounds,
                                                             identifier: topLabelObservation.identifier,
                                                             confidence: topLabelObservation.confidence)
+            
+//            print("RESULT topLabelObservation \(topLabelObservation)")
+
+            let recoginzeData = objectObservation.labels.filter {$0.confidence > 0.01}.map {$0.identifier}
+            
+            recoginzeData.forEach { data in
+                if let row = challengeObjectData.firstIndex(where: {$0.title == data}) {
+                    challengeObjectData[row].isSatisfy = true
+//                    print("CURRENT ROW \(row)")
+//                    print("CURRENT ROW \(challengeCameraView?.objectStacView.arrangedSubviews[0])")
+//                    print("DETECTED LABEK \(challengeCameraView?.objectStacView.subviews[row])")
+                    challengeCameraView?.objectStacView.arrangedSubviews[row].backgroundColor = .systemGreen
+                } else {
+                    challengeObjectData.forEach {
+                        var data = $0
+                        data.isSatisfy = false
+                    }
+                    
+                    challengeCameraView?.objectStacView.arrangedSubviews.forEach({ view in
+                        view.backgroundColor = .systemRed
+                    })
+                    
+
+                }
+            }
+            
+            self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}
+            self.challengeCameraView?.updateCameraButton()
+
+            print("challengeObjectData DATA \(challengeObjectData)")
+            print("recogineData DATA \(recoginzeData)")
+            
+//            if let array = challengeData?.challengeObject?.allObjects as? [ChallengeObjects] {
+//
+//
+//
+//            }
+            
             shapeLayer.addSublayer(textLayer)
             detectionOverlay.addSublayer(shapeLayer)
         }

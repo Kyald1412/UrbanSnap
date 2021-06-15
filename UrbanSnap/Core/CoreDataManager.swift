@@ -107,8 +107,8 @@ extension CoreDataManager {
             short_desc: "Learn to shoot still urban objects with two layers",
             title: "Building and The Sky",
             photos: ["Onboarding-Learn","Onboarding-Practice"],
-            objects: [ObjectData(desc: "Sky is the background", title: "Sky"),
-                      ObjectData(desc: "Buildings are the foreground and the focus object", title: "Building")])
+            objects: [ObjectData(desc: "Sky is the background", title: "Banana"),
+                      ObjectData(desc: "Buildings are the foreground and the focus object", title: "Egg")])
         
         ChallengeDataRepository.shared.insertChallenges(
             completed: false,

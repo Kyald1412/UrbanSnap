@@ -8,6 +8,26 @@
 import Foundation
 import UIKit
 
+extension UINavigationController {
+  open override var shouldAutorotate: Bool {
+    return true
+  }
+    
+  open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    return topViewController?.supportedInterfaceOrientations ?? .allButUpsideDown
+  }
+}
+
+extension UITabBarController {
+  open override var shouldAutorotate: Bool {
+      return true
+  }
+    
+  open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    return selectedViewController?.supportedInterfaceOrientations ?? .allButUpsideDown
+  }
+}
+
 extension UIViewController {
     
     func showSelectionAlertWithCompletion(title: String, msg: String, confirmMsg: String, cancelMsg: String, completionBlock: @escaping (Bool) -> Void) {
