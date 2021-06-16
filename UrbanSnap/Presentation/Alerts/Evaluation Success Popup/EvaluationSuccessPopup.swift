@@ -7,15 +7,32 @@
 
 import UIKit
 
-class EvaluationCongragulationsController: UIViewController {
+
+protocol EvaluationPopupProtocol {
+    func onConfirmButton()
+}
+class EvaluationSuccessPopup: UIViewController {
+    
+    var delegate: EvaluationPopupProtocol!
+    
+    @IBOutlet weak var btnConfirm: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let blurFx = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurFxView = UIVisualEffectView(effect: blurFx)
+        blurFxView.frame = view.bounds
+        blurFxView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.insertSubview(blurFxView, at: 0)
 
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func onConfirmButton(_ sender: Any) {
+        delegate.onConfirmButton()
+    }
+    
     /*
     // MARK: - Navigation
 

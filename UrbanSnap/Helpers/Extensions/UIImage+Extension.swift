@@ -12,7 +12,17 @@ import UIKit
 
 extension UIImage {
 
+    static let assetSlider1 = UIImage.image(named: "Asset slider 1")
+    static let assetSlider2 = UIImage.image(named: "Asset slider 2")
+    static let assetSlider3 = UIImage.image(named: "Asset slider 3")
+    static let assetSlider4 = UIImage.image(named: "Asset slider 4")
+    static let assetSlider5 = UIImage.image(named: "Asset slider 5")
+    static let assetSlider6 = UIImage.image(named: "Asset slider 6")
+    static let assetSlider7 = UIImage.image(named: "Asset slider 7")
+    static let assetSlider8 = UIImage.image(named: "Asset slider 8")
+    static let assetSlider9 = UIImage.image(named: "Asset slider 9")
     static let badge = UIImage.image(named: "Badge")
+    static let onboardingEvaluate = UIImage.image(named: "Onboarding-Evaluate")
     static let onboardingLearn = UIImage.image(named: "Onboarding-Learn")
     static let onboardingPractice = UIImage.image(named: "Onboarding-Practice")
     static let onboardingReflect = UIImage.image(named: "Onboarding-Reflect")

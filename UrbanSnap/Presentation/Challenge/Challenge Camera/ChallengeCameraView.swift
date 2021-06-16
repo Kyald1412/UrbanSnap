@@ -393,12 +393,34 @@ extension ChallengeCameraView {
             if isConfirmed{
                 //Done saving, now go back
                 
-                EvaluationDataRepository.shared.insertEvaluations(completed: false, level: Int(self.challengeData?.level ?? 0), desc: "", editedImage: self.selectedImage ?? UIImage.init(), rawImage: self.selectedImage ?? UIImage.init())
+                EvaluationDataRepository.shared.insertEvaluations(completed: false, level: Int(self.challengeData?.level ?? 0), desc: "", editedImage: self.selectedImage ?? UIImage.init(), rawImage: self.selectedImage ?? UIImage.init(), challenge: self.challengeData!)
                 
+//                self.navigationController?.popViewController(animated: true)
+//
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                    self.tabBarController?.selectedIndex = 1
+//                }
+                
+//                self.navigationController?.tabBarController?.selectedIndex = 1
                 self.navigationController?.popToRootViewController(animated: true)
+
+                // switch to 2nd tab (red vc)
+//                self.tabBarController?.selectedIndex = 1
+
+
+//                let index = 1
+//                self.tabBarController?.selectedIndex = index
+////                self.tabBarController?.viewControllers![index].poptto
+
+//                int index = 4;
+//                self.tabBarController.selectedIndex = index;
+//                [self.tabBarController.viewControllers[index] popToRootViewControllerAnimated:NO];
+
 
             } else {
                 //restart
+                EvaluationDataRepository.shared.insertEvaluations(completed: false, level: Int(self.challengeData?.level ?? 0), desc: "", editedImage: self.selectedImage ?? UIImage.init(), rawImage: self.selectedImage ?? UIImage.init(), challenge: self.challengeData!)
+
                 self.startCaptureSession()
             }
             

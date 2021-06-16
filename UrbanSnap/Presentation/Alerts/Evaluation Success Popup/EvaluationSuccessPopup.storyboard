@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Evaluation Success Popup-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EvaluationSuccessPopup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="EvaluationSuccessPopup" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAB-5f-j09" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
+                                <rect key="frame" x="57.5" y="247.5" width="299.5" height="411.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Badge" translatesAutoresizingMaskIntoConstraints="NO" id="AM0-TG-1G8">
+                                        <rect key="frame" x="16" y="16" width="267.5" height="220"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-Hj-d2v">
+                                        <rect key="frame" x="16" y="252" width="267.5" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jh-lk-1co">
+                                        <rect key="frame" x="16" y="346.5" width="267.5" height="49"/>
+                                        <color key="backgroundColor" name="black"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="fth-AE-ZgY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <state key="normal" title="Next Challenge">
+                                            <color key="titleColor" name="white"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onConfirmButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JEH-8b-xLc"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You did an awesome job! The next level is unclocked" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvH-bk-mGX">
+                                        <rect key="frame" x="16" y="297" width="267.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="AM0-TG-1G8" firstAttribute="leading" secondItem="zAB-5f-j09" secondAttribute="leading" constant="16" id="247-Ix-f18"/>
+                                    <constraint firstItem="aa2-Hj-d2v" firstAttribute="leading" secondItem="zAB-5f-j09" secondAttribute="leading" constant="16" id="6dt-ch-S0E"/>
+                                    <constraint firstItem="aa2-Hj-d2v" firstAttribute="top" secondItem="AM0-TG-1G8" secondAttribute="bottom" constant="16" id="8ZK-Bw-eXA"/>
+                                    <constraint firstAttribute="trailing" secondItem="aa2-Hj-d2v" secondAttribute="trailing" constant="16" id="BSM-ZH-gjm"/>
+                                    <constraint firstItem="1jh-lk-1co" firstAttribute="leading" secondItem="zAB-5f-j09" secondAttribute="leading" constant="16" id="MDi-Pd-T6E"/>
+                                    <constraint firstAttribute="trailing" secondItem="OvH-bk-mGX" secondAttribute="trailing" constant="16" id="R0w-hf-4OK"/>
+                                    <constraint firstItem="OvH-bk-mGX" firstAttribute="top" secondItem="aa2-Hj-d2v" secondAttribute="bottom" constant="16" id="ab2-PD-WhF"/>
+                                    <constraint firstItem="AM0-TG-1G8" firstAttribute="top" secondItem="zAB-5f-j09" secondAttribute="top" constant="16" id="ceY-3H-d7r"/>
+                                    <constraint firstAttribute="trailing" secondItem="AM0-TG-1G8" secondAttribute="trailing" constant="16" id="dEm-eG-3Vp"/>
+                                    <constraint firstAttribute="bottom" secondItem="1jh-lk-1co" secondAttribute="bottom" constant="16" id="h8d-kY-v4Z"/>
+                                    <constraint firstItem="OvH-bk-mGX" firstAttribute="leading" secondItem="zAB-5f-j09" secondAttribute="leading" constant="16" id="tU8-Rb-JLg"/>
+                                    <constraint firstAttribute="trailing" secondItem="1jh-lk-1co" secondAttribute="trailing" constant="16" id="yAZ-nd-trz"/>
+                                    <constraint firstItem="1jh-lk-1co" firstAttribute="top" secondItem="OvH-bk-mGX" secondAttribute="bottom" constant="16" id="yp1-Y2-5nS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zAB-5f-j09" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="oWY-rO-dSO"/>
+                            <constraint firstItem="zAB-5f-j09" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="pwc-5H-d3G"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnConfirm" destination="1jh-lk-1co" id="zNX-SA-HFE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="105.80357142857143"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Badge" width="166" height="220.5"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

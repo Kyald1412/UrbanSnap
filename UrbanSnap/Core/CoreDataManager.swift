@@ -45,8 +45,10 @@ class CoreDataManager {
     }
     
     func preloadData(){
+
         if !UserDefaultManager.shared.isOnboardingCompleted() {
             preloadDataChallenge()
+            preloadDataEvaluation()
         }
     }
     
@@ -90,10 +92,10 @@ extension CoreDataManager {
     func preloadDataEvaluation(){
         EvaluationDataRepository.shared.insertEvaluations(
             completed: true,
-            level: 10,
+            level: 1,
             desc: "",
             editedImage: UIImage.init(),
-            rawImage: UIImage.init())
+            rawImage: UIImage(named: "Asset slider 9")!, challenge: ChallengeDataRepository.shared.getAllChallenges()[0])
     }
     
     func preloadDataChallenge(){
