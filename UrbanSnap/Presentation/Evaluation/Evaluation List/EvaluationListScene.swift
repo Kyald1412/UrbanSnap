@@ -34,7 +34,8 @@ extension EvaluationListScene: UITableViewDelegate{
 
 extension EvaluationListScene: GalleryListCellDelegate{
     func performSegueFromCell() {
-        openEvaluationDetail()
+        //        passing data to evaluation detail
+        //        openEvaluationDetail()
     }
 }
 
@@ -56,17 +57,10 @@ extension EvaluationListScene: UITableViewDataSource{
         cell.layer.masksToBounds = true
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
-    
-    func openEvaluationDetail(){
+
+    func openEvaluationDetail(evaluationData: EvaluationDetails){
         let evaluationScene = UIStoryboard(name: "EvaluationDetail", bundle: nil).instantiateViewController(withIdentifier: "EvaluationDetailLevel") as! EvaluationDetailLevel
-        
-        if let data = EvaluationDataRepository.shared.getAllEvaluations()[0].evaluationDetail?.allObjects[0] as? EvaluationDetails{
-            evaluationScene.evaluationDetailsData = data
-        }
-        
+        evaluationScene.evaluationDetailsData = evaluationData
         self.navigationController?.pushViewController(evaluationScene, animated: true)
     }
 }
