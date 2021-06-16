@@ -18,9 +18,14 @@ class EvaluationDetailLevel: UIViewController {
     @IBOutlet weak var descView: UIView!
     @IBOutlet weak var emptyView: UIView!
     
+    var evaluationDetailsData: EvaluationDetails?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.title = "Level \(evaluationDetailsData?.challenge?.level ?? 0)"
+        
+        self.evaluationImage.image = UIImage(data:evaluationDetailsData?.edited_image ?? Data())
         
         self.navigationController?.navigationBar.prefersLargeTitles = false
         self.navigationController?.navigationBar.backgroundColor = .white
@@ -31,6 +36,17 @@ class EvaluationDetailLevel: UIViewController {
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is Step1Controller {
+            
+            print("SEGUEW pansgis;")
+            
+            let step1Controller = segue.destination as? Step1Controller
+            step1Controller?.evaluationDetailsData = evaluationDetailsData
+
+        }
+    }
+   
     /*
     // MARK: - Navigation
 

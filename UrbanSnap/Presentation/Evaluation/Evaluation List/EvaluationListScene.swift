@@ -62,6 +62,11 @@ extension EvaluationListScene: UITableViewDataSource{
     
     func openEvaluationDetail(){
         let evaluationScene = UIStoryboard(name: "EvaluationDetail", bundle: nil).instantiateViewController(withIdentifier: "EvaluationDetailLevel") as! EvaluationDetailLevel
+        
+        if let data = EvaluationDataRepository.shared.getAllEvaluations()[0].evaluationDetail?.allObjects[0] as? EvaluationDetails{
+            evaluationScene.evaluationDetailsData = data
+        }
+        
         self.navigationController?.pushViewController(evaluationScene, animated: true)
     }
 }

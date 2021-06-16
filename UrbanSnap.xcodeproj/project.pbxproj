@@ -23,6 +23,7 @@
 		BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C126710B8000B7B31F /* CanvasView.swift */; };
 		BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C626710C5800B7B31F /* CommonFunction.swift */; };
 		BC7DF1C926710CBF00B7B31F /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */; };
+		BC8BE8EA2679C59500A15C5B /* EvaluationSuccessPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8BE8E92679C59500A15C5B /* EvaluationSuccessPopup.storyboard */; };
 		BCC36E9F266DBD5B00E9E0BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */; };
 		BCC36EA1266DBD5B00E9E0BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */; };
 		BCC36EA9266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCC36EA7266DBD5B00E9E0BA /* UrbanSnap.xcdatamodeld */; };
@@ -57,8 +58,7 @@
 		E8ED43E32677206B00C1DAEF /* Step1Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E22677206B00C1DAEF /* Step1Controller.swift */; };
 		E8ED43E52677815500C1DAEF /* Step2Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E42677815500C1DAEF /* Step2Controller.swift */; };
 		E8ED43E72677816300C1DAEF /* Step3Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E62677816300C1DAEF /* Step3Controller.swift */; };
-		E8ED43EA267781A300C1DAEF /* EvaluationCongragulationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E8267781A300C1DAEF /* EvaluationCongragulationsController.swift */; };
-		E8ED43EB267781A300C1DAEF /* EvaluationCongragulationsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8ED43E9267781A300C1DAEF /* EvaluationCongragulationsController.xib */; };
+		E8ED43EA267781A300C1DAEF /* EvaluationSuccessPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8ED43E8267781A300C1DAEF /* EvaluationSuccessPopup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +88,7 @@
 		BC7DF1C126710B8000B7B31F /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		BC7DF1C626710C5800B7B31F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
 		BC7DF1C826710CBF00B7B31F /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		BC8BE8E92679C59500A15C5B /* EvaluationSuccessPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EvaluationSuccessPopup.storyboard; sourceTree = "<group>"; };
 		BCC36E9B266DBD5B00E9E0BA /* UrbanSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC36E9E266DBD5B00E9E0BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC36EA0266DBD5B00E9E0BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,8 +127,7 @@
 		E8ED43E22677206B00C1DAEF /* Step1Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step1Controller.swift; sourceTree = "<group>"; };
 		E8ED43E42677815500C1DAEF /* Step2Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2Controller.swift; sourceTree = "<group>"; };
 		E8ED43E62677816300C1DAEF /* Step3Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step3Controller.swift; sourceTree = "<group>"; };
-		E8ED43E8267781A300C1DAEF /* EvaluationCongragulationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCongragulationsController.swift; sourceTree = "<group>"; };
-		E8ED43E9267781A300C1DAEF /* EvaluationCongragulationsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EvaluationCongragulationsController.xib; sourceTree = "<group>"; };
+		E8ED43E8267781A300C1DAEF /* EvaluationSuccessPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationSuccessPopup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,8 +383,8 @@
 		BCD13C74266E4E390029CE05 /* Evaluation Success Popup */ = {
 			isa = PBXGroup;
 			children = (
-				E8ED43E8267781A300C1DAEF /* EvaluationCongragulationsController.swift */,
-				E8ED43E9267781A300C1DAEF /* EvaluationCongragulationsController.xib */,
+				E8ED43E8267781A300C1DAEF /* EvaluationSuccessPopup.swift */,
+				BC8BE8E92679C59500A15C5B /* EvaluationSuccessPopup.storyboard */,
 			);
 			path = "Evaluation Success Popup";
 			sourceTree = "<group>";
@@ -541,7 +541,7 @@
 				BCD13CAB266E51860029CE05 /* ChallengeList.storyboard in Resources */,
 				BCC36EAE266DBD5D00E9E0BA /* LaunchScreen.storyboard in Resources */,
 				BCD13CB0266E519E0029CE05 /* Onboarding.storyboard in Resources */,
-				E8ED43EB267781A300C1DAEF /* EvaluationCongragulationsController.xib in Resources */,
+				BC8BE8EA2679C59500A15C5B /* EvaluationSuccessPopup.storyboard in Resources */,
 				BCD13C8F266E50210029CE05 /* EvaluationList.storyboard in Resources */,
 				BCD13C79266E4EC60029CE05 /* SFProText-Regular.ttf in Resources */,
 				BCD13C63266E4BC30029CE05 /* Colors.xcassets in Resources */,
@@ -568,7 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8ED43EA267781A300C1DAEF /* EvaluationCongragulationsController.swift in Sources */,
+				E8ED43EA267781A300C1DAEF /* EvaluationSuccessPopup.swift in Sources */,
 				BC08E7F42673BA09007A0D29 /* UIViewController+Extension.swift in Sources */,
 				BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */,
 				BC08E7F22673B9E0007A0D29 /* CameraFocusSquare.swift in Sources */,

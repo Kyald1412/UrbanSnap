@@ -13,21 +13,41 @@ class Step3Controller: UIViewController {
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var descTextView: UITextView!
     @IBOutlet weak var buttonSafe: UIButton!
+    
+    var evaluationDetailsData: EvaluationDetails?
+    var editedImage: UIImage = UIImage.init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Step 3 of 3"
+
+        self.imageStep3.image = editedImage
+        self.descTextView.placeholder = "Write your description here.."
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onSaveEvaluation(_ sender: Any) {
+        
+        let myAlert = UIStoryboard(name: "EvaluationSuccessPopup", bundle: nil).instantiateViewController(withIdentifier: "EvaluationSuccessPopup") as! EvaluationSuccessPopup
+        myAlert.delegate = self
+        myAlert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        myAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        self.tabBarController?.present(myAlert, animated: true, completion: nil)
+        
     }
-    */
 
+}
+
+extension Step3Controller: EvaluationPopupProtocol {
+    func onConfirmButton() {
+        if let data = evaluationDetailsData {
+            EvaluationDataRepository.shared.updateEvaluationDetail(completed: true, desc: descTextView.text, editedImage: editedImage, data: data)
+        }
+        self.dismiss(animated: true) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
 }

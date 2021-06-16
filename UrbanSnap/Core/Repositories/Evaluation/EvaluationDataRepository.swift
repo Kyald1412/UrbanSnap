@@ -18,7 +18,7 @@ class EvaluationDataRepository {
                            level: Int,
                            desc: String,
                            editedImage: UIImage,
-                           rawImage: UIImage) {
+                           rawImage: UIImage, challenge: Challenges) {
         
         do {
             let context = CoreDataManager.sharedManager.persistentContainer.viewContext
@@ -33,8 +33,10 @@ class EvaluationDataRepository {
             evaluationDetails.desc = desc
             evaluationDetails.edited_image = editedImage.jpegData(compressionQuality: 100)
             evaluationDetails.raw_image = rawImage.jpegData(compressionQuality: 100)
-            
+            evaluationDetails.challenge = challenge
+
             entity.addToEvaluationDetail(evaluationDetails)
+        
             
             try context.save()
             
