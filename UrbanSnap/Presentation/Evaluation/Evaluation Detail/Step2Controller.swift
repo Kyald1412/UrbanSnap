@@ -70,10 +70,10 @@ class Step2Controller: UIViewController {
             
             print("SEGUEW pansgis;")
             
-//            if viewCanvas.lines.isEmpty {
-//                self.showAlert(title: "Alert", msg: "You are not drawing anything yet")
-//                return
-//            }
+            if viewCanvas.lines.isEmpty {
+                self.showAlert(title: "Alert", msg: "You are not drawing anything yet")
+                return
+            }
             
             let step3Controller = segue.destination as? Step3Controller
             step3Controller?.editedImage = viewContent.asImage()
