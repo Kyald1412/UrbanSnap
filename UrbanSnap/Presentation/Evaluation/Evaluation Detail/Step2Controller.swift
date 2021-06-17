@@ -59,7 +59,7 @@ class Step2Controller: UIViewController {
     }
     
     @IBAction func onClearButton(_ sender: Any) {
-        viewCanvas.clear()
+        viewCanvas.undo()
     }
     
     @IBAction func onViewInfo(_ sender: Any) {
