@@ -13,7 +13,6 @@ class Step2Controller: UIViewController {
     @IBOutlet weak var pencilButton: UIImageView!
     @IBOutlet weak var clearButton: UIImageView!
     @IBOutlet weak var step3Button: UIButton!
-    @IBOutlet weak var infoButton: UIImageView!
     @IBOutlet weak var infoDesc: DesignableView!
     @IBOutlet weak var viewCanvas: Canvas!
     
@@ -33,6 +32,19 @@ class Step2Controller: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onPencilButton(_ sender: Any) {
+        viewCanvas.isUserInteractionEnabled = !viewCanvas.isUserInteractionEnabled
+        if viewCanvas.isUserInteractionEnabled {
+            pencilButton.image = UIImage(systemName: "xmark.circle.fill")
+        } else {
+            pencilButton.image = UIImage(systemName: "pencil.circle.fill")
+        }
+    }
+    
+    @IBAction func onClearButton(_ sender: Any) {
+        viewCanvas.clear()
+    }
+    
     @IBAction func onViewInfo(_ sender: Any) {
         infoDesc.isHidden = !infoDesc.isHidden
     }
@@ -41,6 +53,11 @@ class Step2Controller: UIViewController {
         if segue.destination is Step3Controller {
             
             print("SEGUEW pansgis;")
+            
+            if viewCanvas.lines.isEmpty {
+                self.showAlert(title: "Alert", msg: "You are not drawing anything yet")
+                return
+            }
             
             let step3Controller = segue.destination as? Step3Controller
             step3Controller?.editedImage = viewContent.asImage()

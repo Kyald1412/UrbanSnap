@@ -20,6 +20,8 @@ class Step1Controller: UIViewController {
         infoDesc.isHidden = !infoDesc.isHidden
     }
     
+    var isEdited = false
+    
     var selectedStickerView:StickerView? {
         get {
             return _selectedStickerView
@@ -77,7 +79,7 @@ class Step1Controller: UIViewController {
         sticker1.enableClose = false
         sticker1.enableRotate = false
         sticker1.showEditingHandlers = false
-        sticker1.tag = 999
+        sticker1.tag = index
         self.imgCanvas.addSubview(sticker1)
         
     }
@@ -86,6 +88,11 @@ class Step1Controller: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is Step2Controller {
+            
+            if !isEdited {
+                self.showAlert(title: "Alert", msg: "You are not moving any sticker yet!")
+                return
+            }
             
             print("SEGUEW pansgis;")
             
@@ -99,31 +106,6 @@ class Step1Controller: UIViewController {
             }
         }
     }
-   
-    
-//    @IBAction func btnSaveClick (sender:AnyObject) {
-//        selectedStickerView?.showEditingHandlers = false
-//        if self.imgCanvas.subviews.filter({$0.tag == 999}).count > 0 {
-//            if let image = saveImage(imageView: imgCanvas){
-//
-////                UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-//            }else{
-//                print("Image not found !!")
-//            }
-//        }else{
-////            UIAlertController.showAlertWithOkButton(self, aStrMessage: "No Sticker is available.", completion: nil)
-//        }
-//    }
-    
-//    //MARK: - Add image to Library
-//    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-//        if error != nil {
-//            // we got back an error!
-//            UIAlertController.showAlertWithOkButton(self, aStrMessage: "Save error", completion: nil)
-//        } else {
-//            UIAlertController.showAlertWithOkButton(self, aStrMessage: "Your image has been saved to your photos.", completion: nil)
-//        }
-//    }
 
     func saveImage(imageView: UIImageView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0.0)
@@ -144,6 +126,7 @@ extension Step1Controller : StickerViewDelegate {
     
     func stickerViewDidBeginMoving(_ stickerView: StickerView) {
         self.selectedStickerView = stickerView
+        self.isEdited = true
     }
     
     func stickerViewDidChangeMoving(_ stickerView: StickerView) {

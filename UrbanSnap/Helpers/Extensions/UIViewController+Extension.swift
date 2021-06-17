@@ -30,6 +30,15 @@ extension UITabBarController {
 
 extension UIViewController {
     
+    func showAlert(title:String, msg: String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+
+        let cancelButton = UIAlertAction(title: "Close", style: .destructive, handler: nil)
+        
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func showSelectionAlertWithCompletion(title: String, msg: String, confirmMsg: String, cancelMsg: String, completionBlock: @escaping (Bool) -> Void) {
        
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
