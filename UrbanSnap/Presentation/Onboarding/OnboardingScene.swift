@@ -62,7 +62,7 @@ class OnboardingScene: UIViewController, UIScrollViewDelegate {
             txt2.textAlignment = .center
             txt2.numberOfLines = 5
             txt2.textColor = UIColor(red: 72/256, green: 74/256, blue: 77/256, alpha: 1)
-            txt2.font = UIFont.systemFont(ofSize: 20.0)
+            txt2.font = UIFont.systemFont(ofSize: 18.0)
             txt2.text = desc[index]
             
             slide.addSubview(imageView)
