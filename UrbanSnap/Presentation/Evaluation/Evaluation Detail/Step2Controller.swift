@@ -14,11 +14,14 @@ class Step2Controller: UIViewController {
     @IBOutlet weak var clearButton: UIImageView!
     @IBOutlet weak var step3Button: UIButton!
     @IBOutlet weak var infoDesc: DesignableView!
-    @IBOutlet weak var viewCanvas: Canvas!
+//    @IBOutlet weak var viewCanvas: Canvas!
     
     @IBOutlet weak var viewContent: UIView!
     var evaluationDetailsData: EvaluationDetails?
     var editedImage: UIImage = UIImage.init()
+    
+    let viewCanvas = Canvas()
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,19 @@ class Step2Controller: UIViewController {
         self.title = "Step 2 of 3"
 
         self.imageStep2.image = editedImage
+        
+        viewCanvas.backgroundColor = .clear
+        viewCanvas.bounds = view.bounds
+        viewCanvas.frame = view.frame
+//        viewCanvas.translatesAutoresizingMaskIntoConstraints = false
+        viewContent.addSubview(viewCanvas)
+
+        NSLayoutConstraint.activate([
+            viewCanvas.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor),
+            viewCanvas.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor),
+            viewCanvas.topAnchor.constraint(equalTo: viewContent.topAnchor),
+            viewCanvas.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor)
+        ])
 
         // Do any additional setup after loading the view.
     }
@@ -54,10 +70,10 @@ class Step2Controller: UIViewController {
             
             print("SEGUEW pansgis;")
             
-            if viewCanvas.lines.isEmpty {
-                self.showAlert(title: "Alert", msg: "You are not drawing anything yet")
-                return
-            }
+//            if viewCanvas.lines.isEmpty {
+//                self.showAlert(title: "Alert", msg: "You are not drawing anything yet")
+//                return
+//            }
             
             let step3Controller = segue.destination as? Step3Controller
             step3Controller?.editedImage = viewContent.asImage()
