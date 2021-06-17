@@ -106,9 +106,9 @@ extension CoreDataManager {
             long_desc: "Take a picture of a building(s) and the sky. Make sure to separate your objects into 2 layers: foreground and background. In this picture:",
             short_desc: "Learn to shoot still urban objects with two layers",
             title: "Building and The Sky",
-            photos: ["Onboarding-Learn","Onboarding-Practice"],
-            objects: [ObjectData(desc: "Sky is the background", title: "Building"),
-                      ObjectData(desc: "Buildings are the foreground and the focus object", title: "Sky")])
+            photos: ["Asset slider 1","Asset slider 2", "Asset slider 3"],
+            objects: [ObjectData(desc: "Sky is the background", title: "Sky"),
+                      ObjectData(desc: "Buildings are the foreground and the focus object", title: "Building")])
         
         ChallengeDataRepository.shared.insertChallenges(
             unlock: false,
@@ -117,7 +117,7 @@ extension CoreDataManager {
             long_desc: "Take a picture of a person, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
             short_desc: "Learn to shoot still urban objects with three layers",
             title: "A Person, Building, and The Sky",
-            photos: ["Onboarding-Learn","Onboarding-Practice"],
+            photos: ["Asset slider 4","Asset slider 5", "Asset slider 6"],
             objects: [ObjectData(desc: "A person is the foreground and the focus object", title: "Person"),
                       ObjectData(desc: "Building is the middle ground", title: "Building"),
                       ObjectData(desc: "Sky is the background", title: "Sky")])
@@ -129,7 +129,7 @@ extension CoreDataManager {
             long_desc: "Take a picture of a car, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
             short_desc: "Learn to shoot moving urban objects with three layers",
             title: "A Car, Building, and The Sky",
-            photos: ["Onboarding-Learn","Onboarding-Practice"],
+            photos: ["Asset slider 7","Asset slider 8", "Asset slider 9"],
             objects: [ObjectData(desc: "A car is the foreground and the focus object", title: "Car"),
                       ObjectData(desc: "Building is the middle ground", title: "Building"),
                       ObjectData(desc: "Sky is the background", title: "Sky")])
