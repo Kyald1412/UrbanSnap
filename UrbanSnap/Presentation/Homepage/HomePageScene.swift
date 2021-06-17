@@ -17,6 +17,7 @@ class HomePageScene: UITabBarController {
     
     @IBAction func onHomeTap(_ sender: Any) {
         CoreDataManager.sharedManager.deleteAllData()
+        CoreDataManager.sharedManager.preloadDataChallenge()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
