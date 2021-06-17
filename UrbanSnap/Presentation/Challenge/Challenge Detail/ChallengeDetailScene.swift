@@ -18,11 +18,33 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
     
     var scrollWidth: CGFloat! = 0.0
     var scrollHeight: CGFloat! = 0.0
-    var imgs = ["Onboarding-Learn", "Onboarding-Practice", "Onboarding-Evaluate"]
+    
     
     override func viewDidLayoutSubviews() {
         scrollWidth = scrollView.frame.size.width
         scrollHeight = scrollView.frame.size.height
+    }
+    
+    var challengeDetailList : Challenges?
+    var imgs : [ChallengePhotos]?
+    
+    func setLevelDetail(with challenge: Challenges){
+        if let objectPhoto = challenge.challengePhoto?.allObjects as? [ChallengePhotos]{
+            imgs = objectPhoto
+        }
+        levelTitle.text = challenge.title
+        levelDesc.text = challenge.long_desc
+        if let objectData = challenge.challengeObject?.allObjects as? [ChallengeObjects] {
+            for (index, data) in objectData.enumerated(){
+                let label = UILabel()
+                label.textColor = .black
+                label.text = "\(index+1). \(data.desc ?? "")"
+                label.font = UIFont.systemFont(ofSize: 17)
+                label.numberOfLines = 0
+                stackView.addArrangedSubview(label)
+            }
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -39,29 +61,36 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         // Do any additional setup after loading the view.
-        
-        var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
-        
-        for index in 0..<imgs.count {
-            frame.origin.x = scrollWidth * CGFloat (index)
-            frame.size = CGSize (width: scrollWidth, height: scrollHeight)
+        if let data = challengeDetailList{
+            setLevelDetail(with: data)
             
-            let slide = UIView(frame: frame)
+        }
+        if let imgs = imgs{
+            var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
             
-            //subview
-            let imageView = UIImageView.init(image:UIImage.init(named:imgs[index]))
-            imageView.frame = CGRect(x: 0, y:0, width: scrollWidth, height: scrollHeight)
-            imageView.contentMode = .scaleAspectFit
+            for index in 0..<imgs.count {
+                frame.origin.x = scrollWidth * CGFloat (index)
+                frame.size = CGSize (width: scrollWidth, height: scrollHeight)
+                
+                let slide = UIView(frame: frame)
+                
+                //subview
+                let imageView = UIImageView.init(image:UIImage.init(named:imgs[index].image ?? ""))
+                imageView.frame = CGRect(x: 0, y:0, width: scrollWidth, height: scrollHeight)
+                imageView.contentMode = .scaleAspectFit
+                
+                slide.addSubview(imageView)
+                scrollView.addSubview(slide)
+            }
             
-            slide.addSubview(imageView)
-            scrollView.addSubview(slide)
+            scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(imgs.count), height: scrollHeight)
+            self.scrollView.contentSize.height = 1.0
+            
+            pageControl.numberOfPages = imgs.count
+            pageControl.currentPage = 0
         }
         
-        scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(imgs.count), height: scrollHeight)
-        self.scrollView.contentSize.height = 1.0
-        
-        pageControl.numberOfPages = imgs.count
-        pageControl.currentPage = 0
+       
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -87,15 +116,5 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
     @IBAction func pageChanged(_ sender: Any) {
         scrollView!.scrollRectToVisible(CGRect(x: scrollWidth*CGFloat((pageControl?.currentPage)!), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
