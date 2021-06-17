@@ -8,7 +8,7 @@
 import UIKit
 
 protocol GalleryListCellDelegate {
-    func performSegueFromCell()
+    func performSegueFromCell(evaluationData: EvaluationDetails)
 }
 
 class GalleryListTableViewCell: UITableViewCell {
@@ -59,7 +59,9 @@ extension GalleryListTableViewCell: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.delegate != nil {
-            self.delegate.performSegueFromCell()
+            if let item = evaluationDetails {
+                self.delegate.performSegueFromCell(evaluationData: item[indexPath.row])
+            }
         }
     }
     

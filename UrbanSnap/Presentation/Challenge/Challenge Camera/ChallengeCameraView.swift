@@ -394,6 +394,7 @@ extension ChallengeCameraView {
                 //Done saving, now go back
                 
                 EvaluationDataRepository.shared.insertEvaluations(completed: false, level: Int(self.challengeData?.level ?? 0), desc: "", editedImage: self.selectedImage ?? UIImage.init(), rawImage: self.selectedImage ?? UIImage.init(), challenge: self.challengeData!)
+                Evalu
                 
 //                self.navigationController?.popViewController(animated: true)
 //

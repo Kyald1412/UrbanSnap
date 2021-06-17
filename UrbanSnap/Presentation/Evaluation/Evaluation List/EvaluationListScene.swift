@@ -16,7 +16,6 @@ class EvaluationListScene: UIViewController{
     @IBOutlet weak var emptyLabel1: UILabel!
     @IBOutlet weak var emptyLabel2: UILabel!
     
-    private let galleryList = [ Evaluation(level: "Level 1", gallery: [ Photos(image: UIImage.ilustrasiLevel2)])]
     private let evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
     
     override func viewDidLoad() {
@@ -46,9 +45,8 @@ extension EvaluationListScene: UITableViewDelegate{
 }
 
 extension EvaluationListScene: GalleryListCellDelegate{
-    func performSegueFromCell() {
-        //        passing data to evaluation detail
-        //        openEvaluationDetail()
+    func performSegueFromCell(evaluationData: EvaluationDetails) {
+        openEvaluationDetail(evaluationData: evaluationData)
     }
 }
 
