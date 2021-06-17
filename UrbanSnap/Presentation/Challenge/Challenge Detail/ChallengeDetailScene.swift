@@ -18,7 +18,7 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
     
     var scrollWidth: CGFloat! = 0.0
     var scrollHeight: CGFloat! = 0.0
-    var imgs = ["Onboarding-Learn", "Onboarding-Practice", "Onboarding-Evaluate"]
+    
     
     override func viewDidLayoutSubviews() {
         scrollWidth = scrollView.frame.size.width
@@ -26,8 +26,12 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
     }
     
     var challengeDetailList : Challenges?
+    var imgs : [ChallengePhotos]?
     
     func setLevelDetail(with challenge: Challenges){
+        if let objectPhoto = challenge.challengePhoto?.allObjects as? [ChallengePhotos]{
+            imgs = objectPhoto
+        }
         levelTitle.text = challenge.title
         levelDesc.text = challenge.long_desc
         if let objectData = challenge.challengeObject?.allObjects as? [ChallengeObjects] {
@@ -40,6 +44,7 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
                 stackView.addArrangedSubview(label)
             }
         }
+        
     }
     
     override func viewDidLoad() {
@@ -56,33 +61,36 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         // Do any additional setup after loading the view.
-        
-        var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
-        
-        for index in 0..<imgs.count {
-            frame.origin.x = scrollWidth * CGFloat (index)
-            frame.size = CGSize (width: scrollWidth, height: scrollHeight)
-            
-            let slide = UIView(frame: frame)
-            
-            //subview
-            let imageView = UIImageView.init(image:UIImage.init(named:imgs[index]))
-            imageView.frame = CGRect(x: 0, y:0, width: scrollWidth, height: scrollHeight)
-            imageView.contentMode = .scaleAspectFit
-            
-            slide.addSubview(imageView)
-            scrollView.addSubview(slide)
-        }
-        
-        scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(imgs.count), height: scrollHeight)
-        self.scrollView.contentSize.height = 1.0
-        
-        pageControl.numberOfPages = imgs.count
-        pageControl.currentPage = 0
         if let data = challengeDetailList{
             setLevelDetail(with: data)
             
         }
+        if let imgs = imgs{
+            var frame = CGRect (x: 0, y: 0, width: 0, height: 0)
+            
+            for index in 0..<imgs.count {
+                frame.origin.x = scrollWidth * CGFloat (index)
+                frame.size = CGSize (width: scrollWidth, height: scrollHeight)
+                
+                let slide = UIView(frame: frame)
+                
+                //subview
+                let imageView = UIImageView.init(image:UIImage.init(named:imgs[index].image ?? ""))
+                imageView.frame = CGRect(x: 0, y:0, width: scrollWidth, height: scrollHeight)
+                imageView.contentMode = .scaleAspectFit
+                
+                slide.addSubview(imageView)
+                scrollView.addSubview(slide)
+            }
+            
+            scrollView.contentSize = CGSize(width: scrollWidth * CGFloat(imgs.count), height: scrollHeight)
+            self.scrollView.contentSize.height = 1.0
+            
+            pageControl.numberOfPages = imgs.count
+            pageControl.currentPage = 0
+        }
+        
+       
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
