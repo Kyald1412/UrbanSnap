@@ -59,12 +59,13 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("DID SELECT")
         if challengeList[indexPath.row].unlock {
-            openChallengeDetail()
+            openChallengeDetail(challenge: challengeList[indexPath.row])
         }
     }
     
-    func openChallengeDetail(){
+    func openChallengeDetail(challenge: Challenges){
         let challengeScene = UIStoryboard(name: "ChallengeDetail", bundle: nil).instantiateViewController(withIdentifier: "ChallengeDetailScene") as! ChallengeDetailScene
+        challengeScene.challengeDetailList = challenge
         self.navigationController?.pushViewController(challengeScene, animated: true)
     }
 

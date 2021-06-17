@@ -25,6 +25,23 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
         scrollHeight = scrollView.frame.size.height
     }
     
+    var challengeDetailList : Challenges?
+    
+    func setLevelDetail(with challenge: Challenges){
+        levelTitle.text = challenge.title
+        levelDesc.text = challenge.long_desc
+        if let objectData = challenge.challengeObject?.allObjects as? [ChallengeObjects] {
+            for (index, data) in objectData.enumerated(){
+                let label = UILabel()
+                label.textColor = .black
+                label.text = "\(index+1). \(data.desc ?? "")"
+                label.font = UIFont.systemFont(ofSize: 17)
+                label.numberOfLines = 0
+                stackView.addArrangedSubview(label)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.layoutIfNeeded()
@@ -62,6 +79,10 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
         
         pageControl.numberOfPages = imgs.count
         pageControl.currentPage = 0
+        if let data = challengeDetailList{
+            setLevelDetail(with: data)
+            
+        }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -87,15 +108,5 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
     @IBAction func pageChanged(_ sender: Any) {
         scrollView!.scrollRectToVisible(CGRect(x: scrollWidth*CGFloat((pageControl?.currentPage)!), y: 0, width: scrollWidth, height: scrollHeight), animated: true)
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
