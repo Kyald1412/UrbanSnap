@@ -41,6 +41,9 @@ class Canvas: UIView {
     fileprivate var strokeColor = UIColor.systemGreen
     fileprivate var strokeWidth: Float = 3
     
+    var initialLocation = CGPoint.zero
+    var finalLocation = CGPoint.zero
+
     func setStrokeWidth(width: Float) {
         self.strokeWidth = width
     }
@@ -60,6 +63,25 @@ class Canvas: UIView {
     }
     
     var lines = [Line]()
+    
+    // MARK: Init
+
+    override public init(frame: CGRect) {
+      super.init(frame: frame)
+
+      commonInit()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+
+      commonInit()
+    }
+
+    private func commonInit() {
+      self.layer.masksToBounds = true  // Restrict
+    }
+
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -85,18 +107,82 @@ class Canvas: UIView {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: []))
+        super.touchesBegan(touches, with: event)
+        if let location = touches.first?.location(in: self){
+            initialLocation = location
+        }
+        lines.append(Line.init(strokeWidth: strokeWidth, color: strokeColor, points: [initialLocation]))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let point = touches.first?.location(in: nil) else { return }
-        guard var lastLine = lines.popLast() else { return }
-        lastLine.points.append(point)
-        lines.append(lastLine)
-        setNeedsDisplay()
+        super.touchesMoved(touches, with: event)
+
+        if let location = touches.first?.location(in: self){
+
+            guard var lastLine = lines.popLast() else { return }
+            lastLine.points.append(CGPoint(x: location.x, y: location.y))
+            lines.append(lastLine)
+            setNeedsDisplay()
+
+        }
+        
     }
     
 }
+
+class DrawingView2: UIView {
+    var path = UIBezierPath()
+    var initialLocation = CGPoint.zero
+    var finalLocation = CGPoint.zero
+    var shapeLayer = CAShapeLayer()
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupView()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func setupView(){
+        self.layer.addSublayer(shapeLayer)
+        self.shapeLayer.lineWidth = 20
+        self.shapeLayer.strokeColor = UIColor.blue.cgColor
+    }
+
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let location = touches.first?.location(in: self){
+            initialLocation = location
+        }
+    }
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+
+        if let location = touches.first?.location(in: self){
+            let dx =  location.x - initialLocation.x
+            let dy = location.y - initialLocation.y
+
+            finalLocation = abs(dx) > abs(dy) ? CGPoint(x: location.x, y: initialLocation.y) : CGPoint(x: initialLocation.x, y: location.y)
+
+            path.removeAllPoints()
+            path.move(to: initialLocation)
+            path.addLine(to: finalLocation)
+
+            shapeLayer.path = path.cgPath
+
+        }
+    }
+}
+
 
 class DrawingView: UIView {
 

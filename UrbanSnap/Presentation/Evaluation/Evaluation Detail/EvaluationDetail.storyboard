@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -307,21 +307,13 @@ stickers as follows:
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Owo-Ta-SrG">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="525.33333333333337"/>
                                     </imageView>
-                                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQg-GQ-3wa" customClass="Canvas" customModule="UrbanSnap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="525.33333333333337"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="pQg-GQ-3wa" firstAttribute="top" secondItem="Owo-Ta-SrG" secondAttribute="top" id="4sH-gt-rLN"/>
-                                    <constraint firstItem="pQg-GQ-3wa" firstAttribute="leading" secondItem="Owo-Ta-SrG" secondAttribute="leading" id="5UA-mM-pzk"/>
                                     <constraint firstItem="Owo-Ta-SrG" firstAttribute="top" secondItem="pm1-LU-neZ" secondAttribute="top" id="8CF-ea-5wf"/>
-                                    <constraint firstItem="pQg-GQ-3wa" firstAttribute="bottom" secondItem="Owo-Ta-SrG" secondAttribute="bottom" id="B9c-4I-NIP"/>
                                     <constraint firstAttribute="width" secondItem="pm1-LU-neZ" secondAttribute="height" multiplier="3:4" id="BBo-cA-8LE"/>
                                     <constraint firstAttribute="bottom" secondItem="Owo-Ta-SrG" secondAttribute="bottom" id="JDU-Bo-Sim"/>
                                     <constraint firstItem="Owo-Ta-SrG" firstAttribute="leading" secondItem="pm1-LU-neZ" secondAttribute="leading" id="kxF-mY-NFW"/>
-                                    <constraint firstItem="pQg-GQ-3wa" firstAttribute="trailing" secondItem="Owo-Ta-SrG" secondAttribute="trailing" id="rHO-eC-7lT"/>
                                     <constraint firstAttribute="trailing" secondItem="Owo-Ta-SrG" secondAttribute="trailing" id="w6V-io-skg"/>
                                 </constraints>
                             </view>
@@ -345,7 +337,7 @@ stickers as follows:
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-46-N4W" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
-                                <rect key="frame" x="34" y="56" width="360" height="111"/>
+                                <rect key="frame" x="34" y="56" width="360" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark the focus object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-26-PlQ">
                                         <rect key="frame" x="13" y="11" width="347" height="21"/>
@@ -354,7 +346,7 @@ stickers as follows:
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDt-pq-fgn">
-                                        <rect key="frame" x="13" y="40" width="347" height="51"/>
+                                        <rect key="frame" x="13" y="40" width="347" height="50"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Every photo has object to be focused on. Now please
@@ -452,12 +444,12 @@ heart's content.</string>
                             <constraint firstItem="pm1-LU-neZ" firstAttribute="leading" secondItem="KxR-bx-qwy" secondAttribute="leading" constant="17" id="Hib-YX-rOo"/>
                             <constraint firstItem="KxR-bx-qwy" firstAttribute="trailing" secondItem="31t-of-69a" secondAttribute="trailing" constant="36" id="IGu-XZ-PsS"/>
                             <constraint firstItem="BiQ-46-N4W" firstAttribute="leading" secondItem="KxR-bx-qwy" secondAttribute="leading" constant="34" id="JvN-du-ggn"/>
+                            <constraint firstItem="EXk-lJ-0wn" firstAttribute="trailing" secondItem="pm1-LU-neZ" secondAttribute="trailing" id="Nl5-rr-wQr"/>
                             <constraint firstItem="KxR-bx-qwy" firstAttribute="trailing" secondItem="pm1-LU-neZ" secondAttribute="trailing" constant="17" id="O2J-ub-DUZ"/>
                             <constraint firstItem="BiQ-46-N4W" firstAttribute="top" secondItem="EXk-lJ-0wn" secondAttribute="bottom" constant="4" id="Raf-4I-KW0"/>
                             <constraint firstItem="qad-3p-g8i" firstAttribute="leading" secondItem="KxR-bx-qwy" secondAttribute="leading" constant="20" id="YEE-C9-t6K"/>
                             <constraint firstItem="pm1-LU-neZ" firstAttribute="top" secondItem="xyy-5p-vfF" secondAttribute="bottom" constant="-50" id="ZF3-Xo-9Of"/>
                             <constraint firstItem="EXk-lJ-0wn" firstAttribute="top" secondItem="KxR-bx-qwy" secondAttribute="top" constant="24" id="aFv-Is-7Bj"/>
-                            <constraint firstItem="EXk-lJ-0wn" firstAttribute="trailing" secondItem="pQg-GQ-3wa" secondAttribute="trailing" id="cqf-Da-6NL"/>
                             <constraint firstItem="KxR-bx-qwy" firstAttribute="trailing" secondItem="qad-3p-g8i" secondAttribute="trailing" constant="20" id="hzl-V4-zaH"/>
                             <constraint firstItem="KxR-bx-qwy" firstAttribute="trailing" secondItem="BiQ-46-N4W" secondAttribute="trailing" constant="34" id="oAe-1F-vFN"/>
                         </constraints>
@@ -469,7 +461,6 @@ heart's content.</string>
                         <outlet property="infoDesc" destination="BiQ-46-N4W" id="9gA-X8-NXb"/>
                         <outlet property="pencilButton" destination="xyy-5p-vfF" id="7dm-Ze-paN"/>
                         <outlet property="step3Button" destination="qad-3p-g8i" id="G4x-9t-K7G"/>
-                        <outlet property="viewCanvas" destination="pQg-GQ-3wa" id="xZF-vW-irn"/>
                         <outlet property="viewContent" destination="pm1-LU-neZ" id="r5n-sg-dO8"/>
                     </connections>
                 </viewController>
