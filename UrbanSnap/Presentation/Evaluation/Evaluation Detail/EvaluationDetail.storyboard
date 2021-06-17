@@ -29,30 +29,27 @@
                                 <rect key="frame" x="20" y="454.33333333333326" width="388" height="360.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htP-Ib-UW9">
-                                        <rect key="frame" x="0.0" y="0.0" width="388" height="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="388" height="26.333333333333332"/>
                                         <fontDescription key="fontDescription" name="SFProText-Medium" family="SF Pro Text" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gju-ok-NKM">
-                                        <rect key="frame" x="6" y="37" width="382" height="303.66666666666669"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="13"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-Oh-4Hz">
+                                        <rect key="frame" x="0.0" y="42.333333333333371" width="388" height="20"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="Gju-ok-NKM" firstAttribute="leading" secondItem="V2d-xt-6BG" secondAttribute="leading" constant="6" id="2KS-as-Hsy"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gju-ok-NKM" secondAttribute="trailing" id="9OS-ib-gV4"/>
                                     <constraint firstAttribute="trailing" secondItem="htP-Ib-UW9" secondAttribute="trailing" id="BR2-zl-9dE"/>
-                                    <constraint firstItem="Gju-ok-NKM" firstAttribute="top" secondItem="htP-Ib-UW9" secondAttribute="bottom" constant="11" id="ST1-eK-Gtg"/>
-                                    <constraint firstItem="Gju-ok-NKM" firstAttribute="top" secondItem="htP-Ib-UW9" secondAttribute="bottom" constant="11" id="V1j-0B-2uk"/>
+                                    <constraint firstItem="Jun-Oh-4Hz" firstAttribute="top" secondItem="htP-Ib-UW9" secondAttribute="bottom" constant="16" id="BqC-MY-aE1"/>
+                                    <constraint firstItem="Jun-Oh-4Hz" firstAttribute="leading" secondItem="V2d-xt-6BG" secondAttribute="leading" id="GSZ-4p-w0f"/>
                                     <constraint firstItem="htP-Ib-UW9" firstAttribute="leading" secondItem="V2d-xt-6BG" secondAttribute="leading" id="ZST-U7-PQw"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Jun-Oh-4Hz" secondAttribute="bottom" id="dpM-DO-O6a"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jun-Oh-4Hz" secondAttribute="trailing" id="iCi-yg-3jl"/>
                                     <constraint firstItem="htP-Ib-UW9" firstAttribute="top" secondItem="V2d-xt-6BG" secondAttribute="top" id="l5f-Sr-VqD"/>
-                                    <constraint firstAttribute="bottom" secondItem="Gju-ok-NKM" secondAttribute="bottom" constant="20" id="wdj-h3-o68"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Xo-BW-UrV">
@@ -137,7 +134,7 @@ evaluation</string>
                     </view>
                     <connections>
                         <outlet property="descLabel" destination="htP-Ib-UW9" id="Dqk-P8-4A5"/>
-                        <outlet property="descTextView" destination="Gju-ok-NKM" id="Z7s-Cb-Spc"/>
+                        <outlet property="descTextView" destination="Jun-Oh-4Hz" id="BYo-hk-A5I"/>
                         <outlet property="descView" destination="V2d-xt-6BG" id="NSX-sG-TUQ"/>
                         <outlet property="emptyLabel1" destination="bCS-yA-Ews" id="Uzk-og-rLp"/>
                         <outlet property="emptyLabel2" destination="cP4-gZ-reI" id="zL3-C9-f8C"/>

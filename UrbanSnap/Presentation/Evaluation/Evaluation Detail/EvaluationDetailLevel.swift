@@ -10,7 +10,7 @@ import UIKit
 class EvaluationDetailLevel: UIViewController {
 
     @IBOutlet weak var descLabel: UILabel!
-    @IBOutlet weak var descTextView: UITextView!
+    @IBOutlet weak var descTextView: UILabel!
     @IBOutlet weak var emptyLabel1: UILabel!
     @IBOutlet weak var emptyLabel2: UILabel!
     @IBOutlet weak var evaluationImage: UIImageView!
@@ -31,6 +31,14 @@ class EvaluationDetailLevel: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.tintColor = .black
+        
+        
+        if evaluationDetailsData?.completed ?? false {
+            emptyLabel1.isHidden = evaluationDetailsData?.completed ?? false
+            emptyLabel2.isHidden = evaluationDetailsData?.completed ?? false
+            emptyView.isHidden = evaluationDetailsData?.completed ?? false
+            descTextView.text = evaluationDetailsData?.desc
+        }
         
         // Do any additional setup after loading the view.
     }

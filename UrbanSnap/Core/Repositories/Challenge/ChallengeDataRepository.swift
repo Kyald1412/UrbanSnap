@@ -66,6 +66,25 @@ class ChallengeDataRepository {
         
     }
     
+    func getChallengeByLevel(level: Int) -> Challenges? {
+        
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        fetchRequest.predicate = NSPredicate(format: "level == %d", level)
+        
+        do {
+            
+            let item = try context.fetch(fetchRequest) as! [Challenges]
+            
+            return item.first
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        return nil
+    }
+    
+    
     func getAllChallenges() -> [Challenges] {
         
         let context = CoreDataManager.sharedManager.persistentContainer.viewContext
