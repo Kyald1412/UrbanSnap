@@ -22,6 +22,10 @@ class ChallengeListTableViewCell: UITableViewCell {
         label.text = "Level \(challenges.level)"
         desc.text = challenges.short_desc
         img.image = UIImage(named:challenges.icon ?? "")
+        lockedView.isHidden = challenges.unlock
+        lockIcon.isHidden = challenges.unlock
+        lockDesc.isHidden = challenges.unlock
+        lockDesc.text = "Complete level \(challenges.level-1) to unlock"
     }
     
     func setBlurView(){

@@ -18,7 +18,7 @@ class ChallengeDataRepository {
     static let shared = ChallengeDataRepository()
     let entityName = Challenges.self.description()
 
-    func insertChallenges(completed: Bool,
+    func insertChallenges(unlock: Bool,
                        icon: String,
                        level: Int,
                        long_desc: String,
@@ -32,7 +32,7 @@ class ChallengeDataRepository {
             let entity: Challenges = .init(context: context)
             
             //Add challenge data
-            entity.completed = completed
+            entity.unlock = unlock
             entity.level = Int32(level)
             entity.long_desc = long_desc
             entity.short_desc = short_desc
@@ -83,12 +83,12 @@ class ChallengeDataRepository {
         return []
     }
 
-    func updateChallenges(completed: Bool, data: Challenges){
+    func updateChallenges(unlock: Bool, data: Challenges){
         
         do {
             let context = CoreDataManager.sharedManager.persistentContainer.viewContext
             let entity = data
-            entity.completed = completed
+            entity.unlock = unlock
             
             try context.save()
 
