@@ -48,6 +48,7 @@ class CoreDataManager {
 
         if !UserDefaultManager.shared.isOnboardingCompleted() {
             preloadDataChallenge()
+            preloadDataEvaluation()
         }
     }
     
