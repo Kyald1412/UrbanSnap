@@ -130,7 +130,7 @@ extension CoreDataManager {
             long_desc: "Take a picture of a car, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
             short_desc: "Learn to shoot moving urban objects with three layers",
             title: "A Car, Building, and The Sky",
-            photos: ["Onboarding-Learn","Onboarding-Practice"],
+            photos: ["Asset slider 7","Asset slider 8", "Asset slider 9"],
             objects: [ObjectData(desc: "A car is the foreground and the focus object", title: "Car"),
                       ObjectData(desc: "Building is the middle ground", title: "Building"),
                       ObjectData(desc: "Sky is the background", title: "Sky")])
