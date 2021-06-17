@@ -35,6 +35,7 @@ class Step2Controller: UIViewController {
         viewCanvas.backgroundColor = .clear
         viewCanvas.bounds = view.bounds
         viewCanvas.frame = view.frame
+        viewCanvas.isUserInteractionEnabled = false
 //        viewCanvas.translatesAutoresizingMaskIntoConstraints = false
         viewContent.addSubview(viewCanvas)
 
