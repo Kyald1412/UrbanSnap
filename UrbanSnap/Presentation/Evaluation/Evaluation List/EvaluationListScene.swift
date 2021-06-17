@@ -16,7 +16,7 @@ class EvaluationListScene: UIViewController{
     @IBOutlet weak var emptyLabel1: UILabel!
     @IBOutlet weak var emptyLabel2: UILabel!
     
-    private let evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
+    private var evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,8 @@ class EvaluationListScene: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-                
+        evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
+        levelTableView.reloadData()
     }
     
     func emptyPage(){
