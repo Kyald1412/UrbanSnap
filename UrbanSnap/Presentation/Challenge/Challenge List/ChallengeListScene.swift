@@ -19,14 +19,14 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
   
         let item = challengeList[indexPath.row]
         let cell = challengeTableView.dequeueReusableCell(withIdentifier: "challengeItem", for: indexPath) as! ChallengeListTableViewCell
         cell.setLevelList(with: item)
+        cell.removeBlurEffect()
         cell.setBlurView()
         cell.selectionStyle = .none
-
+        
         return cell
     }
     
@@ -54,7 +54,6 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
         challengeTableView.delegate = self
         challengeTableView.dataSource = self
         
-        
         //making table view looks good
 
     }
@@ -72,5 +71,6 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
         challengeScene.challengeDetailList = challenge
         self.navigationController?.pushViewController(challengeScene, animated: true)
     }
+    
 
 }
