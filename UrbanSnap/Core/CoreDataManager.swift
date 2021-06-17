@@ -45,7 +45,6 @@ class CoreDataManager {
     }
     
     func preloadData(){
-
         if !UserDefaultManager.shared.isOnboardingCompleted() {
             preloadDataChallenge()
         }

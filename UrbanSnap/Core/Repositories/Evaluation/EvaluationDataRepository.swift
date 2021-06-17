@@ -22,10 +22,6 @@ class EvaluationDataRepository {
         
         do {
             let context = CoreDataManager.sharedManager.persistentContainer.viewContext
-            let entity: Evaluations = .init(context: context)
-            
-            //Add evaluation data
-            entity.level = Int32(level)
             
             //Add evaluation photo
             let evaluationDetails = EvaluationDetails(context: context)
@@ -35,8 +31,21 @@ class EvaluationDataRepository {
             evaluationDetails.raw_image = rawImage.jpegData(compressionQuality: 100)
             evaluationDetails.challenge = challenge
 
-            entity.addToEvaluationDetail(evaluationDetails)
-        
+            
+            //Add evaluation data
+            
+            if getEvaluationByLevel(level: level) == nil {
+                
+                print("CALLED BY WHOM??")
+                
+                let entity: Evaluations = .init(context: context)
+                entity.level = Int32(level)
+                entity.addToEvaluationDetail(evaluationDetails)
+            } else {
+                if let entity = getEvaluationByLevel(level: level) {
+                    entity.addToEvaluationDetail(evaluationDetails)
+                }
+            }
             
             try context.save()
             
