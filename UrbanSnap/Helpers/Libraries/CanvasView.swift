@@ -38,8 +38,8 @@ struct Line {
 class Canvas: UIView {
     
     // public function
-    fileprivate var strokeColor = UIColor.black
-    fileprivate var strokeWidth: Float = 1
+    fileprivate var strokeColor = UIColor.systemGreen
+    fileprivate var strokeWidth: Float = 3
     
     func setStrokeWidth(width: Float) {
         self.strokeWidth = width
@@ -59,7 +59,7 @@ class Canvas: UIView {
         setNeedsDisplay()
     }
     
-    fileprivate var lines = [Line]()
+    var lines = [Line]()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)

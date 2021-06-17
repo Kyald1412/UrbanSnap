@@ -307,7 +307,7 @@ stickers as follows:
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Owo-Ta-SrG">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="525.33333333333337"/>
                                     </imageView>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQg-GQ-3wa" customClass="Canvas" customModule="UrbanSnap" customModuleProvider="target">
+                                    <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQg-GQ-3wa" customClass="Canvas" customModule="UrbanSnap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="525.33333333333337"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -325,22 +325,6 @@ stickers as follows:
                                     <constraint firstAttribute="trailing" secondItem="Owo-Ta-SrG" secondAttribute="trailing" id="w6V-io-skg"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-5p-vfF">
-                                <rect key="frame" x="357" y="81" width="35" height="33.666666666666671"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="fxI-a4-asr"/>
-                                    <constraint firstAttribute="height" constant="35" id="z7U-6a-tG9"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.uturn.backward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="31t-of-69a">
-                                <rect key="frame" x="357" y="131.66666666666666" width="35" height="33.666666666666657"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="3eR-Qo-abC"/>
-                                    <constraint firstAttribute="width" constant="35" id="mrv-5g-Onc"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qad-3p-g8i">
                                 <rect key="frame" x="20" y="769" width="388" height="49"/>
                                 <color key="backgroundColor" name="black"/>
@@ -361,7 +345,7 @@ stickers as follows:
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-46-N4W" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
-                                <rect key="frame" x="34" y="56" width="360" height="110"/>
+                                <rect key="frame" x="34" y="56" width="360" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark the focus object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-26-PlQ">
                                         <rect key="frame" x="13" y="11" width="347" height="21"/>
@@ -370,7 +354,7 @@ stickers as follows:
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDt-pq-fgn">
-                                        <rect key="frame" x="13" y="40" width="347" height="50"/>
+                                        <rect key="frame" x="13" y="40" width="347" height="51"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Every photo has object to be focused on. Now please
@@ -433,6 +417,30 @@ heart's content.</string>
                                     <action selector="onViewInfo:" destination="kbp-Q6-L1U" eventType="touchUpInside" id="idK-tx-dFp"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-5p-vfF">
+                                <rect key="frame" x="357" y="81" width="35" height="33.666666666666671"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="fxI-a4-asr"/>
+                                    <constraint firstAttribute="height" constant="35" id="z7U-6a-tG9"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HLS-MR-UmB" appends="YES" id="8xR-qK-rzV"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.uturn.backward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="31t-of-69a">
+                                <rect key="frame" x="357" y="131.66666666666666" width="35" height="33.666666666666657"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3eR-Qo-abC"/>
+                                    <constraint firstAttribute="width" constant="35" id="mrv-5g-Onc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MdP-jf-leY" appends="YES" id="sDn-N0-gfO"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KxR-bx-qwy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -466,6 +474,16 @@ heart's content.</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLh-Ta-6Ge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HLS-MR-UmB">
+                    <connections>
+                        <action selector="onPencilButton:" destination="kbp-Q6-L1U" id="bNl-ps-EQ4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="MdP-jf-leY">
+                    <connections>
+                        <action selector="onClearButton:" destination="kbp-Q6-L1U" id="g25-Zs-Ex6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1784" y="83"/>
         </scene>
