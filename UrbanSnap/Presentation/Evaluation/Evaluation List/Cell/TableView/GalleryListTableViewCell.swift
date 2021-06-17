@@ -8,20 +8,23 @@
 import UIKit
 
 protocol GalleryListCellDelegate {
-    func performSegueFromCell()
+    func performSegueFromCell(evaluationData: EvaluationDetails)
 }
 
 class GalleryListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var galleryCollectionView : UICollectionView!
     @IBOutlet weak var levelLabel : UILabel!
-    var photos: [Photos]?
+    var evaluationDetails: [EvaluationDetails]?
     
     var delegate: GalleryListCellDelegate!
     
-    func displayLevelGallery(with eval: Evaluation){
-        levelLabel.text = eval.level
-        photos = eval.gallery
+    func displayLevelGallery(with eval: Evaluations){
+        levelLabel.text = "Level \(eval.level)"
+        
+        if let objectsData = eval.evaluationDetail?.allObjects as? [EvaluationDetails] {
+            evaluationDetails = objectsData
+        }
         
         galleryCollectionView.reloadData()
     }
@@ -40,24 +43,25 @@ extension GalleryListTableViewCell: UICollectionViewDelegate{
 extension GalleryListTableViewCell: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("CEKCEK")
-        return photos?.count ?? 0
+        return evaluationDetails?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = galleryCollectionView.dequeueReusableCell(withReuseIdentifier: "galleryItem", for: indexPath) as! PhotosCollectionViewCell
        
-        if let item = photos {
+        if let item = evaluationDetails {
             cell.displayPhotosTaken(with: item[indexPath.row])
         }
-        
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.delegate != nil {
-            self.delegate.performSegueFromCell()
+            if let item = evaluationDetails {
+                self.delegate.performSegueFromCell(evaluationData: item[indexPath.row])
+            }
         }
     }
     

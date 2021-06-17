@@ -390,11 +390,18 @@ extension ChallengeCameraView {
         print("TAKEN?")
         self.showSelectionAlertWithCompletion(title: "Great Photo", msg: "Continue to review your work?", confirmMsg: "Proceed", cancelMsg: "Another Shoot") { isConfirmed in
             
+            let nextChallenge = ChallengeDataRepository.shared.getChallengeByLevel(level: Int(self.challengeData?.level ?? 0)+1)
+
+            if let nextChallenge = nextChallenge {
+                ChallengeDataRepository.shared.updateChallenges(unlock: true, data: nextChallenge)
+            }
+            
             if isConfirmed{
                 //Done saving, now go back
                 
                 EvaluationDataRepository.shared.insertEvaluations(completed: false, level: Int(self.challengeData?.level ?? 0), desc: "", editedImage: self.selectedImage ?? UIImage.init(), rawImage: self.selectedImage ?? UIImage.init(), challenge: self.challengeData!)
                 
+               
 //                self.navigationController?.popViewController(animated: true)
 //
 //                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

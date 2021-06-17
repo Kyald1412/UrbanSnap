@@ -31,11 +31,15 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        challengeList = ChallengeDataRepository.shared.getAllChallenges()
+        challengeTableView.reloadData()
+    }
     
     @IBOutlet weak var challengeTableView: UITableView!
     
-    let challengeList = ChallengeDataRepository.shared.getAllChallenges()
+    var challengeList = ChallengeDataRepository.shared.getAllChallenges()
     
     override func viewDidLoad() {
         
@@ -70,19 +74,3 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
     }
 
 }
-struct Challenge{
-    let level : String
-    let desc: String
-    let image: UIImage
-}
-
-//extension UIView{
-//    func dropShadow(scale:Bool = true){
-//        layer.masksToBounds = false
-//        layer.shadowColor = UIColor.blue.cgColor
-//        layer.shadowOpacity = 0.23
-//        layer.shadowOffset = CGSize.zero
-//        layer.shadowRadius = 3
-//        layer.rasterizationScale = UIScreen.main.scale
-//    }
-//}

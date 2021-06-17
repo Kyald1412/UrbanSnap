@@ -16,7 +16,7 @@ class EvaluationListScene: UIViewController{
     @IBOutlet weak var emptyLabel1: UILabel!
     @IBOutlet weak var emptyLabel2: UILabel!
     
-    private let galleryList = [ Evaluation(level: "Level 1", gallery: [ Photos(image: UIImage.ilustrasiLevel2)])]
+    private var evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +27,8 @@ class EvaluationListScene: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        print("viewWillAppear count \(EvaluationDataRepository.shared.getAllEvaluations().count)")
-        
+        evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
+        levelTableView.reloadData()
     }
     
     func emptyPage(){
@@ -47,15 +46,14 @@ extension EvaluationListScene: UITableViewDelegate{
 }
 
 extension EvaluationListScene: GalleryListCellDelegate{
-    func performSegueFromCell() {
-        //        passing data to evaluation detail
-        //        openEvaluationDetail()
+    func performSegueFromCell(evaluationData: EvaluationDetails) {
+        openEvaluationDetail(evaluationData: evaluationData)
     }
 }
 
 extension EvaluationListScene: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return galleryList.count
+        return evaluationList.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -63,7 +61,7 @@ extension EvaluationListScene: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = galleryList[indexPath.row]
+        let item = evaluationList[indexPath.row]
         let cell = levelTableView.dequeueReusableCell(withIdentifier: "galleryItem", for: indexPath) as! GalleryListTableViewCell
         cell.displayLevelGallery(with: item)
         cell.delegate = self
@@ -77,13 +75,4 @@ extension EvaluationListScene: UITableViewDataSource{
         evaluationScene.evaluationDetailsData = evaluationData
         self.navigationController?.pushViewController(evaluationScene, animated: true)
     }
-}
-
-struct Evaluation{
-    let level : String
-    let gallery : [Photos]
-}
-
-struct Photos{
-    var image : UIImage
 }
