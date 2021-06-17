@@ -58,15 +58,8 @@ class ChallengeListScene: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("DID SELECT")
-        switch indexPath.row {
-        case 0:
+        if challengeList[indexPath.row].unlock {
             openChallengeDetail()
-        case 1:
-            openChallengeDetail()
-        case 2:
-            openChallengeDetail()
-        default:
-            print("No")
         }
     }
     
