@@ -286,6 +286,7 @@ stickers as follows:
                     <connections>
                         <outlet property="imgCanvas" destination="KdO-Oe-e7l" id="pBi-vu-Lnz"/>
                         <outlet property="infoDesc" destination="04j-Ik-iBn" id="OLt-7g-6d0"/>
+                        <outlet property="lblMarkLayer" destination="267-F2-nQX" id="DyF-6Q-eEw"/>
                         <outlet property="step2Button" destination="x8Y-SK-Ipa" id="6va-c2-mMj"/>
                     </connections>
                 </viewController>
