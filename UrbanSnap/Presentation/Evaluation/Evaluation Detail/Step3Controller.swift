@@ -20,6 +20,13 @@ class Step3Controller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+ 
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+
+        
         self.title = "Step 3 of 3"
 
         self.imageStep3.image = editedImage
@@ -39,13 +46,34 @@ class Step3Controller: UIViewController {
         
     }
 
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+
 }
 
 extension Step3Controller: EvaluationPopupProtocol {
     func onConfirmButton() {
         if let data = evaluationDetailsData {
             EvaluationDataRepository.shared.updateEvaluationDetail(completed: true, desc: descTextView.text, editedImage: editedImage, data: data)
+            let nextChallenge = ChallengeDataRepository.shared.getChallengeByLevel(level: Int(data.challenge?.level ?? 0)+1)
+            
+            if let nextChallenge = nextChallenge {
+                ChallengeDataRepository.shared.updateChallenges(unlock: true, data: nextChallenge)
+            }
+            
         }
+        
         self.dismiss(animated: true) {
             self.navigationController?.popToRootViewController(animated: true)
         }

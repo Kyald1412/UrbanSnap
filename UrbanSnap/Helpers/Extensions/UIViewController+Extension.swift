@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+
+extension Notification.Name {
+    static let didReceiveData = Notification.Name("didReceiveData")
+    static let didCompleteTask = Notification.Name("didCompleteTask")
+    static let completedLengthyDownload = Notification.Name("completedLengthyDownload")
+}
+
 extension UINavigationController {
   open override var shouldAutorotate: Bool {
     return true

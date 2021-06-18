@@ -104,6 +104,11 @@ extension ChallengeCameraScene {
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspect
         view.layer.insertSublayer(previewLayer, below: challengeCameraView?.switchCameraButton.layer)
         previewLayer.frame = view.layer.bounds
+        
+//        if let previewView = challengeCameraView?.previewView {
+//            previewView.layer.insertSublayer(previewLayer, below: challengeCameraView?.switchCameraButton.layer)
+//            previewLayer.frame = previewView.layer.bounds
+//        }
     }
   
     
