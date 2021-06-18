@@ -58,7 +58,7 @@
         <!--Item-->
         <scene sceneID="Vzi-sG-atw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oHd-iB-q9b" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ChallengeNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oHd-iB-q9b" customClass="ChallengeNavigationController" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="jFN-tG-Xde"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7L7-IN-3y7">

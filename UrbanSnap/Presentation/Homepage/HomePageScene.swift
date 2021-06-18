@@ -11,10 +11,11 @@ class HomePageScene: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // Do any additional setup after loading the view.
     }
     
+   
     @IBAction func onHomeTap(_ sender: Any) {
         CoreDataManager.sharedManager.deleteAllData()
         CoreDataManager.sharedManager.preloadDataChallenge()
@@ -27,6 +28,8 @@ class HomePageScene: UITabBarController {
     override var shouldAutorotate: Bool {
         return false
     }
+    
+    
     /*
      // MARK: - Navigation
      

@@ -27,8 +27,8 @@ class EvaluationDataRepository {
             let evaluationDetails = EvaluationDetails(context: context)
             evaluationDetails.completed = false
             evaluationDetails.desc = desc
-            evaluationDetails.edited_image = editedImage.jpegData(compressionQuality: 100)
-            evaluationDetails.raw_image = rawImage.jpegData(compressionQuality: 100)
+            evaluationDetails.edited_image = editedImage.jpegData(compressionQuality: 1.0)
+            evaluationDetails.raw_image = rawImage.jpegData(compressionQuality: 1.0)
             evaluationDetails.challenge = challenge
 
             
@@ -101,7 +101,7 @@ class EvaluationDataRepository {
 
             entityData.completed = completed
             data.desc = desc
-            data.edited_image = editedImage.jpegData(compressionQuality: 100)
+            data.edited_image = editedImage.jpegData(compressionQuality: 1.0)
             
             try context.save()
 

@@ -29,6 +29,7 @@ class EvaluationListScene: UIViewController{
         super.viewWillAppear(animated)
         evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
         levelTableView.reloadData()
+        emptyPage()
     }
     
     func emptyPage(){

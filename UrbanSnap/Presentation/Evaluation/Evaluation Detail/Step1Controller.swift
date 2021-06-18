@@ -13,6 +13,7 @@ class Step1Controller: UIViewController {
     @IBOutlet weak var step2Button: UIButton!
     @IBOutlet weak var infoDesc: DesignableView!
     
+    @IBOutlet weak var lblMarkLayer: UILabel!
     @IBOutlet weak var imgCanvas: UIImageView!
     private var _selectedStickerView:StickerView?
 
@@ -54,6 +55,18 @@ class Step1Controller: UIViewController {
             self.imgCanvas.image = UIImage(data:evaluationDetail.raw_image ?? Data())
             
             if let objectsData = evaluationDetail.challenge?.challengeObject?.allObjects as? [ChallengeObjects] {
+                
+                
+                lblMarkLayer.text = """
+                There are \(objectsData.count) sticker on the top right corner that you can
+                move & drag. Please mark the layers by using these
+                stickers as follows:
+                1. Foreground
+                2. Background
+                """
+                if objectsData.count > 2 {
+                    lblMarkLayer.text = "\(lblMarkLayer.text ?? "")\n3. Middleground"
+                }
                 
                 for (index, _) in objectsData.enumerated() {
                     addTestImage(img: "\(index+1).circle.fill", index: index)

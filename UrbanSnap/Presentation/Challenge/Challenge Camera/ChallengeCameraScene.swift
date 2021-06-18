@@ -82,11 +82,14 @@ class ChallengeCameraScene: UIViewController {
         self.setupInputs()
         
         self.setupPreviewLayer()
-        self.setupAROutput()
-        self.setupLayers()
-        self.updateLayerGeometry()
-        self.setupVision()
         
+        DispatchQueue.main.async {
+            self.setupLayers()
+            self.setupAROutput()
+            self.updateLayerGeometry()
+            self.setupVision()
+        }
+            
         //commit configuration
         self.captureSession.commitConfiguration()
         
