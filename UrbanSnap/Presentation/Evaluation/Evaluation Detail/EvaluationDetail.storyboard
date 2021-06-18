@@ -337,6 +337,44 @@ stickers as follows:
                                     <segue destination="z4d-9A-YBX" kind="show" id="OPd-8f-gd6"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.uturn.backward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="31t-of-69a">
+                                <rect key="frame" x="357" y="131.66666666666666" width="35" height="33.666666666666657"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3eR-Qo-abC"/>
+                                    <constraint firstAttribute="width" constant="35" id="mrv-5g-Onc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MdP-jf-leY" appends="YES" id="sDn-N0-gfO"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXk-lJ-0wn">
+                                <rect key="frame" x="383" y="24" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="NQz-hQ-onp"/>
+                                    <constraint firstAttribute="width" constant="28" id="fta-Bo-Zta"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="tintColor" name="black"/>
+                                <state key="normal" image="Button i"/>
+                                <connections>
+                                    <action selector="onInfoButton:" destination="HvT-3z-xsJ" eventType="touchUpInside" id="tfe-B4-Nmz"/>
+                                    <action selector="onViewInfo:" destination="kbp-Q6-L1U" eventType="touchUpInside" id="idK-tx-dFp"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-5p-vfF">
+                                <rect key="frame" x="357" y="81" width="35" height="33.666666666666671"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="fxI-a4-asr"/>
+                                    <constraint firstAttribute="height" constant="35" id="z7U-6a-tG9"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HLS-MR-UmB" appends="YES" id="8xR-qK-rzV"/>
+                                </connections>
+                            </imageView>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-46-N4W" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
                                 <rect key="frame" x="34" y="56" width="360" height="111"/>
                                 <subviews>
@@ -396,44 +434,6 @@ heart's content.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXk-lJ-0wn">
-                                <rect key="frame" x="383" y="24" width="28" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="NQz-hQ-onp"/>
-                                    <constraint firstAttribute="width" constant="28" id="fta-Bo-Zta"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="tintColor" name="black"/>
-                                <state key="normal" image="Button i"/>
-                                <connections>
-                                    <action selector="onInfoButton:" destination="HvT-3z-xsJ" eventType="touchUpInside" id="tfe-B4-Nmz"/>
-                                    <action selector="onViewInfo:" destination="kbp-Q6-L1U" eventType="touchUpInside" id="idK-tx-dFp"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-5p-vfF">
-                                <rect key="frame" x="357" y="81" width="35" height="33.666666666666671"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="fxI-a4-asr"/>
-                                    <constraint firstAttribute="height" constant="35" id="z7U-6a-tG9"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="HLS-MR-UmB" appends="YES" id="8xR-qK-rzV"/>
-                                </connections>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.uturn.backward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="31t-of-69a">
-                                <rect key="frame" x="357" y="131.66666666666666" width="35" height="33.666666666666657"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="3eR-Qo-abC"/>
-                                    <constraint firstAttribute="width" constant="35" id="mrv-5g-Onc"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="MdP-jf-leY" appends="YES" id="sDn-N0-gfO"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KxR-bx-qwy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
