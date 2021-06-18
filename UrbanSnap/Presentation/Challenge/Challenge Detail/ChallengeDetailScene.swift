@@ -44,6 +44,7 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
                 stackView.addArrangedSubview(label)
             }
         }
+        self.title = "Level \(challenge.level)"
         
     }
     
