@@ -259,7 +259,7 @@ stickers as follows:
                                     <constraint firstAttribute="height" constant="28" id="7lx-Xv-CQl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" image="i.circle.fill" catalog="system"/>
+                                <state key="normal" image="Button i"/>
                                 <connections>
                                     <action selector="onInfoButton:" destination="HvT-3z-xsJ" eventType="touchUpInside" id="lyN-0X-NIy"/>
                                 </connections>
@@ -403,7 +403,7 @@ heart's content.</string>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <color key="tintColor" name="black"/>
-                                <state key="normal" image="i.circle.fill" catalog="system"/>
+                                <state key="normal" image="Button i"/>
                                 <connections>
                                     <action selector="onInfoButton:" destination="HvT-3z-xsJ" eventType="touchUpInside" id="tfe-B4-Nmz"/>
                                     <action selector="onViewInfo:" destination="kbp-Q6-L1U" eventType="touchUpInside" id="idK-tx-dFp"/>
@@ -578,8 +578,8 @@ heart's content.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Button i" width="28" height="28"/>
         <image name="arrow.uturn.backward.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="i.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
