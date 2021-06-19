@@ -22,7 +22,7 @@ class ChallengeNavigationController: UINavigationController {
         
         for controllers in viewControllers {
             print("CONTROLLER \(controllers)")
-            if controllers is ChallengeCameraView {
+            if controllers is ChallengeCameraScene {
                 self.viewControllers.removeLast()
             }
         }

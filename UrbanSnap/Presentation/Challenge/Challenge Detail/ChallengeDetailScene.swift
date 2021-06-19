@@ -108,7 +108,7 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func pressButton(_ sender: Any) {
-        let evaluationScene = ChallengeCameraView()
+        let evaluationScene = UIStoryboard(name: "ChallengeCamera", bundle: nil).instantiateViewController(withIdentifier: "ChallengeCameraScene") as! ChallengeCameraScene
         evaluationScene.challengeData = challengeDetailList
         self.navigationController?.pushViewController(evaluationScene, animated: true)
         // Do any additional setup after loading the view.

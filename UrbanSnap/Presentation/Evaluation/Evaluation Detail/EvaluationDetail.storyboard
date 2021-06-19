@@ -158,7 +158,7 @@ evaluation</string>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAY-YT-PRL">
                                 <rect key="frame" x="20" y="64" width="388" height="517.33333333333337"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KdO-Oe-e7l">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KdO-Oe-e7l">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="517.33333333333337"/>
                                     </imageView>
                                 </subviews>
