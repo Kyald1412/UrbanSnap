@@ -20,6 +20,8 @@
 		BC08E7F42673BA09007A0D29 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */; };
 		BC08E7F62673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */; };
 		BC2E85F826791987004E347B /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BC2E85F726791987004E347B /* ObjectDetector.mlmodel */; };
+		BC489489267E1E80009210B5 /* ChallengeCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC489488267E1E80009210B5 /* ChallengeCamera.storyboard */; };
+		BC48948B267E1EAA009210B5 /* ChallengeCameraViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC48948A267E1EAA009210B5 /* ChallengeCameraViewExt.swift */; };
 		BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1BF26710AEE00B7B31F /* StickerView.swift */; };
 		BC7DF1C226710B8000B7B31F /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C126710B8000B7B31F /* CanvasView.swift */; };
 		BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7DF1C626710C5800B7B31F /* CommonFunction.swift */; };
@@ -86,6 +88,8 @@
 		BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "UrbanSnapImageML 1.mlmodel"; sourceTree = "<group>"; };
 		BC2E85F726791987004E347B /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
+		BC489488267E1E80009210B5 /* ChallengeCamera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeCamera.storyboard; sourceTree = "<group>"; };
+		BC48948A267E1EAA009210B5 /* ChallengeCameraViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCameraViewExt.swift; sourceTree = "<group>"; };
 		BC7DF1BF26710AEE00B7B31F /* StickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerView.swift; sourceTree = "<group>"; };
 		BC7DF1C126710B8000B7B31F /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		BC7DF1C626710C5800B7B31F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
@@ -398,7 +402,9 @@
 				BC08E7EA2673B96B007A0D29 /* ChallengeCameraML.swift */,
 				BC08E7E92673B96A007A0D29 /* ChallengeCameraScene.swift */,
 				BC08E7E82673B96A007A0D29 /* ChallengeCameraView.swift */,
+				BC48948A267E1EAA009210B5 /* ChallengeCameraViewExt.swift */,
 				BC08E7E72673B96A007A0D29 /* ChallengeCameraVision.swift */,
+				BC489488267E1E80009210B5 /* ChallengeCamera.storyboard */,
 			);
 			path = "Challenge Camera";
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				BCD13C63266E4BC30029CE05 /* Colors.xcassets in Resources */,
 				BCD4506B2671CC190084A4F2 /* HomePage.storyboard in Resources */,
 				BCC36EAB266DBD5D00E9E0BA /* Assets.xcassets in Resources */,
+				BC489489267E1E80009210B5 /* ChallengeCamera.storyboard in Resources */,
 				BCD13C78266E4EC60029CE05 /* SFProText-Medium.ttf in Resources */,
 				BCD13C87266E4F1C0029CE05 /* library in Resources */,
 				BCD13CA7266E516D0029CE05 /* ChallengeDetail.storyboard in Resources */,
@@ -574,6 +581,7 @@
 				E8ED43EA267781A300C1DAEF /* EvaluationSuccessPopup.swift in Sources */,
 				BC08E7F42673BA09007A0D29 /* UIViewController+Extension.swift in Sources */,
 				BC7DF1C026710AEE00B7B31F /* StickerView.swift in Sources */,
+				BC48948B267E1EAA009210B5 /* ChallengeCameraViewExt.swift in Sources */,
 				BC08E7F22673B9E0007A0D29 /* CameraFocusSquare.swift in Sources */,
 				BC7DF1C726710C5800B7B31F /* CommonFunction.swift in Sources */,
 				BC2E85F826791987004E347B /* ObjectDetector.mlmodel in Sources */,
@@ -764,8 +772,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YU42ADAZ46;
 				INFOPLIST_FILE = UrbanSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -774,7 +782,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tukangfoto.urbansnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "UrbanSnap Provisioning";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -785,8 +793,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YU42ADAZ46;
 				INFOPLIST_FILE = UrbanSnap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -795,7 +803,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tukangfoto.urbansnap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "UrbanSnap Provisioning";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
