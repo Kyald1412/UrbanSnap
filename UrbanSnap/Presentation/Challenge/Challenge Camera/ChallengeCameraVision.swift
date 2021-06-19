@@ -155,12 +155,18 @@ extension ChallengeCameraScene: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let exifOrientation = exifOrientationFromDeviceOrientation()
         
+        print("exifOrientation \(exifOrientation.rawValue)")
+
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: exifOrientation, options: [:])
         do {
             try imageRequestHandler.perform(self.requests)
         } catch {
             print(error)
         }
+        
+        print("LAST ORIENTATION\(orientationLast.rawValue)")
+        print("ASDSDASD connection ORIENTATION\(connection.videoOrientation.rawValue)")
+
         
         //Take picture section
         
@@ -172,14 +178,30 @@ extension ChallengeCameraScene: AVCaptureVideoDataOutputSampleBufferDelegate {
 //        guard let cvBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
 //            return
 //        }
+        
 
         //get a CIImage out of the CVImageBuffer
-        let ciImage = CIImage(cvImageBuffer: pixelBuffer)
+        var ciImage = CIImage(cvImageBuffer: pixelBuffer)
 
+        switch orientationLast {
+        case .portrait:
+            ciImage = ciImage.oriented(.up)
+        case .landscapeRight:
+            ciImage = ciImage.oriented(.right)
+        case .landscapeLeft:
+            ciImage = ciImage.oriented(.left)
+        default:
+            break
+        }
+        
+        guard let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent) else { return }
+//        let fixedImage = UIImage(cgImage: cgImage)
+
+        
         //get UIImage out of CIImage
-        var uiImage = UIImage(ciImage: ciImage)
+        let uiImage = UIImage(cgImage: cgImage)
         print("UIIMGAE ORIENTATION \(uiImage.imageOrientation.rawValue)")
-        uiImage = uiImage.fixOrientation()!
+//        uiImage = uiImage.fixOrientation()!
 
         DispatchQueue.main.async {
             self.selectedImage = uiImage

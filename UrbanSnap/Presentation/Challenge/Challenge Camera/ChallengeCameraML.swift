@@ -75,7 +75,7 @@ extension ChallengeCameraScene {
 //            detectionOverlay.sublayers = nil // remove all the old recognized objects
 //        }
         
-        print("Observer begin \(results)")
+//        print("Observer begin \(results)")
         
         if results.isEmpty {
 //            challengeObjectData.forEach {
@@ -132,7 +132,7 @@ extension ChallengeCameraScene {
                 }
             }
             
-            print("challengeObjectData.allSatisfy {$0.isSatisfy == true} \(challengeObjectData.allSatisfy {$0.isSatisfy == true})")
+//            print("challengeObjectData.allSatisfy {$0.isSatisfy == true} \(challengeObjectData.allSatisfy {$0.isSatisfy == true})")
 //            print("recogineData DATA \(recoginzeData)")
 
             self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}

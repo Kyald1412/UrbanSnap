@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 import Vision
+import CoreMotion
  
 struct ChallengeObjectData {
     var title: String
@@ -15,7 +16,7 @@ struct ChallengeObjectData {
 }
 
 class ChallengeCameraScene: UIViewController {
-    
+        
     @IBOutlet weak var switchCameraButton : UIButton!
     @IBOutlet weak var flashCameraButton : UIButton!
     @IBOutlet weak var cancelButton : UIButton!
@@ -53,6 +54,9 @@ class ChallengeCameraScene: UIViewController {
     var focusSquare: CameraFocusSquare?
     var animateActivity: Bool!
     var initialZoom: CGFloat = 1.0
+    
+    var orientationLast = UIInterfaceOrientation(rawValue: 0)!
+    var motionManager: CMMotionManager?
 
     var challengeData: Challenges?
     
@@ -90,6 +94,7 @@ class ChallengeCameraScene: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.tabBarController?.tabBar.isHidden = true
         
+        initializeMotionManager()
         
         setupView()
         updateView()
@@ -99,6 +104,51 @@ class ChallengeCameraScene: UIViewController {
         super.viewDidDisappear(animated)
         stopCaptureSession()
     }
+    
+    func initializeMotionManager() {
+        motionManager = CMMotionManager()
+        motionManager?.accelerometerUpdateInterval = 0.2
+        motionManager?.gyroUpdateInterval = 0.2
+        motionManager?.startAccelerometerUpdates(to: (OperationQueue.current)!, withHandler: {
+            (accelerometerData, error) -> Void in
+            if error == nil {
+                self.outputAccelertionData((accelerometerData?.acceleration)!)
+            }
+            else {
+                print("\(error!)")
+            }
+        })
+    }
+    
+    func outputAccelertionData(_ acceleration: CMAcceleration) {
+       var orientationNew: UIInterfaceOrientation
+       if acceleration.x >= 0.75 {
+           orientationNew = .landscapeLeft
+           print("landscapeLeft")
+       }
+       else if acceleration.x <= -0.75 {
+           orientationNew = .landscapeRight
+           print("landscapeRight")
+       }
+       else if acceleration.y <= -0.75 {
+           orientationNew = .portrait
+           print("portrait")
+
+       }
+       else if acceleration.y >= 0.75 {
+           orientationNew = .portraitUpsideDown
+           print("portraitUpsideDown")
+       }
+       else {
+           // Consider same as last time
+           return
+       }
+
+       if orientationNew == orientationLast {
+           return
+       }
+       orientationLast = orientationNew
+   }
     
     //MARK:- Camera Setup
     func setupCaptureSession(){
