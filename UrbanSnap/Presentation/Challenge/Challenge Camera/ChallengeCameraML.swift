@@ -68,7 +68,8 @@ extension ChallengeCameraScene {
     func drawVisionRequestResults(_ results: [Any]) {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        if detectionOverlay.sublayers != nil {
+        
+        if detectionOverlay.sublayers?.isEmpty == false {
             detectionOverlay.sublayers = nil // remove all the old recognized objects
         }
         for observation in results where observation is VNRecognizedObjectObservation {
