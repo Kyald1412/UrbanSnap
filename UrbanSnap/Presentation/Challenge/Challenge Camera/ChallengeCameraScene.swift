@@ -84,9 +84,9 @@ class ChallengeCameraScene: UIViewController {
         self.setupPreviewLayer()
         
         DispatchQueue.main.async {
-            self.setupLayers()
+//            self.setupLayers()
             self.setupAROutput()
-            self.updateLayerGeometry()
+//            self.updateLayerGeometry()
             self.setupVision()
         }
             
@@ -119,17 +119,17 @@ class ChallengeCameraScene: UIViewController {
         CommonFunction.shared.flash(layer: self.previewLayer, numberOfFlashes: 1)
         CommonFunction.shared.playSystemSound(id: 1108)
         self.takePicture = true
-        self.captureSession.stopRunning()
         
-        self.detectionOverlay.removeFromSuperlayer()
-        self.detectionOverlay = nil
+//        self.detectionOverlay.removeFromSuperlayer()
+//        self.detectionOverlay = nil
         self.bufferSize = .zero
         self.backCamera = .none
         self.frontCamera = .none
         self.backInput = .none
         self.frontInput = .none
         self.videoOutput = nil
-        
+        self.captureSession.stopRunning()
+
         self.challengeCameraView?.updateView()
 
     }
