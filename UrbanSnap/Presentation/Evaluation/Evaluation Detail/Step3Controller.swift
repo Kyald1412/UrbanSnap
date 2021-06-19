@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Step3Controller: UIViewController {
+class Step3Controller: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var imageStep3: UIImageView!
     @IBOutlet weak var descLabel: UILabel!
@@ -31,6 +31,7 @@ class Step3Controller: UIViewController {
 
         self.imageStep3.image = editedImage
         self.descTextView.placeholder = "Write your description here.."
+        self.descTextView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -44,6 +45,21 @@ class Step3Controller: UIViewController {
 
         self.tabBarController?.present(myAlert, animated: true, completion: nil)
         
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        print("TEXT COUNT \(textView.text.count)")
+        if textView.text.count > 0 {
+            self.descTextView.placeholder = ""
+            buttonSafe.backgroundColor = .black
+            buttonSafe.setTitleColor(.white, for: .normal)
+            buttonSafe.isEnabled = true
+        } else {
+            self.descTextView.placeholder = "Write your description here.."
+            buttonSafe.backgroundColor = .gray
+            buttonSafe.setTitleColor(.white, for: .normal)
+            buttonSafe.isEnabled = false
+        }
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {

@@ -56,17 +56,25 @@ class Step1Controller: UIViewController {
             
             if let objectsData = evaluationDetail.challenge?.challengeObject?.allObjects as? [ChallengeObjects] {
                 
+                var layerMarkText = "There are \(objectsData.count) sticker on the top right corner that you can move & drag. Please mark the layers by using these stickers as follows:"
                 
-                lblMarkLayer.text = """
-                There are \(objectsData.count) sticker on the top right corner that you can
-                move & drag. Please mark the layers by using these
-                stickers as follows:
-                1. Foreground
-                2. Background
-                """
-                if objectsData.count > 2 {
-                    lblMarkLayer.text = "\(lblMarkLayer.text ?? "")\n3. Middleground"
+                for (index, _) in objectsData.enumerated() {
+                    switch (index) {
+                    case 0:
+                        layerMarkText.append("\n\(index+1). Foreground")
+                        break
+                    case 1:
+                        layerMarkText.append("\n\(index+1). Background")
+                        break
+                    case 2:
+                        layerMarkText.append("\n\(index+1). Middleground")
+                        break
+                    default:
+                        print("")
+                    }
                 }
+                
+                self.lblMarkLayer.text = layerMarkText
                 
                 for (index, _) in objectsData.enumerated() {
                     addTestImage(img: "\(index+1).circle.fill", index: index)
@@ -75,7 +83,18 @@ class Step1Controller: UIViewController {
             }
         }
        
+   
+        addClearViewInfo()
         // Do any additional setup after loading the view.
+    }
+    
+    func addClearViewInfo(){
+        let viewInfoTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideViewInfo))
+        self.view.addGestureRecognizer(viewInfoTapGesture)
+    }
+    
+    @objc func hideViewInfo(){
+        infoDesc.isHidden = true
     }
     
     func addTestImage(img: String, index: Int){

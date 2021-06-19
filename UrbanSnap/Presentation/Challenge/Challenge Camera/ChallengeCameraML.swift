@@ -36,6 +36,8 @@ extension ChallengeCameraScene {
             print(error)
         }
         
+        videoOutput.connections.first?.videoOrientation = .portrait
+
     }
     
     
@@ -72,6 +74,27 @@ extension ChallengeCameraScene {
 //        if detectionOverlay.sublayers?.isEmpty == false {
 //            detectionOverlay.sublayers = nil // remove all the old recognized objects
 //        }
+        
+        print("Observer begin \(results)")
+        
+        if results.isEmpty {
+//            challengeObjectData.forEach {
+//                var data = $0
+//                data.isSatisfy = false
+//            }
+//
+            for (index, _) in challengeObjectData.enumerated() {
+                challengeObjectData[index].isSatisfy = false
+            }
+            
+            objectStacView.arrangedSubviews.forEach({ view in
+                view.backgroundColor = .systemRed
+            })
+            
+            self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}
+            self.updateCameraButton()
+        }
+ 
         for observation in results where observation is VNRecognizedObjectObservation {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
                 continue
@@ -91,32 +114,45 @@ extension ChallengeCameraScene {
 
             let recoginzeData = objectObservation.labels.filter {$0.confidence > 0.01}.map {$0.identifier}
             
-            recoginzeData.forEach { data in
-                if let row = challengeObjectData.firstIndex(where: {$0.title == data}) {
-                    challengeObjectData[row].isSatisfy = true
-//                    print("CURRENT ROW \(row)")
-//                    print("CURRENT ROW \(challengeCameraView?.objectStacView.arrangedSubviews[0])")
-//                    print("DETECTED LABEK \(challengeCameraView?.objectStacView.subviews[row])")
-                    challengeCameraView?.objectStacView.arrangedSubviews[row].backgroundColor = .systemGreen
-                } else {
-                    challengeObjectData.forEach {
-                        var data = $0
-                        data.isSatisfy = false
-                    }
-                    
-                    challengeCameraView?.objectStacView.arrangedSubviews.forEach({ view in
-                        view.backgroundColor = .systemRed
-                    })
-                    
+//            recoginzeData.forEach { data in
+//                if let row = challengeObjectData.firstIndex(where: {$0.title == data}) {
+//                    challengeObjectData[row].isSatisfy = true
+//                    objectStacView.arrangedSubviews[row].backgroundColor = .systemGreen
+//                }
+//            }
+            
+//            let testArrIds = testArray.map { $0.id }
+            challengeObjectData.indices.forEach { challengeObjectData[$0].isSatisfy = recoginzeData.contains(challengeObjectData[$0].title) ? true : false  }
 
+            for (row, data) in challengeObjectData.enumerated(){
+                if data.isSatisfy {
+                    objectStacView.arrangedSubviews[row].backgroundColor = .systemGreen
+                } else {
+                    objectStacView.arrangedSubviews[row].backgroundColor = .systemRed
                 }
             }
             
-            self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}
-            self.challengeCameraView?.updateCameraButton()
+            print("challengeObjectData.allSatisfy {$0.isSatisfy == true} \(challengeObjectData.allSatisfy {$0.isSatisfy == true})")
+//            print("recogineData DATA \(recoginzeData)")
 
-            print("challengeObjectData DATA \(challengeObjectData)")
-            print("recogineData DATA \(recoginzeData)")
+            self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}
+            self.updateCameraButton()
+
+            
+//            else {
+//               challengeObjectData.forEach {
+//                   var data = $0
+//                   data.isSatisfy = false
+//               }
+//
+//               objectStacView.arrangedSubviews.forEach({ view in
+//                   view.backgroundColor = .systemRed
+//               })
+//
+//
+//           }
+            
+           
             
 //            if let array = challengeData?.challengeObject?.allObjects as? [ChallengeObjects] {
 //
@@ -127,10 +163,38 @@ extension ChallengeCameraScene {
 //            shapeLayer.addSublayer(textLayer)
 //            detectionOverlay.addSublayer(shapeLayer)
         }
+        
 //        self.updateLayerGeometry()
         CATransaction.commit()
     }
     
+    func managePhotoOrientation() -> UIImage.Orientation {
+        var currentDevice: UIDevice
+        currentDevice = .current
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        var deviceOrientation: UIDeviceOrientation
+        deviceOrientation = currentDevice.orientation
+
+        var imageOrientation: UIImage.Orientation!
+
+        if deviceOrientation == .portrait {
+            imageOrientation = .up
+            print("Device: Portrait")
+        }else if (deviceOrientation == .landscapeLeft){
+            imageOrientation = .left
+            print("Device: LandscapeLeft")
+        }else if (deviceOrientation == .landscapeRight){
+            imageOrientation = .right
+            print("Device LandscapeRight")
+        }else if (deviceOrientation == .portraitUpsideDown){
+            imageOrientation = .down
+            print("Device PortraitUpsideDown")
+        }else{
+           imageOrientation = .up
+        }
+        return imageOrientation
+    }
+
     
     public func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {
         let curDeviceOrientation = UIDevice.current.orientation

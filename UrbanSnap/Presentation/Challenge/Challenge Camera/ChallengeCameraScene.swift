@@ -16,6 +16,15 @@ struct ChallengeObjectData {
 
 class ChallengeCameraScene: UIViewController {
     
+    @IBOutlet weak var switchCameraButton : UIButton!
+    @IBOutlet weak var flashCameraButton : UIButton!
+    @IBOutlet weak var cancelButton : UIButton!
+    @IBOutlet weak var captureImageButton : UIButton!
+    @IBOutlet weak var confirmPhotoButton : UIButton!
+    @IBOutlet weak var pictureLabel : UILabel!
+    @IBOutlet weak var objectStacView : UIStackView!
+    var objectLabel = [PaddingLabel]()
+    
     //MARK:- AVFoundation
     var captureSession : AVCaptureSession!
     var backCamera : AVCaptureDevice!
@@ -35,9 +44,7 @@ class ChallengeCameraScene: UIViewController {
     var bufferSize: CGSize = .zero
 //    var rootLayer: CALayer! = nil
     var requests = [VNRequest]()
-    
-    var challengeCameraView: ChallengeCameraView? = nil
-    
+        
     var selectedImage: UIImage? = nil
     
     /*=========================================
@@ -59,6 +66,40 @@ class ChallengeCameraScene: UIViewController {
         return false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        DispatchQueue.main.async {
+            self.checkPermissions()
+            self.startCaptureSession()
+        }
+        
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+        
+        
+        setupView()
+        updateView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopCaptureSession()
+    }
+    
     //MARK:- Camera Setup
     func setupCaptureSession(){
         
@@ -67,14 +108,15 @@ class ChallengeCameraScene: UIViewController {
         //start configuration
         self.captureSession.beginConfiguration()
         
-        if self.captureSession.canSetSessionPreset(.photo) {
-            self.captureSession.sessionPreset = .photo
-        }
+//        if self.captureSession.canSetSessionPreset(.photo) {
+//            self.captureSession.sessionPreset = .photo
+//        }
         
 //                self.captureSession.sessionPreset = .vga640x480 // Model image size is smaller.
         //        self.captureSession.sessionPreset = .vga640x480 // Model image size is smaller.
 
-//        self.captureSession.sessionPreset = .hd1280x720 // Model image size is smaller.
+        //        self.captureSession.sessionPreset = .hd1280x720 // Model image size is smaller.
+        self.captureSession.sessionPreset = .medium // Model image size is smaller.
 
         self.captureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
         
@@ -107,21 +149,13 @@ class ChallengeCameraScene: UIViewController {
         self.selectedImage = nil
         self.takePicture = false
         self.backCameraOn = true
-        self.challengeCameraView?.updateView()
+        self.updateView()
         
         setupCaptureSession()
     }
     
     func stopCaptureSession(){
-        
-//        print(self.view.sub)
-        
-        CommonFunction.shared.flash(layer: self.previewLayer, numberOfFlashes: 1)
-        CommonFunction.shared.playSystemSound(id: 1108)
-        self.takePicture = true
-        
-//        self.detectionOverlay.removeFromSuperlayer()
-//        self.detectionOverlay = nil
+      
         self.bufferSize = .zero
         self.backCamera = .none
         self.frontCamera = .none
@@ -130,8 +164,16 @@ class ChallengeCameraScene: UIViewController {
         self.videoOutput = nil
         self.captureSession.stopRunning()
 
-        self.challengeCameraView?.updateView()
-
+    }
+    
+    func saveCapturedImage(){
+        
+        stopCaptureSession()
+        
+        CommonFunction.shared.flash(layer: self.previewLayer, numberOfFlashes: 1)
+        CommonFunction.shared.playSystemSound(id: 1108)
+        self.takePicture = true
+        self.updateView()
     }
     
 }

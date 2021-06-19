@@ -16,7 +16,7 @@ class EvaluationListScene: UIViewController{
     @IBOutlet weak var emptyLabel1: UILabel!
     @IBOutlet weak var emptyLabel2: UILabel!
     
-    private var evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
+    private var evaluationList = [Evaluations]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +27,23 @@ class EvaluationListScene: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
-        levelTableView.reloadData()
         emptyPage()
     }
     
     func emptyPage(){
-        if EvaluationDataRepository.shared.getAllEvaluations().count == 0 {
-            emptyView.isHidden = false
-        } else {
-            emptyView.isHidden = true
+        
+        DispatchQueue.main.async {
+            self.evaluationList = EvaluationDataRepository.shared.getAllEvaluations()
+            
+            if self.evaluationList.count == 0 {
+                self.emptyView.isHidden = false
+            } else {
+                self.emptyView.isHidden = true
+            }
+            
+            self.levelTableView.reloadData()
         }
+      
     }
     
 }
