@@ -187,8 +187,11 @@ extension ChallengeCameraScene {
             if isConfirmed{
                 //Done saving, now go back
 //                self.navigationController?.popToRootViewController(animated: true)
-                self.tabBarController?.selectedIndex = 1
-                NotificationCenter.default.post(name: .didReceiveData, object: nil)
+                
+                DispatchQueue.main.async {
+//                    self.tabBarController?.selectedIndex = 1
+                    NotificationCenter.default.post(name: .didReceiveData, object: nil)
+                }
 
             } else {
                 //restart

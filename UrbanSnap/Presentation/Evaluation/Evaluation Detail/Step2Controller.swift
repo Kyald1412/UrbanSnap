@@ -46,7 +46,17 @@ class Step2Controller: UIViewController {
             viewCanvas.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor)
         ])
 
+        addClearViewInfo()
         // Do any additional setup after loading the view.
+    }
+    
+    func addClearViewInfo(){
+        let viewInfoTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideViewInfo))
+        self.view.addGestureRecognizer(viewInfoTapGesture)
+    }
+    
+    @objc func hideViewInfo(){
+        infoDesc.isHidden = true
     }
     
     @IBAction func onPencilButton(_ sender: Any) {

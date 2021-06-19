@@ -83,7 +83,18 @@ class Step1Controller: UIViewController {
             }
         }
        
+   
+        addClearViewInfo()
         // Do any additional setup after loading the view.
+    }
+    
+    func addClearViewInfo(){
+        let viewInfoTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideViewInfo))
+        self.view.addGestureRecognizer(viewInfoTapGesture)
+    }
+    
+    @objc func hideViewInfo(){
+        infoDesc.isHidden = true
     }
     
     func addTestImage(img: String, index: Int){

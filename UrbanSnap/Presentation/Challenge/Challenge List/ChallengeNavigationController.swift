@@ -20,13 +20,23 @@ class ChallengeNavigationController: UINavigationController {
     @objc func onDidReceiveData(_ notification: Notification) {
         // Do something now
         
-        for controllers in viewControllers {
-            print("CONTROLLER \(controllers)")
-            if controllers is ChallengeCameraScene {
-                self.viewControllers.removeLast()
-            }
+        
+        if let tabBar = self.tabBarController as? HomePageScene {
+            tabBar.isAnimated = true
+            tabBar.selectedIndex = 1
+            tabBar.isAnimated = false
         }
         
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            for controllers in self.viewControllers {
+                print("CONTROLLER \(controllers)")
+                if controllers is ChallengeCameraScene {
+                    self.viewControllers.removeLast()
+                }
+            }
+        }
+   
     }
     
 }

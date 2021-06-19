@@ -108,14 +108,15 @@ class ChallengeCameraScene: UIViewController {
         //start configuration
         self.captureSession.beginConfiguration()
         
-        if self.captureSession.canSetSessionPreset(.photo) {
-            self.captureSession.sessionPreset = .photo
-        }
+//        if self.captureSession.canSetSessionPreset(.photo) {
+//            self.captureSession.sessionPreset = .photo
+//        }
         
 //                self.captureSession.sessionPreset = .vga640x480 // Model image size is smaller.
         //        self.captureSession.sessionPreset = .vga640x480 // Model image size is smaller.
 
-//        self.captureSession.sessionPreset = .hd1280x720 // Model image size is smaller.
+        //        self.captureSession.sessionPreset = .hd1280x720 // Model image size is smaller.
+        self.captureSession.sessionPreset = .medium // Model image size is smaller.
 
         self.captureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
         
