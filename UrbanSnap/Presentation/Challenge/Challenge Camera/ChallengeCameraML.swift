@@ -69,24 +69,24 @@ extension ChallengeCameraScene {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
         
-        if detectionOverlay.sublayers?.isEmpty == false {
-            detectionOverlay.sublayers = nil // remove all the old recognized objects
-        }
+//        if detectionOverlay.sublayers?.isEmpty == false {
+//            detectionOverlay.sublayers = nil // remove all the old recognized objects
+//        }
         for observation in results where observation is VNRecognizedObjectObservation {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
                 continue
             }
             
             // Select only the label with the highest confidence.
-            let topLabelObservation = objectObservation.labels[0]
-            let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
+//            let topLabelObservation = objectObservation.labels[0]
+//            let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
             
-            let shapeLayer = self.createRoundedRectLayerWithBounds(objectBounds)
-            
-            let textLayer = self.createTextSubLayerInBounds(objectBounds,
-                                                            identifier: topLabelObservation.identifier,
-                                                            confidence: topLabelObservation.confidence)
-            
+//            let shapeLayer = self.createRoundedRectLayerWithBounds(objectBounds)
+//
+//            let textLayer = self.createTextSubLayerInBounds(objectBounds,
+//                                                            identifier: topLabelObservation.identifier,
+//                                                            confidence: topLabelObservation.confidence)
+//
 //            print("RESULT topLabelObservation \(topLabelObservation)")
 
             let recoginzeData = objectObservation.labels.filter {$0.confidence > 0.01}.map {$0.identifier}
@@ -124,10 +124,10 @@ extension ChallengeCameraScene {
 //
 //            }
             
-            shapeLayer.addSublayer(textLayer)
-            detectionOverlay.addSublayer(shapeLayer)
+//            shapeLayer.addSublayer(textLayer)
+//            detectionOverlay.addSublayer(shapeLayer)
         }
-        self.updateLayerGeometry()
+//        self.updateLayerGeometry()
         CATransaction.commit()
     }
     
