@@ -32,7 +32,7 @@ class ChallengeListTableViewCell: UITableViewCell {
         let blurEffect = UIBlurEffect(style: .dark)
         let blurredEffectView = UIVisualEffectView(effect: blurEffect)
         blurredEffectView.frame = self.blurView.bounds
-        blurredEffectView.alpha = 0.8
+        blurredEffectView.alpha = 0.7
         blurredEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //        blurredEffectView.layer.cornerRadius = 10
         blurredEffectView.translatesAutoresizingMaskIntoConstraints = false
