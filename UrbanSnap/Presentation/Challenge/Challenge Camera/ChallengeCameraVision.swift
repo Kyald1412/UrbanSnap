@@ -155,7 +155,7 @@ extension ChallengeCameraScene: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let exifOrientation = exifOrientationFromDeviceOrientation()
         
-        print("exifOrientation \(exifOrientation.rawValue)")
+//        print("exifOrientation \(exifOrientation.rawValue)")
 
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: exifOrientation, options: [:])
         do {
@@ -163,9 +163,9 @@ extension ChallengeCameraScene: AVCaptureVideoDataOutputSampleBufferDelegate {
         } catch {
             print(error)
         }
-        
-        print("LAST ORIENTATION\(orientationLast.rawValue)")
-        print("ASDSDASD connection ORIENTATION\(connection.videoOrientation.rawValue)")
+//
+//        print("LAST ORIENTATION\(orientationLast.rawValue)")
+//        print("ASDSDASD connection ORIENTATION\(connection.videoOrientation.rawValue)")
 
         
         //Take picture section

@@ -20,7 +20,7 @@ extension ChallengeCameraScene {
             let objectData = objectsData.map {$0.title ?? ""}
             
             objectData.forEach { data in
-                challengeObjectData.append(ChallengeObjectData.init(title: data, isSatisfy: false))
+                challengeObjectData.append(ChallengeObjectData.init(title: data, isSatisfy: false, isSatisfyTimer: 0))
             }
             
             objectsData.forEach { data in

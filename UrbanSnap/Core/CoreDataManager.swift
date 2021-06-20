@@ -118,7 +118,7 @@ extension CoreDataManager {
             short_desc: "Learn to shoot still urban objects with three layers",
             title: "A Person, Building, and The Sky",
             photos: ["Asset slider 4","Asset slider 5", "Asset slider 6"],
-            objects: [ObjectData(desc: "A person is the foreground and the focus object", title: "Person"),
+            objects: [ObjectData(desc: "A person is the foreground and the focus object", title: "People"),
                       ObjectData(desc: "Building is the middle ground", title: "Building"),
                       ObjectData(desc: "Sky is the background", title: "Sky")])
         

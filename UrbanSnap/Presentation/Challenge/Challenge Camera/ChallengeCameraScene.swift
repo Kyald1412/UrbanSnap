@@ -13,6 +13,7 @@ import CoreMotion
 struct ChallengeObjectData {
     var title: String
     var isSatisfy: Bool
+    var isSatisfyTimer: Int
 }
 
 class ChallengeCameraScene: UIViewController {
@@ -26,6 +27,8 @@ class ChallengeCameraScene: UIViewController {
     @IBOutlet weak var objectStacView : UIStackView!
     var objectLabel = [PaddingLabel]()
     
+    var timer:Timer!
+
     //MARK:- AVFoundation
     var captureSession : AVCaptureSession!
     var backCamera : AVCaptureDevice!
@@ -98,6 +101,8 @@ class ChallengeCameraScene: UIViewController {
         
         setupView()
         updateView()
+        
+        setChallengeObjectTimer()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -200,6 +205,7 @@ class ChallengeCameraScene: UIViewController {
         self.takePicture = false
         self.backCameraOn = true
         self.updateView()
+        self.timer.fire()
         
         setupCaptureSession()
     }
@@ -213,6 +219,7 @@ class ChallengeCameraScene: UIViewController {
         self.frontInput = .none
         self.videoOutput = nil
         self.captureSession.stopRunning()
+        self.timer.invalidate()
 
     }
     

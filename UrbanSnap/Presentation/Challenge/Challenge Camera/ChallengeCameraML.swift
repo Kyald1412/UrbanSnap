@@ -67,6 +67,27 @@ extension ChallengeCameraScene {
         return error
     }
     
+    func setChallengeObjectTimer(){
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (Timer) in
+//            if self.secondsRemaining > 0 {
+//                print ("\(self.secondsRemaining) seconds")
+//                self.secondsRemaining -= 1
+//            } else {
+//                self.invalidate()
+//            }
+            for (index, data) in self.challengeObjectData.enumerated() {
+                if data.isSatisfy {
+                    self.challengeObjectData[index].isSatisfyTimer = 5
+                } else {
+                    if data.isSatisfyTimer > 0 {
+                        self.challengeObjectData[index].isSatisfyTimer = -1
+                    }
+                }
+                
+            }
+        }
+    }
+    
     func drawVisionRequestResults(_ results: [Any]) {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
@@ -122,7 +143,17 @@ extension ChallengeCameraScene {
 //            }
             
 //            let testArrIds = testArray.map { $0.id }
-            challengeObjectData.indices.forEach { challengeObjectData[$0].isSatisfy = recoginzeData.contains(challengeObjectData[$0].title) ? true : false  }
+            challengeObjectData.indices.forEach {
+                let satisfy = recoginzeData.contains(challengeObjectData[$0].title)
+                
+                if satisfy {
+                    challengeObjectData[$0].isSatisfy = true
+                } else {
+                    if challengeObjectData[$0].isSatisfyTimer == 0 {
+                        challengeObjectData[$0].isSatisfy = false
+                    }
+                }
+            }
 
             for (row, data) in challengeObjectData.enumerated(){
                 if data.isSatisfy {
@@ -133,7 +164,7 @@ extension ChallengeCameraScene {
             }
             
 //            print("challengeObjectData.allSatisfy {$0.isSatisfy == true} \(challengeObjectData.allSatisfy {$0.isSatisfy == true})")
-//            print("recogineData DATA \(recoginzeData)")
+            print("recogineData DATA \(recoginzeData)")
 
             self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}
             self.updateCameraButton()
@@ -197,21 +228,36 @@ extension ChallengeCameraScene {
 
     
     public func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {
-        let curDeviceOrientation = UIDevice.current.orientation
+        
+        //        print("exifOrientation \(exifOrientation.rawValue)")
+
+        
+//        let curDeviceOrientation = UIDevice.current.orientation
         let exifOrientation: CGImagePropertyOrientation
         
-        switch curDeviceOrientation {
-        case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
-            exifOrientation = .left
-        case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
-            exifOrientation = .upMirrored
-        case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
-            exifOrientation = .down
-        case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
+        switch orientationLast {
+        case .portrait:
             exifOrientation = .up
+        case .landscapeRight:
+            exifOrientation = .down
+        case .landscapeLeft:
+            exifOrientation = .upMirrored
         default:
             exifOrientation = .up
         }
+        
+//        switch curDeviceOrientation {
+//        case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
+//            exifOrientation = .left
+//        case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
+//            exifOrientation = .upMirrored
+//        case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
+//            exifOrientation = .down
+//        case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
+//            exifOrientation = .up
+//        default:
+//            exifOrientation = .up
+//        }
         return exifOrientation
     }
     func setupLayers() {
