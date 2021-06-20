@@ -102,7 +102,8 @@ extension ChallengeCameraScene {
     func setupPreviewLayer(){
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspect
-        view.layer.insertSublayer(previewLayer, below: switchCameraButton.layer)
+//        view.layer.insertSublayer(previewLayer, below: switchCameraButton.layer)
+        view.layer.insertSublayer(previewLayer, at: 0)
         previewLayer.frame = view.layer.bounds
         
 //        if let previewView = challengeCameraView?.previewView {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -14,30 +14,28 @@
             <objects>
                 <viewController storyboardIdentifier="ChallengeCameraScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ChallengeCameraScene" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXc-Ux-mwH">
-                                <rect key="frame" x="0.0" y="650" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="1218" width="1024" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3p-JD-vw9">
-                                        <rect key="frame" x="20" y="66.333333333333371" width="48" height="30"/>
+                                        <rect key="frame" x="20" y="41.5" width="48" height="30"/>
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGY-B9-cR4">
-                                        <rect key="frame" x="317.66666666666669" y="67" width="37.333333333333314" height="29"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="bGY-B9-cR4">
+                                        <rect key="frame" x="901.5" y="32" width="102.5" height="49"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal">
                                             <imageReference key="image" image="camera.rotate" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="80"/>
-                                            </preferredSymbolConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="default"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMC-3f-et8">
-                                        <rect key="frame" x="283" y="66.333333333333371" width="72" height="30"/>
+                                        <rect key="frame" x="932" y="41.5" width="72" height="30"/>
                                         <state key="normal" title="Use Photo">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -52,29 +50,24 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHOTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0n-Kv-e0x">
-                                <rect key="frame" x="163.33333333333334" y="668" width="48.333333333333343" height="17"/>
+                                <rect key="frame" x="487.5" y="1186" width="49" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" systemColor="systemYellowColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="firstBaseline" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oZr-uF-gaK">
-                                <rect key="frame" x="25" y="90" width="325" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="PSD-v3-Cdw"/>
-                                </constraints>
+                                <rect key="frame" x="25" y="56" width="325" height="68.5"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBe-qx-neB">
-                                <rect key="frame" x="150" y="695" width="75" height="73"/>
+                                <rect key="frame" x="409.5" y="1213" width="205" height="123"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <imageReference key="image" image="largecircle.fill.circle" catalog="system" symbolScale="large" renderingMode="template"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="80"/>
-                                    </preferredSymbolConfiguration>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kg8-i9-WNJ">
-                                <rect key="frame" x="20" y="44" width="30" height="30"/>
+                                <rect key="frame" x="20" y="16" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="hwU-nb-HEH"/>
                                     <constraint firstAttribute="height" constant="30" id="i1V-V8-zCO"/>
@@ -97,6 +90,7 @@
                             <constraint firstItem="oBe-qx-neB" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.2" id="A9z-c7-m7s"/>
                             <constraint firstItem="A0n-Kv-e0x" firstAttribute="centerX" secondItem="oBe-qx-neB" secondAttribute="centerX" id="Aiz-LM-PEl"/>
                             <constraint firstItem="oBe-qx-neB" firstAttribute="top" secondItem="A0n-Kv-e0x" secondAttribute="bottom" constant="10" id="DSR-Qb-VzH"/>
+                            <constraint firstItem="oZr-uF-gaK" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.05" id="EPz-ps-g8U"/>
                             <constraint firstItem="oZr-uF-gaK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="NTy-r3-nsv"/>
                             <constraint firstItem="oBe-qx-neB" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.09" id="NYo-Pg-en8"/>
                             <constraint firstItem="Kg8-i9-WNJ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="QPy-ai-dRr"/>
@@ -104,12 +98,12 @@
                             <constraint firstItem="bGY-B9-cR4" firstAttribute="width" secondItem="oBe-qx-neB" secondAttribute="width" multiplier="0.5" id="X1L-HM-pcZ"/>
                             <constraint firstItem="A3p-JD-vw9" firstAttribute="centerY" secondItem="oBe-qx-neB" secondAttribute="centerY" id="bE1-Eg-B7A"/>
                             <constraint firstItem="dXc-Ux-mwH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="e1H-Kr-WKW"/>
-                            <constraint firstItem="Kg8-i9-WNJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="flX-UV-HWk"/>
+                            <constraint firstItem="Kg8-i9-WNJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="flX-UV-HWk"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="oBe-qx-neB" secondAttribute="bottom" constant="10" id="kmv-gK-7rl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oZr-uF-gaK" secondAttribute="trailing" constant="25" id="qrg-oN-uJA"/>
                             <constraint firstItem="bGY-B9-cR4" firstAttribute="centerY" secondItem="oBe-qx-neB" secondAttribute="centerY" id="s4p-Pu-0Mp"/>
                             <constraint firstItem="qMC-3f-et8" firstAttribute="centerY" secondItem="oBe-qx-neB" secondAttribute="centerY" id="uaX-Z9-RAE"/>
-                            <constraint firstItem="oZr-uF-gaK" firstAttribute="top" secondItem="Kg8-i9-WNJ" secondAttribute="bottom" constant="16" id="z8j-VM-7tV"/>
+                            <constraint firstItem="oZr-uF-gaK" firstAttribute="top" secondItem="Kg8-i9-WNJ" secondAttribute="bottom" constant="10" id="z8j-VM-7tV"/>
                         </constraints>
                     </view>
                     <connections>
