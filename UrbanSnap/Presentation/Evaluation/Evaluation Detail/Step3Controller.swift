@@ -30,7 +30,7 @@ class Step3Controller: UIViewController, UITextViewDelegate {
         self.title = "Step 3 of 3"
 
         self.imageStep3.image = editedImage
-        self.descTextView.placeholder = "Write your description here.."
+        self.descTextView.placeholder = "Write your learning and describe the moment here"
         self.descTextView.delegate = self
 
         // Do any additional setup after loading the view.
@@ -55,7 +55,7 @@ class Step3Controller: UIViewController, UITextViewDelegate {
             buttonSafe.setTitleColor(.white, for: .normal)
             buttonSafe.isEnabled = true
         } else {
-            self.descTextView.placeholder = "Write your description here.."
+            self.descTextView.placeholder = "Write your learning and describe the moment here"
             buttonSafe.backgroundColor = .gray
             buttonSafe.setTitleColor(.white, for: .normal)
             buttonSafe.isEnabled = false
