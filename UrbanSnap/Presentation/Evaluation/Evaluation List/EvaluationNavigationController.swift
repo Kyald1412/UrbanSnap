@@ -27,8 +27,12 @@ class EvaluationNavigationController: UINavigationController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            
-            self.viewControllers.removeAll(where: { !($0 is EvaluationListScene) })
+            for controllers in self.viewControllers {
+                print("CONTROLLER \(controllers)")
+                if !(controllers is EvaluationListScene) {
+                    self.viewControllers.removeLast()
+                }
+            }
         }
    
     }
