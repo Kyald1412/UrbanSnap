@@ -98,12 +98,16 @@ extension CoreDataManager {
     
     func preloadDataChallenge(){
         
+        let longDesc1 = "Take a picture of a building(s) and the sky. Make sure to separate your objects into 2 layers: foreground and background. In this picture:".withBoldText(text: "2 layers: foreground and background", font: UIFont.systemFont(ofSize: 17, weight: .regular))
+        let longDesc2 = "Take a picture of a person, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:".withBoldText(text: "3 layers: foreground, middle ground, and background", font: UIFont.systemFont(ofSize: 17, weight: .regular))
+        let longDesc3 = "Take a picture of a car, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:".withBoldText(text: "3 layers: foreground, middle ground, and background", font: UIFont.systemFont(ofSize: 17, weight: .regular))
+
         // Level 1
         ChallengeDataRepository.shared.insertChallenges(
             unlock: true,
             icon: "ilustrasi level 1",
             level: 1,
-            long_desc: "Take a picture of a building(s) and the sky. Make sure to separate your objects into 2 layers: foreground and background. In this picture:",
+            long_desc: longDesc1,
             short_desc: "Learn to shoot still urban objects with two layers",
             title: "Building and The Sky",
             photos: ["Asset slider 1","Asset slider 2", "Asset slider 3"],
@@ -114,7 +118,7 @@ extension CoreDataManager {
             unlock: false,
             icon: "ilustrasi level 2",
             level: 2,
-            long_desc: "Take a picture of a person, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
+            long_desc: longDesc2,
             short_desc: "Learn to shoot still urban objects with three layers",
             title: "A Person, Building, and The Sky",
             photos: ["Asset slider 4","Asset slider 5", "Asset slider 6"],
@@ -126,7 +130,7 @@ extension CoreDataManager {
             unlock: false,
             icon: "ilustrasi level 3",
             level: 3,
-            long_desc: "Take a picture of a car, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
+            long_desc: longDesc3,
             short_desc: "Learn to shoot moving urban objects with three layers",
             title: "A Car, Building, and The Sky",
             photos: ["Asset slider 7","Asset slider 8", "Asset slider 9"],

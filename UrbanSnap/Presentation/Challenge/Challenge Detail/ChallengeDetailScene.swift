@@ -33,7 +33,7 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
             imgs = objectPhoto
         }
         levelTitle.text = challenge.title
-        levelDesc.text = challenge.long_desc
+        levelDesc.attributedText = challenge.long_desc
         if var objectData = challenge.challengeObject?.allObjects as? [ChallengeObjects] {
             
             objectData.sort(by: { lhs, rhs in

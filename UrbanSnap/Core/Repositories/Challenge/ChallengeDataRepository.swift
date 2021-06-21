@@ -22,7 +22,7 @@ class ChallengeDataRepository {
     func insertChallenges(unlock: Bool,
                        icon: String,
                        level: Int,
-                       long_desc: String,
+                       long_desc: NSAttributedString,
                        short_desc: String,
                        title: String,
                        photos: [String],
