@@ -34,6 +34,9 @@ class ChallengeNavigationController: UINavigationController {
                 if controllers is ChallengeCameraScene {
                     self.viewControllers.removeLast()
                 }
+                if controllers is ChallengeDetailScene {
+                    self.viewControllers.removeLast()
+                }
             }
         }
    
