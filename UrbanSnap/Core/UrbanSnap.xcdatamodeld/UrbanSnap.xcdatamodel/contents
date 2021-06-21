@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ChallengeObjects" representedClassName="ChallengeObjects" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String"/>
+        <attribute name="pos" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="ofChallenge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Challenges" inverseName="challengeObject" inverseEntity="Challenges"/>
     </entity>
@@ -34,7 +35,7 @@
         <relationship name="evaluationDetail" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="EvaluationDetails" inverseName="evaluation" inverseEntity="EvaluationDetails"/>
     </entity>
     <elements>
-        <element name="ChallengeObjects" positionX="102.6621704101562" positionY="377.13525390625" width="128" height="74"/>
+        <element name="ChallengeObjects" positionX="102.6621704101562" positionY="377.13525390625" width="128" height="89"/>
         <element name="ChallengePhotos" positionX="-70.869384765625" positionY="64.795166015625" width="128" height="59"/>
         <element name="Challenges" positionX="-232.1102905273438" positionY="206.70947265625" width="128" height="164"/>
         <element name="EvaluationDetails" positionX="110.5230712890625" positionY="-132.3811798095703" width="128" height="119"/>

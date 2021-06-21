@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-Oh-4Hz">
-                                        <rect key="frame" x="0.0" y="42.333333333333371" width="388" height="20"/>
+                                        <rect key="frame" x="0.0" y="42.333333333333371" width="388" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@ your work</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP4-gZ-reI">
-                                        <rect key="frame" x="0.0" y="93.000000000000057" width="388" height="42"/>
+                                        <rect key="frame" x="0.0" y="93.000000000000057" width="388" height="43"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Tap the button below to write
@@ -191,10 +191,10 @@ evaluation</string>
                                 </connections>
                             </button>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04j-Ik-iBn" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
-                                <rect key="frame" x="34" y="52" width="360" height="164"/>
+                                <rect key="frame" x="34" y="52" width="360" height="166"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="267-F2-nQX">
-                                        <rect key="frame" x="13" y="40" width="347" height="104"/>
+                                        <rect key="frame" x="13" y="40" width="334" height="106"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">There are 2 sticker on the top right corner that you can 
@@ -225,7 +225,7 @@ stickers as follows:
                                     <constraint firstItem="267-F2-nQX" firstAttribute="top" secondItem="MNe-dP-USi" secondAttribute="bottom" constant="8" symbolic="YES" id="6y8-RQ-af9"/>
                                     <constraint firstItem="MNe-dP-USi" firstAttribute="leading" secondItem="04j-Ik-iBn" secondAttribute="leading" constant="13" id="Dw0-ta-2MQ"/>
                                     <constraint firstAttribute="bottom" secondItem="267-F2-nQX" secondAttribute="bottom" constant="20" symbolic="YES" id="TJz-mU-iDD"/>
-                                    <constraint firstAttribute="trailing" secondItem="267-F2-nQX" secondAttribute="trailing" id="co8-JE-10b"/>
+                                    <constraint firstAttribute="trailing" secondItem="267-F2-nQX" secondAttribute="trailing" constant="13" id="co8-JE-10b"/>
                                     <constraint firstItem="MNe-dP-USi" firstAttribute="top" secondItem="04j-Ik-iBn" secondAttribute="top" constant="11" id="wAf-e6-J2c"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -337,8 +337,8 @@ stickers as follows:
                                     <segue destination="z4d-9A-YBX" kind="show" id="OPd-8f-gd6"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.uturn.backward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="31t-of-69a">
-                                <rect key="frame" x="357" y="131.66666666666666" width="35" height="33.666666666666657"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Undo" translatesAutoresizingMaskIntoConstraints="NO" id="31t-of-69a">
+                                <rect key="frame" x="357" y="131" width="35" height="35"/>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -363,8 +363,8 @@ stickers as follows:
                                     <action selector="onViewInfo:" destination="kbp-Q6-L1U" eventType="touchUpInside" id="idK-tx-dFp"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-5p-vfF">
-                                <rect key="frame" x="357" y="81" width="35" height="33.666666666666671"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pen" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-5p-vfF">
+                                <rect key="frame" x="357" y="80" width="35" height="35"/>
                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -376,7 +376,7 @@ stickers as follows:
                                 </connections>
                             </imageView>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-46-N4W" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
-                                <rect key="frame" x="34" y="56" width="360" height="110"/>
+                                <rect key="frame" x="34" y="56" width="360" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark the focus object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-26-PlQ">
                                         <rect key="frame" x="13" y="11" width="347" height="21"/>
@@ -385,7 +385,7 @@ stickers as follows:
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDt-pq-fgn">
-                                        <rect key="frame" x="13" y="40" width="347" height="50"/>
+                                        <rect key="frame" x="13" y="40" width="331" height="51"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Every photo has object to be focused on. Now please
@@ -406,7 +406,7 @@ mark your focus by using pen tool and draw the outline of the object.</string>
                                     <constraint firstAttribute="trailing" secondItem="B9z-26-PlQ" secondAttribute="trailing" id="HkV-ch-4Zf"/>
                                     <constraint firstItem="B9z-26-PlQ" firstAttribute="top" secondItem="BiQ-46-N4W" secondAttribute="top" constant="11" id="QqB-zs-Eti"/>
                                     <constraint firstItem="B9z-26-PlQ" firstAttribute="leading" secondItem="BiQ-46-N4W" secondAttribute="leading" constant="13" id="pzH-tt-vqD"/>
-                                    <constraint firstAttribute="trailing" secondItem="lDt-pq-fgn" secondAttribute="trailing" id="rft-cu-TR3"/>
+                                    <constraint firstAttribute="trailing" secondItem="lDt-pq-fgn" secondAttribute="trailing" constant="16" id="rft-cu-TR3"/>
                                     <constraint firstAttribute="bottom" secondItem="lDt-pq-fgn" secondAttribute="bottom" constant="20" id="zQ1-Hj-LF2"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -459,6 +459,7 @@ mark your focus by using pen tool and draw the outline of the object.</string>
                         <outlet property="clearButton" destination="31t-of-69a" id="SYC-fm-ktQ"/>
                         <outlet property="imageStep2" destination="Owo-Ta-SrG" id="1ys-7X-xYc"/>
                         <outlet property="infoDesc" destination="BiQ-46-N4W" id="9gA-X8-NXb"/>
+                        <outlet property="lblDescInfo" destination="lDt-pq-fgn" id="aUc-Xh-pGL"/>
                         <outlet property="pencilButton" destination="xyy-5p-vfF" id="7dm-Ze-paN"/>
                         <outlet property="step3Button" destination="qad-3p-g8i" id="G4x-9t-K7G"/>
                         <outlet property="viewContent" destination="pm1-LU-neZ" id="r5n-sg-dO8"/>
@@ -582,8 +583,8 @@ mark your focus by using pen tool and draw the outline of the object.</string>
     </scenes>
     <resources>
         <image name="Button i" width="28" height="28"/>
-        <image name="arrow.uturn.backward.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="Pen" width="35" height="35"/>
+        <image name="Undo" width="35" height="35"/>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

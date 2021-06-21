@@ -107,8 +107,8 @@ extension CoreDataManager {
             short_desc: "Learn to shoot still urban objects with two layers",
             title: "Building and The Sky",
             photos: ["Asset slider 1","Asset slider 2", "Asset slider 3"],
-            objects: [ObjectData(desc: "Sky is the background", title: "Sky"),
-                      ObjectData(desc: "Buildings are the foreground and the focus object", title: "Building")])
+            objects: [ObjectData(desc: "Sky is the background", title: "Sky", pos: 2),
+                      ObjectData(desc: "Buildings are the foreground and the focus object", title: "Building", pos: 1)])
         
         ChallengeDataRepository.shared.insertChallenges(
             unlock: false,
@@ -118,9 +118,9 @@ extension CoreDataManager {
             short_desc: "Learn to shoot still urban objects with three layers",
             title: "A Person, Building, and The Sky",
             photos: ["Asset slider 4","Asset slider 5", "Asset slider 6"],
-            objects: [ObjectData(desc: "A person is the foreground and the focus object", title: "People"),
-                      ObjectData(desc: "Building is the middle ground", title: "Building"),
-                      ObjectData(desc: "Sky is the background", title: "Sky")])
+            objects: [ObjectData(desc: "A person is the foreground and the focus object", title: "People", pos: 1),
+                      ObjectData(desc: "Building is the middle ground", title: "Building", pos: 2),
+                      ObjectData(desc: "Sky is the background", title: "Sky", pos: 3)])
         
         ChallengeDataRepository.shared.insertChallenges(
             unlock: false,
@@ -130,9 +130,9 @@ extension CoreDataManager {
             short_desc: "Learn to shoot moving urban objects with three layers",
             title: "A Car, Building, and The Sky",
             photos: ["Asset slider 7","Asset slider 8", "Asset slider 9"],
-            objects: [ObjectData(desc: "A car is the foreground and the focus object", title: "Car"),
-                      ObjectData(desc: "Building is the middle ground", title: "Building"),
-                      ObjectData(desc: "Sky is the background", title: "Sky")])
+            objects: [ObjectData(desc: "A car is the foreground and the focus object", title: "Car", pos: 1),
+                      ObjectData(desc: "Building is the middle ground", title: "Building", pos : 2),
+                      ObjectData(desc: "Sky is the background", title: "Sky", pos: 3)])
         
     }
     

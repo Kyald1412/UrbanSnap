@@ -34,8 +34,13 @@ class ChallengeDetailScene: UIViewController, UIScrollViewDelegate {
         }
         levelTitle.text = challenge.title
         levelDesc.text = challenge.long_desc
-        if let objectData = challenge.challengeObject?.allObjects as? [ChallengeObjects] {
-            for (index, data) in objectData.enumerated(){
+        if var objectData = challenge.challengeObject?.allObjects as? [ChallengeObjects] {
+            
+            objectData.sort(by: { lhs, rhs in
+              return lhs.pos < rhs.pos
+            })
+            
+            for (index, data) in objectData.enumerated() {
                 let label = UILabel()
                 label.textColor = .black
                 label.text = "\(index+1). \(data.desc ?? "")"

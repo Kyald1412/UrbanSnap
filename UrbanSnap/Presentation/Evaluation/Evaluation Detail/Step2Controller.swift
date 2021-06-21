@@ -16,6 +16,7 @@ class Step2Controller: UIViewController {
     @IBOutlet weak var infoDesc: DesignableView!
 //    @IBOutlet weak var viewCanvas: Canvas!
     
+    @IBOutlet weak var lblDescInfo: UILabel!
     @IBOutlet weak var viewContent: UIView!
     var evaluationDetailsData: EvaluationDetails?
     var editedImage: UIImage = UIImage.init()
@@ -45,6 +46,10 @@ class Step2Controller: UIViewController {
             viewCanvas.topAnchor.constraint(equalTo: viewContent.topAnchor),
             viewCanvas.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor)
         ])
+        
+        var layerMarkText = "Every photo has objects to be focused on. Now please mark your focus by using above pen tool and draw to your heart’s content.".withBoldText(text: "mark your focus by using above pen tool", font: UIFont.systemFont(ofSize: 14, weight: .regular))
+
+        lblDescInfo.attributedText = layerMarkText
 
         addClearViewInfo()
         // Do any additional setup after loading the view.
@@ -64,7 +69,7 @@ class Step2Controller: UIViewController {
         if viewCanvas.isUserInteractionEnabled {
             pencilButton.image = UIImage(systemName: "xmark.circle.fill")
         } else {
-            pencilButton.image = UIImage(systemName: "pencil.circle.fill")
+            pencilButton.image = UIImage(named: "Pen")
         }
     }
     

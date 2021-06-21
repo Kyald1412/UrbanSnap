@@ -19,6 +19,7 @@
 		BC08E7F22673B9E0007A0D29 /* CameraFocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F12673B9E0007A0D29 /* CameraFocusSquare.swift */; };
 		BC08E7F42673BA09007A0D29 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */; };
 		BC08E7F62673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */; };
+		BC24FA8F268045FC005D7D77 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24FA8E268045FC005D7D77 /* String+Extension.swift */; };
 		BC2E85F826791987004E347B /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BC2E85F726791987004E347B /* ObjectDetector.mlmodel */; };
 		BC489489267E1E80009210B5 /* ChallengeCamera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC489488267E1E80009210B5 /* ChallengeCamera.storyboard */; };
 		BC48948B267E1EAA009210B5 /* ChallengeCameraViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC48948A267E1EAA009210B5 /* ChallengeCameraViewExt.swift */; };
@@ -87,6 +88,7 @@
 		BC08E7F12673B9E0007A0D29 /* CameraFocusSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFocusSquare.swift; sourceTree = "<group>"; };
 		BC08E7F32673BA09007A0D29 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BC08E7F52673C0D1007A0D29 /* UrbanSnapImageML 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "UrbanSnapImageML 1.mlmodel"; sourceTree = "<group>"; };
+		BC24FA8E268045FC005D7D77 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		BC2E85F726791987004E347B /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		BC489488267E1E80009210B5 /* ChallengeCamera.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeCamera.storyboard; sourceTree = "<group>"; };
 		BC48948A267E1EAA009210B5 /* ChallengeCameraViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCameraViewExt.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				BCD13C80266E4EED0029CE05 /* UIView+Extension.swift */,
 				BCD13C7E266E4EE40029CE05 /* TableViewCell+Extension.swift */,
 				BCD13C7C266E4EE10029CE05 /* Date+Extension.swift */,
+				BC24FA8E268045FC005D7D77 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				BC0118E8267CD3E500B1BB52 /* ChallengeNavigationController.swift in Sources */,
 				BCD13C85266E4EF50029CE05 /* UIColor+Extension.swift in Sources */,
 				84F54B082671B4B70013353B /* ChallengeListTableViewCell.swift in Sources */,
+				BC24FA8F268045FC005D7D77 /* String+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
