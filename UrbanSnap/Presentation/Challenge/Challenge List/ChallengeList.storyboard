@@ -48,7 +48,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="ilustrasi level 1" translatesAutoresizingMaskIntoConstraints="NO" id="0qu-ty-Xmg">
-                                                            <rect key="frame" x="167" y="0.0" width="207" height="149"/>
+                                                            <rect key="frame" x="187" y="0.0" width="187" height="149"/>
                                                         </imageView>
                                                         <label opaque="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Belajar fotografi bersama " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hGe-kb-TUU">
                                                             <rect key="frame" x="16" y="64" width="138.33333333333334" height="14"/>
@@ -64,6 +64,7 @@
                                                         <constraint firstItem="0qu-ty-Xmg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hGe-kb-TUU" secondAttribute="trailing" constant="10" id="0jf-zk-uHU"/>
                                                         <constraint firstAttribute="trailing" secondItem="0qu-ty-Xmg" secondAttribute="trailingMargin" constant="8" id="Exb-Tt-nAM"/>
                                                         <constraint firstItem="gMT-SR-d9e" firstAttribute="top" secondItem="X3a-bT-ZOX" secondAttribute="top" constant="24" id="J5n-WN-BHA"/>
+                                                        <constraint firstItem="0qu-ty-Xmg" firstAttribute="width" secondItem="X3a-bT-ZOX" secondAttribute="width" multiplier="0.5" id="Jf0-cP-IsB"/>
                                                         <constraint firstItem="hGe-kb-TUU" firstAttribute="top" secondItem="gMT-SR-d9e" secondAttribute="bottom" constant="16" id="N9b-uJ-7q1"/>
                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hGe-kb-TUU" secondAttribute="bottom" constant="10" id="NmC-JS-973"/>
                                                         <constraint firstItem="0qu-ty-Xmg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gMT-SR-d9e" secondAttribute="trailing" constant="10" id="PLn-C0-oR3"/>
