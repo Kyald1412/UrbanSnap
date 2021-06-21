@@ -11,6 +11,7 @@ import CoreData
 struct ObjectData {
     let desc: String
     let title: String
+    let pos: Int
 }
 
 class ChallengeDataRepository {
@@ -44,9 +45,10 @@ class ChallengeDataRepository {
             for photo in photos {
                 let challengePhotoEntity = ChallengePhotos(context: context)
                 challengePhotoEntity.image = photo
-                challengePhotos.append(challengePhotoEntity)
+//                challengePhotos.append(challengePhotoEntity)
+                entity.addToChallengePhoto(challengePhotoEntity)
             }
-            entity.challengePhoto = NSSet.init(array: challengePhotos)
+//            entity.addToChallengePhoto(NSSet.init(array: challengePhotos))
             
             //Add challenge objects
             var challengeObjects = [Any]()
@@ -54,9 +56,16 @@ class ChallengeDataRepository {
                 let challengePhotoEntity = ChallengeObjects(context: context)
                 challengePhotoEntity.desc = object.desc
                 challengePhotoEntity.title = object.title
-                challengeObjects.append(challengePhotoEntity)
+                challengePhotoEntity.pos = Int32(object.pos)
+
+//                challengeObjects.append(challengePhotoEntity)
+                
+                entity.addToChallengeObject(challengePhotoEntity)
             }
-            entity.challengeObject = NSSet.init(array: challengeObjects)
+            
+            print("OBJECST merged \(objects)")
+
+//            entity.addToChallengeObject(NSSet.init(array: challengeObjects))
             
             try context.save()
 

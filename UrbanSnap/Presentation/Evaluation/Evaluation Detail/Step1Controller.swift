@@ -64,10 +64,14 @@ class Step1Controller: UIViewController {
                         layerMarkText.append("\n\(index+1). Foreground")
                         break
                     case 1:
-                        layerMarkText.append("\n\(index+1). Background")
+                        if objectsData.count > 2 {
+                            layerMarkText.append("\n\(index+1). Middleground")
+                        } else {
+                            layerMarkText.append("\n\(index+1). Background")
+                        }
                         break
                     case 2:
-                        layerMarkText.append("\n\(index+1). Middleground")
+                        layerMarkText.append("\n\(index+1). Background")
                         break
                     default:
                         print("")
