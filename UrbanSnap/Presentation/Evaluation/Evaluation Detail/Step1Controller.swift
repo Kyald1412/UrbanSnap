@@ -56,32 +56,36 @@ class Step1Controller: UIViewController {
             
             if let objectsData = evaluationDetail.challenge?.challengeObject?.allObjects as? [ChallengeObjects] {
                 
-                var layerMarkText = "There are \(objectsData.count) sticker on the top right corner that you can move & drag. Please mark the layers by using these stickers as follows:"
+                var layerMarkText = "There are \(objectsData.count) sticker on the top right corner that you can move & drag. Please mark the layers by using these stickers as follows:".withBoldText(text: "", font: UIFont.systemFont(ofSize: 14))
+                
+                let backgroundLevel = NSMutableAttributedString()
+                
+                backgroundLevel.append(layerMarkText)
                 
                 for (index, _) in objectsData.enumerated() {
                     switch (index) {
                     case 0:
-                        layerMarkText.append("\n\(index+1). Foreground")
+                        backgroundLevel.append("\n\(index+1). Foreground".withBoldText(text: "\(index+1). Foreground"))
                         break
                     case 1:
                         if objectsData.count > 2 {
-                            layerMarkText.append("\n\(index+1). Middleground")
+                            backgroundLevel.append("\n\(index+1). Midddleground".withBoldText(text: "\(index+1). Midddleground"))
                         } else {
-                            layerMarkText.append("\n\(index+1). Background")
+                            backgroundLevel.append("\n\(index+1). Background".withBoldText(text: "\(index+1). Background"))
                         }
                         break
                     case 2:
-                        layerMarkText.append("\n\(index+1). Background")
+                        backgroundLevel.append("\n\(index+1). Background".withBoldText(text: "\(index+1). Background"))
                         break
                     default:
                         print("")
                     }
                 }
                 
-                self.lblMarkLayer.text = layerMarkText
+                self.lblMarkLayer.attributedText = backgroundLevel
                 
                 for (index, _) in objectsData.enumerated() {
-                    addTestImage(img: "\(index+1).circle.fill", index: index)
+                    addTestImage(img: "Sticker \(index+1)", index: index)
                 }
 
             }
@@ -103,7 +107,7 @@ class Step1Controller: UIViewController {
     
     func addTestImage(img: String, index: Int){
         let testImage = UIImageView.init(frame: CGRect.init(x: 50, y: 50, width: 35, height: 35))
-        testImage.image = UIImage(systemName: img)
+        testImage.image = UIImage(named: img)
         testImage.tintColor = .systemGreen
         testImage.contentMode = .scaleAspectFit
         let sticker1 = StickerView.init(contentView: testImage)

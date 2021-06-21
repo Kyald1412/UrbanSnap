@@ -111,7 +111,7 @@ extension CoreDataManager {
                       ObjectData(desc: "Buildings are the foreground and the focus object", title: "Building", pos: 1)])
         
         ChallengeDataRepository.shared.insertChallenges(
-            unlock: true,
+            unlock: false,
             icon: "ilustrasi level 2",
             level: 2,
             long_desc: "Take a picture of a person, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
@@ -123,7 +123,7 @@ extension CoreDataManager {
                       ObjectData(desc: "Sky is the background", title: "Sky", pos: 3)])
         
         ChallengeDataRepository.shared.insertChallenges(
-            unlock: true,
+            unlock: false,
             icon: "ilustrasi level 3",
             level: 3,
             long_desc: "Take a picture of a car, building and the sky. Make sure to separate your objects into 3 layers: foreground, middle ground, and background. In this picture:",
