@@ -47,7 +47,7 @@ class Step2Controller: UIViewController {
             viewCanvas.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor)
         ])
         
-        var layerMarkText = "Every photo has objects to be focused on. Now please mark your focus by using above pen tool and draw to your heart’s content.".withBoldText(text: "mark your focus by using above pen tool", font: UIFont.systemFont(ofSize: 14, weight: .regular))
+        var layerMarkText = "Every photo has objects to be focused on. Now please mark your focus by using above pen tool and draw outlining the object focus.".withBoldText(text: "mark your focus by using above pen tool", font: UIFont.systemFont(ofSize: 14, weight: .regular))
 
         lblDescInfo.attributedText = layerMarkText
 
