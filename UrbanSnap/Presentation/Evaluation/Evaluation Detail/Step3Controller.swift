@@ -23,7 +23,7 @@ class Step3Controller: UIViewController {
         self.title = "Step 3 of 3"
 
         self.imageStep3.image = editedImage
-        self.descTextView.placeholder = "Write your description here.."
+        self.descTextView.placeholder = "Write your learning and describe the moment here"
 
         // Do any additional setup after loading the view.
     }
