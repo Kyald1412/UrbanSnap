@@ -13,7 +13,7 @@
     <entity name="Challenges" representedClassName="Challenges" syncable="YES" codeGenerationType="class">
         <attribute name="icon" optional="YES" attributeType="String"/>
         <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="long_desc" optional="YES" attributeType="String"/>
+        <attribute name="long_desc" optional="YES" attributeType="Transformable" customClassName="NSAttributedString"/>
         <attribute name="short_desc" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="unlock" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
