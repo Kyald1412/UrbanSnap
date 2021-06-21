@@ -11,6 +11,7 @@ import UIKit
 
 extension Notification.Name {
     static let didReceiveData = Notification.Name("didReceiveData")
+    static let didReceiveDataEvaluation = Notification.Name("didReceiveDataEvaluation")
     static let didCompleteTask = Notification.Name("didCompleteTask")
     static let completedLengthyDownload = Notification.Name("completedLengthyDownload")
 }
