@@ -77,7 +77,7 @@
         <!--Item-->
         <scene sceneID="hEt-j6-6ZN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B0Y-tt-A0p" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="EvaluationNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="B0Y-tt-A0p" customClass="EvaluationNavigationController" customModule="UrbanSnap" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="hQx-dg-Z8m"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="P7d-LA-KL4">

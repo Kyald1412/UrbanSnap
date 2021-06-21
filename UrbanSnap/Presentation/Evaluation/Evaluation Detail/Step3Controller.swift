@@ -91,7 +91,7 @@ extension Step3Controller: EvaluationPopupProtocol {
         }
         
         self.dismiss(animated: true) {
-            self.navigationController?.popToRootViewController(animated: true)
+            NotificationCenter.default.post(name: .didReceiveDataEvaluation, object: nil)
         }
     }
 }
