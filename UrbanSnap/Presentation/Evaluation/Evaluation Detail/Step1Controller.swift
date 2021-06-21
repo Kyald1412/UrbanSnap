@@ -69,7 +69,7 @@ class Step1Controller: UIViewController {
                         break
                     case 1:
                         if objectsData.count > 2 {
-                            backgroundLevel.append("\n\(index+1). Midddleground".withBoldText(text: "\(index+1). Midddleground"))
+                            backgroundLevel.append("\n\(index+1). Middleground".withBoldText(text: "\(index+1). Middleground"))
                         } else {
                             backgroundLevel.append("\n\(index+1). Background".withBoldText(text: "\(index+1). Background"))
                         }
