@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+
+extension Notification.Name {
+    static let didReceiveData = Notification.Name("didReceiveData")
+    static let didCompleteTask = Notification.Name("didCompleteTask")
+    static let completedLengthyDownload = Notification.Name("completedLengthyDownload")
+}
+
 extension UINavigationController {
   open override var shouldAutorotate: Bool {
     return true
@@ -29,6 +36,15 @@ extension UITabBarController {
 }
 
 extension UIViewController {
+    
+    func showAlert(title:String, msg: String){
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+
+        let cancelButton = UIAlertAction(title: "Close", style: .destructive, handler: nil)
+        
+        alert.addAction(cancelButton)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func showSelectionAlertWithCompletion(title: String, msg: String, confirmMsg: String, cancelMsg: String, completionBlock: @escaping (Bool) -> Void) {
        

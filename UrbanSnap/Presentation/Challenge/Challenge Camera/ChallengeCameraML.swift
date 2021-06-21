@@ -36,6 +36,8 @@ extension ChallengeCameraScene {
             print(error)
         }
         
+        videoOutput.connections.first?.videoOrientation = .portrait
+
     }
     
     
@@ -65,55 +67,123 @@ extension ChallengeCameraScene {
         return error
     }
     
+    func setChallengeObjectTimer(){
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (Timer) in
+//            if self.secondsRemaining > 0 {
+//                print ("\(self.secondsRemaining) seconds")
+//                self.secondsRemaining -= 1
+//            } else {
+//                self.invalidate()
+//            }
+            for (index, data) in self.challengeObjectData.enumerated() {
+                if data.isSatisfy {
+                    self.challengeObjectData[index].isSatisfyTimer = 5
+                } else {
+                    if data.isSatisfyTimer > 0 {
+                        self.challengeObjectData[index].isSatisfyTimer = -1
+                    }
+                }
+                
+            }
+        }
+    }
+    
     func drawVisionRequestResults(_ results: [Any]) {
         CATransaction.begin()
         CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
-        detectionOverlay.sublayers = nil // remove all the old recognized objects
+        
+//        if detectionOverlay.sublayers?.isEmpty == false {
+//            detectionOverlay.sublayers = nil // remove all the old recognized objects
+//        }
+        
+//        print("Observer begin \(results)")
+        
+        if results.isEmpty {
+//            challengeObjectData.forEach {
+//                var data = $0
+//                data.isSatisfy = false
+//            }
+//
+            for (index, _) in challengeObjectData.enumerated() {
+                challengeObjectData[index].isSatisfy = false
+            }
+            
+            objectStacView.arrangedSubviews.forEach({ view in
+                view.backgroundColor = .systemRed
+            })
+            
+            self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}
+            self.updateCameraButton()
+        }
+ 
         for observation in results where observation is VNRecognizedObjectObservation {
             guard let objectObservation = observation as? VNRecognizedObjectObservation else {
                 continue
             }
             
             // Select only the label with the highest confidence.
-            let topLabelObservation = objectObservation.labels[0]
-            let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
+//            let topLabelObservation = objectObservation.labels[0]
+//            let objectBounds = VNImageRectForNormalizedRect(objectObservation.boundingBox, Int(bufferSize.width), Int(bufferSize.height))
             
-            let shapeLayer = self.createRoundedRectLayerWithBounds(objectBounds)
-            
-            let textLayer = self.createTextSubLayerInBounds(objectBounds,
-                                                            identifier: topLabelObservation.identifier,
-                                                            confidence: topLabelObservation.confidence)
-            
+//            let shapeLayer = self.createRoundedRectLayerWithBounds(objectBounds)
+//
+//            let textLayer = self.createTextSubLayerInBounds(objectBounds,
+//                                                            identifier: topLabelObservation.identifier,
+//                                                            confidence: topLabelObservation.confidence)
+//
 //            print("RESULT topLabelObservation \(topLabelObservation)")
 
             let recoginzeData = objectObservation.labels.filter {$0.confidence > 0.01}.map {$0.identifier}
             
-            recoginzeData.forEach { data in
-                if let row = challengeObjectData.firstIndex(where: {$0.title == data}) {
-                    challengeObjectData[row].isSatisfy = true
-//                    print("CURRENT ROW \(row)")
-//                    print("CURRENT ROW \(challengeCameraView?.objectStacView.arrangedSubviews[0])")
-//                    print("DETECTED LABEK \(challengeCameraView?.objectStacView.subviews[row])")
-                    challengeCameraView?.objectStacView.arrangedSubviews[row].backgroundColor = .systemGreen
+//            recoginzeData.forEach { data in
+//                if let row = challengeObjectData.firstIndex(where: {$0.title == data}) {
+//                    challengeObjectData[row].isSatisfy = true
+//                    objectStacView.arrangedSubviews[row].backgroundColor = .systemGreen
+//                }
+//            }
+            
+//            let testArrIds = testArray.map { $0.id }
+            challengeObjectData.indices.forEach {
+                let satisfy = recoginzeData.contains(challengeObjectData[$0].title)
+                
+                if satisfy {
+                    challengeObjectData[$0].isSatisfy = true
                 } else {
-                    challengeObjectData.forEach {
-                        var data = $0
-                        data.isSatisfy = false
+                    if challengeObjectData[$0].isSatisfyTimer == 0 {
+                        challengeObjectData[$0].isSatisfy = false
                     }
-                    
-                    challengeCameraView?.objectStacView.arrangedSubviews.forEach({ view in
-                        view.backgroundColor = .systemRed
-                    })
-                    
+                }
+            }
 
+            for (row, data) in challengeObjectData.enumerated(){
+                if data.isSatisfy {
+                    objectStacView.arrangedSubviews[row].backgroundColor = .systemGreen
+                } else {
+                    objectStacView.arrangedSubviews[row].backgroundColor = .systemRed
                 }
             }
             
-            self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}
-            self.challengeCameraView?.updateCameraButton()
-
-            print("challengeObjectData DATA \(challengeObjectData)")
+//            print("challengeObjectData.allSatisfy {$0.isSatisfy == true} \(challengeObjectData.allSatisfy {$0.isSatisfy == true})")
             print("recogineData DATA \(recoginzeData)")
+
+            self.canTakePicture = challengeObjectData.allSatisfy {$0.isSatisfy == true}
+            self.updateCameraButton()
+
+            
+//            else {
+//               challengeObjectData.forEach {
+//                   var data = $0
+//                   data.isSatisfy = false
+//               }
+//
+//               objectStacView.arrangedSubviews.forEach({ view in
+//                   view.backgroundColor = .systemRed
+//               })
+//
+//
+//           }
+            
+           
             
 //            if let array = challengeData?.challengeObject?.allObjects as? [ChallengeObjects] {
 //
@@ -121,30 +191,73 @@ extension ChallengeCameraScene {
 //
 //            }
             
-            shapeLayer.addSublayer(textLayer)
-            detectionOverlay.addSublayer(shapeLayer)
+//            shapeLayer.addSublayer(textLayer)
+//            detectionOverlay.addSublayer(shapeLayer)
         }
-        self.updateLayerGeometry()
+        
+//        self.updateLayerGeometry()
         CATransaction.commit()
     }
     
+    func managePhotoOrientation() -> UIImage.Orientation {
+        var currentDevice: UIDevice
+        currentDevice = .current
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        var deviceOrientation: UIDeviceOrientation
+        deviceOrientation = currentDevice.orientation
+
+        var imageOrientation: UIImage.Orientation!
+
+        if deviceOrientation == .portrait {
+            imageOrientation = .up
+            print("Device: Portrait")
+        }else if (deviceOrientation == .landscapeLeft){
+            imageOrientation = .left
+            print("Device: LandscapeLeft")
+        }else if (deviceOrientation == .landscapeRight){
+            imageOrientation = .right
+            print("Device LandscapeRight")
+        }else if (deviceOrientation == .portraitUpsideDown){
+            imageOrientation = .down
+            print("Device PortraitUpsideDown")
+        }else{
+           imageOrientation = .up
+        }
+        return imageOrientation
+    }
+
     
     public func exifOrientationFromDeviceOrientation() -> CGImagePropertyOrientation {
-        let curDeviceOrientation = UIDevice.current.orientation
+        
+        //        print("exifOrientation \(exifOrientation.rawValue)")
+
+        
+//        let curDeviceOrientation = UIDevice.current.orientation
         let exifOrientation: CGImagePropertyOrientation
         
-        switch curDeviceOrientation {
-        case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
-            exifOrientation = .left
-        case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
-            exifOrientation = .upMirrored
-        case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
-            exifOrientation = .down
-        case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
+        switch orientationLast {
+        case .portrait:
             exifOrientation = .up
+        case .landscapeRight:
+            exifOrientation = .down
+        case .landscapeLeft:
+            exifOrientation = .upMirrored
         default:
             exifOrientation = .up
         }
+        
+//        switch curDeviceOrientation {
+//        case UIDeviceOrientation.portraitUpsideDown:  // Device oriented vertically, home button on the top
+//            exifOrientation = .left
+//        case UIDeviceOrientation.landscapeLeft:       // Device oriented horizontally, home button on the right
+//            exifOrientation = .upMirrored
+//        case UIDeviceOrientation.landscapeRight:      // Device oriented horizontally, home button on the left
+//            exifOrientation = .down
+//        case UIDeviceOrientation.portrait:            // Device oriented vertically, home button on the bottom
+//            exifOrientation = .up
+//        default:
+//            exifOrientation = .up
+//        }
         return exifOrientation
     }
     func setupLayers() {

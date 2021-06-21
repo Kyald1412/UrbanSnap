@@ -21,10 +21,10 @@ extension ChallengeCameraScene {
 
             if (device.torchMode == AVCaptureDevice.TorchMode.on) {
                 device.torchMode = AVCaptureDevice.TorchMode.off
-                self.challengeCameraView?.flashCameraButton.setImage(UIImage.init(systemName: "bolt.slash"), for: .normal)
+                self.flashCameraButton.setImage(UIImage.init(systemName: "bolt.slash"), for: .normal)
             } else {
                 do {
-                    self.challengeCameraView?.flashCameraButton.setImage(UIImage.init(systemName: "bolt.fill"), for: .normal)
+                    self.flashCameraButton.setImage(UIImage.init(systemName: "bolt.fill"), for: .normal)
                     try device.setTorchModeOn(level: 1.0)
                 } catch {
                     print(error)
@@ -102,14 +102,20 @@ extension ChallengeCameraScene {
     func setupPreviewLayer(){
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspect
-        view.layer.insertSublayer(previewLayer, below: challengeCameraView?.switchCameraButton.layer)
+//        view.layer.insertSublayer(previewLayer, below: switchCameraButton.layer)
+        view.layer.insertSublayer(previewLayer, at: 0)
         previewLayer.frame = view.layer.bounds
+        
+//        if let previewView = challengeCameraView?.previewView {
+//            previewView.layer.insertSublayer(previewLayer, below: challengeCameraView?.switchCameraButton.layer)
+//            previewLayer.frame = previewView.layer.bounds
+//        }
     }
   
     
     func switchCameraInput(){
         //don't let user spam the button, fun for the user, not fun for performance
-        challengeCameraView?.switchCameraButton.isUserInteractionEnabled = false
+        switchCameraButton.isUserInteractionEnabled = false
         
         //reconfigure the input
         captureSession.beginConfiguration()
@@ -136,7 +142,7 @@ extension ChallengeCameraScene {
         captureSession.commitConfiguration()
         
         //acitvate the camera button again
-        challengeCameraView?.switchCameraButton.isUserInteractionEnabled = true
+        switchCameraButton.isUserInteractionEnabled = true
     }
     
 }
@@ -150,12 +156,18 @@ extension ChallengeCameraScene: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let exifOrientation = exifOrientationFromDeviceOrientation()
         
+//        print("exifOrientation \(exifOrientation.rawValue)")
+
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: exifOrientation, options: [:])
         do {
             try imageRequestHandler.perform(self.requests)
         } catch {
             print(error)
         }
+//
+//        print("LAST ORIENTATION\(orientationLast.rawValue)")
+//        print("ASDSDASD connection ORIENTATION\(connection.videoOrientation.rawValue)")
+
         
         //Take picture section
         
@@ -163,20 +175,38 @@ extension ChallengeCameraScene: AVCaptureVideoDataOutputSampleBufferDelegate {
             return //we have nothing to do with the image buffer
         }
 
-        //try and get a CVImageBuffer out of the sample buffer
-        guard let cvBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
-            return
-        }
+//        //try and get a CVImageBuffer out of the sample buffer
+//        guard let cvBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+//            return
+//        }
+        
 
         //get a CIImage out of the CVImageBuffer
-        let ciImage = CIImage(cvImageBuffer: cvBuffer)
+        var ciImage = CIImage(cvImageBuffer: pixelBuffer)
 
+        switch orientationLast {
+        case .portrait:
+            ciImage = ciImage.oriented(.up)
+        case .landscapeRight:
+            ciImage = ciImage.oriented(.right)
+        case .landscapeLeft:
+            ciImage = ciImage.oriented(.left)
+        default:
+            break
+        }
+        
+        guard let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent) else { return }
+//        let fixedImage = UIImage(cgImage: cgImage)
+
+        
         //get UIImage out of CIImage
-        let uiImage = UIImage(ciImage: ciImage)
+        let uiImage = UIImage(cgImage: cgImage)
+        print("UIIMGAE ORIENTATION \(uiImage.imageOrientation.rawValue)")
+//        uiImage = uiImage.fixOrientation()!
 
         DispatchQueue.main.async {
             self.selectedImage = uiImage
-            self.stopCaptureSession()
+            self.saveCapturedImage()
         }
     }
         

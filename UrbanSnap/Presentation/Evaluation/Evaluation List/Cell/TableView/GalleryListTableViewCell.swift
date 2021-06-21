@@ -42,7 +42,6 @@ extension GalleryListTableViewCell: UICollectionViewDelegate{
 
 extension GalleryListTableViewCell: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("CEKCEK")
         return evaluationDetails?.count ?? 0
     }
     

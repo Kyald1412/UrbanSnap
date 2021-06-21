@@ -38,6 +38,12 @@ class EvaluationDetailLevel: UIViewController {
             emptyLabel2.isHidden = evaluationDetailsData?.completed ?? false
             emptyView.isHidden = evaluationDetailsData?.completed ?? false
             descTextView.text = evaluationDetailsData?.desc
+            evaluationButton.backgroundColor = .white
+            evaluationButton.setTitle("Edit Evaluation" , for: .normal)
+            evaluationButton.setTitleColor(.black, for: .normal)
+            evaluationButton.layer.borderWidth = 1
+            evaluationButton.layer.borderColor = UIColor.black.cgColor
+            evaluationButton.layer.cornerRadius = 10
         }
         
         // Do any additional setup after loading the view.

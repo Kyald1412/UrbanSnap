@@ -32,23 +32,16 @@ class ChallengeListTableViewCell: UITableViewCell {
         let blurEffect = UIBlurEffect(style: .dark)
         let blurredEffectView = UIVisualEffectView(effect: blurEffect)
         blurredEffectView.frame = self.blurView.bounds
-        blurredEffectView.alpha = 0.5
+        blurredEffectView.alpha = 0.7
         blurredEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //        blurredEffectView.layer.cornerRadius = 10
         blurredEffectView.translatesAutoresizingMaskIntoConstraints = false
+        blurredEffectView.tag = 9
         self.lockedView.insertSubview(blurredEffectView, at: 1)
-
     }
     
-}
-
-extension UIView {
-    func addBlurToView() {
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurredEffectView = UIVisualEffectView(effect: blurEffect)
-        blurredEffectView.frame = self.bounds
-        blurredEffectView.alpha = 0.7
-        blurredEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.addSubview(blurredEffectView)
+    func removeBlurEffect(){
+        lockedView.viewWithTag(9)?.removeFromSuperview()
     }
+    
 }

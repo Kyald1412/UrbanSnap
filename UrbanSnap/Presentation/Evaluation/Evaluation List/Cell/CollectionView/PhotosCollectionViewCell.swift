@@ -12,6 +12,6 @@ class PhotosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photo : UIImageView!
     
     func displayPhotosTaken(with photos: EvaluationDetails){
-        photo.image = UIImage(data: photos.raw_image ?? Data())
+        photo.image = UIImage(data: photos.edited_image ?? Data())
     }
 }

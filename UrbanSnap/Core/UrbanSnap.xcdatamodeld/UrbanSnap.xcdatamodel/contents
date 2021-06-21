@@ -23,8 +23,8 @@
     <entity name="EvaluationDetails" representedClassName="EvaluationDetails" syncable="YES" codeGenerationType="class">
         <attribute name="completed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
-        <attribute name="edited_image" optional="YES" attributeType="Binary"/>
-        <attribute name="raw_image" optional="YES" attributeType="Binary"/>
+        <attribute name="edited_image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="raw_image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <relationship name="challenge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Challenges"/>
         <relationship name="evaluation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evaluations" inverseName="evaluationDetail" inverseEntity="Evaluations"/>
     </entity>
@@ -37,7 +37,7 @@
         <element name="ChallengeObjects" positionX="102.6621704101562" positionY="377.13525390625" width="128" height="74"/>
         <element name="ChallengePhotos" positionX="-70.869384765625" positionY="64.795166015625" width="128" height="59"/>
         <element name="Challenges" positionX="-232.1102905273438" positionY="206.70947265625" width="128" height="164"/>
-        <element name="EvaluationDetails" positionX="110.5230712890625" positionY="-132.3811798095703" width="128" height="133"/>
+        <element name="EvaluationDetails" positionX="110.5230712890625" positionY="-132.3811798095703" width="128" height="119"/>
         <element name="Evaluations" positionX="-236.3215942382812" positionY="-124.6099700927734" width="128" height="88"/>
     </elements>
 </model>

@@ -129,5 +129,21 @@ class ChallengeDataRepository {
         }
 
     }
+    
+    
+    func deleteAllChallenges(){
+
+        let context = CoreDataManager.sharedManager.persistentContainer.viewContext
+
+        do {
+            let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entityName)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+            try context.execute(deleteRequest)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+
+    }
 
 }

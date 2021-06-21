@@ -158,7 +158,7 @@ evaluation</string>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAY-YT-PRL">
                                 <rect key="frame" x="20" y="64" width="388" height="517.33333333333337"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KdO-Oe-e7l">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KdO-Oe-e7l">
                                         <rect key="frame" x="0.0" y="0.0" width="388" height="517.33333333333337"/>
                                     </imageView>
                                 </subviews>
@@ -190,7 +190,7 @@ evaluation</string>
                                     <segue destination="kbp-Q6-L1U" kind="show" id="2zd-Ho-wId"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04j-Ik-iBn" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
+                            <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04j-Ik-iBn" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
                                 <rect key="frame" x="34" y="52" width="360" height="164"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="267-F2-nQX">
@@ -259,7 +259,7 @@ stickers as follows:
                                     <constraint firstAttribute="height" constant="28" id="7lx-Xv-CQl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" image="i.circle.fill" catalog="system"/>
+                                <state key="normal" image="Button i"/>
                                 <connections>
                                     <action selector="onInfoButton:" destination="HvT-3z-xsJ" eventType="touchUpInside" id="lyN-0X-NIy"/>
                                 </connections>
@@ -286,6 +286,7 @@ stickers as follows:
                     <connections>
                         <outlet property="imgCanvas" destination="KdO-Oe-e7l" id="pBi-vu-Lnz"/>
                         <outlet property="infoDesc" destination="04j-Ik-iBn" id="OLt-7g-6d0"/>
+                        <outlet property="lblMarkLayer" destination="267-F2-nQX" id="DyF-6Q-eEw"/>
                         <outlet property="step2Button" destination="x8Y-SK-Ipa" id="6va-c2-mMj"/>
                     </connections>
                 </viewController>
@@ -307,40 +308,16 @@ stickers as follows:
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Owo-Ta-SrG">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="525.33333333333337"/>
                                     </imageView>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQg-GQ-3wa" customClass="Canvas" customModule="UrbanSnap" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="525.33333333333337"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="pQg-GQ-3wa" firstAttribute="top" secondItem="Owo-Ta-SrG" secondAttribute="top" id="4sH-gt-rLN"/>
-                                    <constraint firstItem="pQg-GQ-3wa" firstAttribute="leading" secondItem="Owo-Ta-SrG" secondAttribute="leading" id="5UA-mM-pzk"/>
                                     <constraint firstItem="Owo-Ta-SrG" firstAttribute="top" secondItem="pm1-LU-neZ" secondAttribute="top" id="8CF-ea-5wf"/>
-                                    <constraint firstItem="pQg-GQ-3wa" firstAttribute="bottom" secondItem="Owo-Ta-SrG" secondAttribute="bottom" id="B9c-4I-NIP"/>
                                     <constraint firstAttribute="width" secondItem="pm1-LU-neZ" secondAttribute="height" multiplier="3:4" id="BBo-cA-8LE"/>
                                     <constraint firstAttribute="bottom" secondItem="Owo-Ta-SrG" secondAttribute="bottom" id="JDU-Bo-Sim"/>
                                     <constraint firstItem="Owo-Ta-SrG" firstAttribute="leading" secondItem="pm1-LU-neZ" secondAttribute="leading" id="kxF-mY-NFW"/>
-                                    <constraint firstItem="pQg-GQ-3wa" firstAttribute="trailing" secondItem="Owo-Ta-SrG" secondAttribute="trailing" id="rHO-eC-7lT"/>
                                     <constraint firstAttribute="trailing" secondItem="Owo-Ta-SrG" secondAttribute="trailing" id="w6V-io-skg"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-5p-vfF">
-                                <rect key="frame" x="357" y="81" width="35" height="33.666666666666671"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="fxI-a4-asr"/>
-                                    <constraint firstAttribute="height" constant="35" id="z7U-6a-tG9"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.uturn.backward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="31t-of-69a">
-                                <rect key="frame" x="357" y="131.66666666666666" width="35" height="33.666666666666657"/>
-                                <color key="tintColor" systemColor="systemGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="3eR-Qo-abC"/>
-                                    <constraint firstAttribute="width" constant="35" id="mrv-5g-Onc"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qad-3p-g8i">
                                 <rect key="frame" x="20" y="769" width="388" height="49"/>
                                 <color key="backgroundColor" name="black"/>
@@ -360,7 +337,45 @@ stickers as follows:
                                     <segue destination="z4d-9A-YBX" kind="show" id="OPd-8f-gd6"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-46-N4W" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.uturn.backward.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="31t-of-69a">
+                                <rect key="frame" x="357" y="131.66666666666666" width="35" height="33.666666666666657"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3eR-Qo-abC"/>
+                                    <constraint firstAttribute="width" constant="35" id="mrv-5g-Onc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MdP-jf-leY" appends="YES" id="sDn-N0-gfO"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXk-lJ-0wn">
+                                <rect key="frame" x="383" y="24" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="NQz-hQ-onp"/>
+                                    <constraint firstAttribute="width" constant="28" id="fta-Bo-Zta"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="tintColor" name="black"/>
+                                <state key="normal" image="Button i"/>
+                                <connections>
+                                    <action selector="onInfoButton:" destination="HvT-3z-xsJ" eventType="touchUpInside" id="tfe-B4-Nmz"/>
+                                    <action selector="onViewInfo:" destination="kbp-Q6-L1U" eventType="touchUpInside" id="idK-tx-dFp"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xyy-5p-vfF">
+                                <rect key="frame" x="357" y="81" width="35" height="33.666666666666671"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="fxI-a4-asr"/>
+                                    <constraint firstAttribute="height" constant="35" id="z7U-6a-tG9"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HLS-MR-UmB" appends="YES" id="8xR-qK-rzV"/>
+                                </connections>
+                            </imageView>
+                            <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiQ-46-N4W" customClass="DesignableView" customModule="UrbanSnap" customModuleProvider="target">
                                 <rect key="frame" x="34" y="56" width="360" height="110"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark the focus object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-26-PlQ">
@@ -418,20 +433,6 @@ mark your focus by using pen tool and draw the outline of the object.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXk-lJ-0wn">
-                                <rect key="frame" x="383" y="24" width="28" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="NQz-hQ-onp"/>
-                                    <constraint firstAttribute="width" constant="28" id="fta-Bo-Zta"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="tintColor" name="black"/>
-                                <state key="normal" image="i.circle.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="onInfoButton:" destination="HvT-3z-xsJ" eventType="touchUpInside" id="tfe-B4-Nmz"/>
-                                    <action selector="onViewInfo:" destination="kbp-Q6-L1U" eventType="touchUpInside" id="idK-tx-dFp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KxR-bx-qwy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -443,12 +444,12 @@ mark your focus by using pen tool and draw the outline of the object.</string>
                             <constraint firstItem="pm1-LU-neZ" firstAttribute="leading" secondItem="KxR-bx-qwy" secondAttribute="leading" constant="17" id="Hib-YX-rOo"/>
                             <constraint firstItem="KxR-bx-qwy" firstAttribute="trailing" secondItem="31t-of-69a" secondAttribute="trailing" constant="36" id="IGu-XZ-PsS"/>
                             <constraint firstItem="BiQ-46-N4W" firstAttribute="leading" secondItem="KxR-bx-qwy" secondAttribute="leading" constant="34" id="JvN-du-ggn"/>
+                            <constraint firstItem="EXk-lJ-0wn" firstAttribute="trailing" secondItem="pm1-LU-neZ" secondAttribute="trailing" id="Nl5-rr-wQr"/>
                             <constraint firstItem="KxR-bx-qwy" firstAttribute="trailing" secondItem="pm1-LU-neZ" secondAttribute="trailing" constant="17" id="O2J-ub-DUZ"/>
                             <constraint firstItem="BiQ-46-N4W" firstAttribute="top" secondItem="EXk-lJ-0wn" secondAttribute="bottom" constant="4" id="Raf-4I-KW0"/>
                             <constraint firstItem="qad-3p-g8i" firstAttribute="leading" secondItem="KxR-bx-qwy" secondAttribute="leading" constant="20" id="YEE-C9-t6K"/>
                             <constraint firstItem="pm1-LU-neZ" firstAttribute="top" secondItem="xyy-5p-vfF" secondAttribute="bottom" constant="-50" id="ZF3-Xo-9Of"/>
                             <constraint firstItem="EXk-lJ-0wn" firstAttribute="top" secondItem="KxR-bx-qwy" secondAttribute="top" constant="24" id="aFv-Is-7Bj"/>
-                            <constraint firstItem="EXk-lJ-0wn" firstAttribute="trailing" secondItem="pQg-GQ-3wa" secondAttribute="trailing" id="cqf-Da-6NL"/>
                             <constraint firstItem="KxR-bx-qwy" firstAttribute="trailing" secondItem="qad-3p-g8i" secondAttribute="trailing" constant="20" id="hzl-V4-zaH"/>
                             <constraint firstItem="KxR-bx-qwy" firstAttribute="trailing" secondItem="BiQ-46-N4W" secondAttribute="trailing" constant="34" id="oAe-1F-vFN"/>
                         </constraints>
@@ -460,11 +461,20 @@ mark your focus by using pen tool and draw the outline of the object.</string>
                         <outlet property="infoDesc" destination="BiQ-46-N4W" id="9gA-X8-NXb"/>
                         <outlet property="pencilButton" destination="xyy-5p-vfF" id="7dm-Ze-paN"/>
                         <outlet property="step3Button" destination="qad-3p-g8i" id="G4x-9t-K7G"/>
-                        <outlet property="viewCanvas" destination="pQg-GQ-3wa" id="xZF-vW-irn"/>
                         <outlet property="viewContent" destination="pm1-LU-neZ" id="r5n-sg-dO8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLh-Ta-6Ge" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HLS-MR-UmB">
+                    <connections>
+                        <action selector="onPencilButton:" destination="kbp-Q6-L1U" id="bNl-ps-EQ4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="MdP-jf-leY">
+                    <connections>
+                        <action selector="onClearButton:" destination="kbp-Q6-L1U" id="g25-Zs-Ex6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1784" y="83"/>
         </scene>
@@ -485,9 +495,9 @@ mark your focus by using pen tool and draw the outline of the object.</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJO-ru-PJ4">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJO-ru-PJ4">
                                 <rect key="frame" x="20" y="769" width="388" height="49"/>
-                                <color key="backgroundColor" name="black"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="78j-I9-HQy"/>
                                 </constraints>
@@ -513,6 +523,9 @@ mark your focus by using pen tool and draw the outline of the object.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="z4d-9A-YBX" id="CqD-jH-0si"/>
+                                        </connections>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -568,8 +581,8 @@ mark your focus by using pen tool and draw the outline of the object.</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Button i" width="28" height="28"/>
         <image name="arrow.uturn.backward.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="i.circle.fill" catalog="system" width="128" height="121"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

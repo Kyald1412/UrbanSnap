@@ -19,7 +19,7 @@
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOs-fa-K2c">
                                 <rect key="frame" x="20" y="743" width="350" height="47"/>
-                                <color key="backgroundColor" red="0.13357576730000001" green="0.1447329819" blue="0.16078686710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.14509803921568626" blue="0.16078686710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="gke-Tn-bl3"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzT-Km-FWY">
                                 <rect key="frame" x="340" y="68" width="30" height="30"/>
                                 <state key="normal" title="Skip">
-                                    <color key="titleColor" red="0.81176470588235294" green="0.83137254901960778" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.59607843137254901" green="0.61568627450980395" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="skipButtonWith_sender:" destination="DtS-ZS-cah" eventType="touchUpInside" id="ede-zE-tXs"/>

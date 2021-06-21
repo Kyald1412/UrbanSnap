@@ -13,12 +13,15 @@ class Step1Controller: UIViewController {
     @IBOutlet weak var step2Button: UIButton!
     @IBOutlet weak var infoDesc: DesignableView!
     
+    @IBOutlet weak var lblMarkLayer: UILabel!
     @IBOutlet weak var imgCanvas: UIImageView!
     private var _selectedStickerView:StickerView?
 
     @IBAction func onInfoButton(_ sender: Any) {
         infoDesc.isHidden = !infoDesc.isHidden
     }
+    
+    var isEdited = false
     
     var selectedStickerView:StickerView? {
         get {
@@ -53,6 +56,26 @@ class Step1Controller: UIViewController {
             
             if let objectsData = evaluationDetail.challenge?.challengeObject?.allObjects as? [ChallengeObjects] {
                 
+                var layerMarkText = "There are \(objectsData.count) sticker on the top right corner that you can move & drag. Please mark the layers by using these stickers as follows:"
+                
+                for (index, _) in objectsData.enumerated() {
+                    switch (index) {
+                    case 0:
+                        layerMarkText.append("\n\(index+1). Foreground")
+                        break
+                    case 1:
+                        layerMarkText.append("\n\(index+1). Background")
+                        break
+                    case 2:
+                        layerMarkText.append("\n\(index+1). Middleground")
+                        break
+                    default:
+                        print("")
+                    }
+                }
+                
+                self.lblMarkLayer.text = layerMarkText
+                
                 for (index, _) in objectsData.enumerated() {
                     addTestImage(img: "\(index+1).circle.fill", index: index)
                 }
@@ -60,7 +83,18 @@ class Step1Controller: UIViewController {
             }
         }
        
+   
+        addClearViewInfo()
         // Do any additional setup after loading the view.
+    }
+    
+    func addClearViewInfo(){
+        let viewInfoTapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideViewInfo))
+        self.view.addGestureRecognizer(viewInfoTapGesture)
+    }
+    
+    @objc func hideViewInfo(){
+        infoDesc.isHidden = true
     }
     
     func addTestImage(img: String, index: Int){
@@ -77,7 +111,7 @@ class Step1Controller: UIViewController {
         sticker1.enableClose = false
         sticker1.enableRotate = false
         sticker1.showEditingHandlers = false
-        sticker1.tag = 999
+        sticker1.tag = index
         self.imgCanvas.addSubview(sticker1)
         
     }
@@ -86,6 +120,11 @@ class Step1Controller: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is Step2Controller {
+            
+            if !isEdited {
+                self.showAlert(title: "Alert", msg: "You are not moving any sticker yet!")
+                return
+            }
             
             print("SEGUEW pansgis;")
             
@@ -99,31 +138,6 @@ class Step1Controller: UIViewController {
             }
         }
     }
-   
-    
-//    @IBAction func btnSaveClick (sender:AnyObject) {
-//        selectedStickerView?.showEditingHandlers = false
-//        if self.imgCanvas.subviews.filter({$0.tag == 999}).count > 0 {
-//            if let image = saveImage(imageView: imgCanvas){
-//
-////                UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-//            }else{
-//                print("Image not found !!")
-//            }
-//        }else{
-////            UIAlertController.showAlertWithOkButton(self, aStrMessage: "No Sticker is available.", completion: nil)
-//        }
-//    }
-    
-//    //MARK: - Add image to Library
-//    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-//        if error != nil {
-//            // we got back an error!
-//            UIAlertController.showAlertWithOkButton(self, aStrMessage: "Save error", completion: nil)
-//        } else {
-//            UIAlertController.showAlertWithOkButton(self, aStrMessage: "Your image has been saved to your photos.", completion: nil)
-//        }
-//    }
 
     func saveImage(imageView: UIImageView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0.0)
@@ -144,6 +158,7 @@ extension Step1Controller : StickerViewDelegate {
     
     func stickerViewDidBeginMoving(_ stickerView: StickerView) {
         self.selectedStickerView = stickerView
+        self.isEdited = true
     }
     
     func stickerViewDidChangeMoving(_ stickerView: StickerView) {
